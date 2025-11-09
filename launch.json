@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET 9 Launch (Application)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/Application/Breadboard.Application/bin/Debug/net9.0/Application.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Application/Breadboard.Application",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
+  ]
+}

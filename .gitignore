@@ -1,0 +1,10 @@
+# Rider
+.idea/
+*.iml
+
+# Build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
