@@ -4,6 +4,6 @@ namespace Breadboard.Shared;
 
 public interface IUnityOfWork
 {
-    Task Commit();
+    Task<int> Commit();
     Task Rollback();
 }
