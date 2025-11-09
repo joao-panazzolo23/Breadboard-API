@@ -120,6 +120,16 @@
             "related": ".xml"
           }
         }
+      },
+      "Breadboard.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Breadboard.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Shared.dll": {}
+        }
       }
     }
   },
@@ -348,10 +358,16 @@
         "npgsql.nuspec",
         "postgresql.png"
       ]
+    },
+    "Breadboard.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Breadboard.Shared >= 1.0.0",
       "Dapper >= 2.1.66",
       "Microsoft.Extensions.Configuration >= 9.0.10",
       "Npgsql >= 9.0.4"
@@ -388,7 +404,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj": {
+              "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

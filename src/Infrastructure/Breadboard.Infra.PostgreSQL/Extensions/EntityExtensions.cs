@@ -1,3 +1,5 @@
+using Breadboard.Infra.PostgreSQL.Repositories;
+using Breadboard.Shared;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,15 +17,12 @@ public static class EntityExtensions
         );
 
         services.AddRepositories();
-        //services.AddNpgsql<AppDbContext>(configuration["DefaultConnection"]);
         return services;
     }
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        //inject repositores dependencies here
-        // services.AddScoped();
-
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         return services;
     }
 

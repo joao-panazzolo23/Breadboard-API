@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Expenses\Commands\" />
-    <Folder Include="Expenses\Entities\" />
     <Folder Include="Login\" />
-    <Folder Include="Users\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Breadboard.Shared\Breadboard.Shared.csproj" />
   </ItemGroup>
 
 </Project>

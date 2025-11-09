@@ -424,6 +424,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Breadboard.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.10",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.10",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.10",
@@ -440,6 +441,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Breadboard.Shared": "1.0.0",
           "Dapper": "2.1.66",
           "Microsoft.Extensions.Configuration": "9.0.10",
           "Npgsql": "9.0.4"
@@ -449,6 +451,16 @@
         },
         "runtime": {
           "bin/placeholder/Breadboard.Infra.PostgreSQLDapper.dll": {}
+        }
+      },
+      "Breadboard.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Breadboard.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Shared.dll": {}
         }
       }
     }
@@ -1306,6 +1318,11 @@
       "type": "project",
       "path": "../../Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj",
       "msbuildProject": "../../Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj"
+    },
+    "Breadboard.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
