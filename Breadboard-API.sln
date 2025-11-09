@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.PostgreSQL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.PostgreSQLDapper", "src\Infrastructure\Breadboard.Infra.PostgreSQLDapper\Breadboard.Infra.PostgreSQLDapper.csproj", "{0299E0B3-9BAE-43E7-835E-665EAF826D15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Shared", "src\Domain\Breadboard.Shared\Breadboard.Shared.csproj", "{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,18 @@ Global
 		{0299E0B3-9BAE-43E7-835E-665EAF826D15}.Release|x64.Build.0 = Release|Any CPU
 		{0299E0B3-9BAE-43E7-835E-665EAF826D15}.Release|x86.ActiveCfg = Release|Any CPU
 		{0299E0B3-9BAE-43E7-835E-665EAF826D15}.Release|x86.Build.0 = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|x64.Build.0 = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Debug|x86.Build.0 = Debug|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|x64.ActiveCfg = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|x64.Build.0 = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +103,6 @@ Global
 		{9048EB7F-3875-A59E-E36B-5BD4C6F2A282} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{06F73863-3055-4556-9417-EA009A1085EE} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
 		{0299E0B3-9BAE-43E7-835E-665EAF826D15} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
+		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4} = {8B290487-4C16-E85E-E807-F579CBE9FC4D}
 	EndGlobalSection
 EndGlobal

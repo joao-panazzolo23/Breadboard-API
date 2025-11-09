@@ -2,6 +2,11 @@
 .idea/
 *.iml
 
+# VSCode
+.vscode/*.code-workspace
+.vscode/settings.json   
+.vscode/*.history    
+
 # Build outputs
 bin/
 obj/

@@ -1,5 +1,6 @@
 using Breadboard.Application.Extensions;
 using Breadboard.Infra.PostgreSQL.Extensions;
+using Breadboard.Infra.PostgreSQLDapper.Extensions;
 
 //TODO: DESCOBRIR OQ EH OPEN API E PQ USAR ESSA BOMBA EM .NET 9
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,7 @@ builder.Services.AddCaching();
 builder.AddControllerNamingConvention();
 //services.AddHttpContextAccessor(); later
 builder.Services.ConfigureJsonOptions();
-
+builder.Services.AddQueryRepositories();
 //entity dependencies & repositories
 builder.Services.AddEntityFrameWork(builder.Configuration);
 
