@@ -3,9 +3,9 @@ using Breadboard.Shared.LightBridge;
 
 namespace Breadboard.Infra.LightBridget.LightBridge;
 
-public class LightBridge(Dictionary<Type, HandlerRegistration> handlers) : ILightBridge
+public class LightDispatcher(Dictionary<Type, HandlerRegistration> handlers) : ILightDispatcher
 {
-    public async Task<Result<TResponse>> Send<TResponse>(object request)
+    public async Task<Result<TResponse>> Dispatch<TResponse>(object request)
     {
         var requestType = request.GetType();
         if (!handlers.TryGetValue(requestType, out var handler))

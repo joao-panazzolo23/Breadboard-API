@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace Breadboard.Application.Controllers;
 
 [Route("api/v1/[controller]")]
-public class ExpenseController(ILightBridge bridge) : ControllerBase
+public class ExpenseController(ILightDispatcher dispatcher) : ControllerBase
 {
-    private readonly ILightBridge _bridge = bridge;
+    private readonly ILightDispatcher _dispatcher = dispatcher;
     
     [HttpPost]
     public IActionResult Add()

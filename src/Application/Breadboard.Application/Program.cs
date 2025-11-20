@@ -1,7 +1,7 @@
 using System.Reflection;
 using Breadboard.Application.Extensions;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Infra.LightBridget.Extensions;
+using Breadboard.Infra.LightBridge.Extensions;
 using Breadboard.Infra.PostgreSQL.Extensions;
 using Breadboard.Infra.PostgreSQLDapper.Extensions;
 

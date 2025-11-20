@@ -10,10 +10,10 @@ namespace Breadboard.Application.Controllers;
 [Route("api/v1/[controller]")]
 public class ExpenseCategoryController
 {
-    public ILightBridge _Bridge { get; set; }
-    public ExpenseCategoryController(ILightBridge bridge)
+    public ILightDispatcher Dispatcher { get; set; }
+    public ExpenseCategoryController(ILightDispatcher dispatcher)
     {
-        _Bridge = bridge;
+        Dispatcher = dispatcher;
     }
 
     // [HttpPost]

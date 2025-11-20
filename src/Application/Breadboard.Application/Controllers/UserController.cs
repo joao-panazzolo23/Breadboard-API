@@ -10,10 +10,10 @@ namespace Breadboard.Application.Controllers;
 [Route("api/v1/[controller]")]
 public class UserController : ControllerBase
 {
-    private ILightBridge _bridge { get; set; }
-    public UserController(ILightBridge bridge)
+    private ILightDispatcher _dispatcher { get; set; }
+    public UserController(ILightDispatcher dispatcher)
     {
-        _bridge = bridge;
+        _dispatcher = dispatcher;
     }
 
     [HttpPost("login")]
@@ -22,13 +22,9 @@ public class UserController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<ObjectResult> Login([FromBody] LoginCommand command)
     {
-        var response = await _bridge.Send<LoginViewmodel>(command);
+        var response = await _dispatcher.Dispatch<LoginViewmodel>(command);
         return StatusCode(response.StatusCode, response);
     }
-    
-    
-    
-    
     
     [HttpPost("register")]
     public IActionResult Register()
