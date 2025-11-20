@@ -8,11 +8,18 @@
 
   <ItemGroup>
     <Folder Include="Expenses\Commands\" />
+    <Folder Include="Expenses\Handlers\" />
+    <Folder Include="Expenses\Services\" />
     <Folder Include="Login\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Breadboard.Shared\Breadboard.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaMoney" Version="2.5.0" />
+    <PackageReference Include="NodaMoney.DependencyInjection" Version="2.5.0" />
   </ItemGroup>
 
 </Project>

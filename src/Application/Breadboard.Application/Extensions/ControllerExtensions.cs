@@ -16,7 +16,6 @@ namespace Breadboard.Application.Extensions
             var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
             var apiVersion = new ApiVersion(assemblyVersion?.Major ?? 1, assemblyVersion?.Minor ?? 0);
 
-            //todo: resolver isso aqui
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
@@ -27,14 +26,14 @@ namespace Breadboard.Application.Extensions
             return services;
         }
 
-        public static WebApplicationBuilder AddControllerNamingConvention(this WebApplicationBuilder builder)
+        public static IServiceCollection AddControllerNamingConvention(this IServiceCollection services)
         {
-            builder.Services.AddControllers(options =>
+            services.AddControllers(options =>
             {
                 options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
             });
 
-            return builder;
+            return services;
         }
 
         public static WebApplication MapEndpoints(this WebApplication application)

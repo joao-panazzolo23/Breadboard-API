@@ -196,6 +196,22 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/9.0.10": {
         "type": "package",
         "dependencies": {
@@ -291,6 +307,26 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Primitives/9.0.10": {
         "type": "package",
         "compile": {
@@ -318,6 +354,31 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "NodaMoney/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/NodaMoney.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/NodaMoney.dll": {}
+        }
+      },
+      "NodaMoney.DependencyInjection/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "[5.0.0, 10.0.0)",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[5.0.0, 10.0.0)",
+          "Microsoft.Extensions.Options": "[5.0.0, 10.0.0)",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "[5.0.0, 10.0.0)",
+          "NodaMoney": "2.5.0"
+        },
+        "compile": {
+          "lib/net9.0/NodaMoney.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/NodaMoney.DependencyInjection.dll": {}
         }
       },
       "Npgsql/9.0.4": {
@@ -420,6 +481,35 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Breadboard.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Breadboard.Shared": "1.0.0",
+          "NodaMoney": "2.5.0",
+          "NodaMoney.DependencyInjection": "2.5.0"
+        },
+        "compile": {
+          "bin/placeholder/Breadboard.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Domain.dll": {}
+        }
+      },
+      "Breadboard.Infra.LightBridge/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Breadboard.Shared": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Breadboard.Infra.LightBridge.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Infra.LightBridge.dll": {}
+        }
+      },
       "Breadboard.Infra.PostgreSQL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -456,6 +546,9 @@
       "Breadboard.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "NodaMoney": "2.5.0"
+        },
         "compile": {
           "bin/placeholder/Breadboard.Shared.dll": {}
         },
@@ -960,6 +1053,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/5.0.0": {
+      "sha512": "Of1Irt1+NzWO+yEYkuDh5TpT4On7LKl98Q9iLqCdOZps6XXEWDj3AKtmyvzJPVXZe4apmkJJIiDL7rR1yC+hjQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/9.0.10": {
       "sha512": "iEtXCkNd5XhjNJAOb/wO4IhDRdLIE2CsPxZggZQWJ/q2+sa8dmEPC393nnsiqdH8/4KV8Xn25IzgKPR1UEQ0og==",
       "type": "package",
@@ -1166,6 +1279,26 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/5.0.0": {
+      "sha512": "280RxNJqOeQqq47aJLy5D9LN61CAWeuRA83gPToQ8B9jl9SNdQ5EXjlfvF66zQI5AXMl+C/3hGnbtIEN+X3mqA==",
+      "type": "package",
+      "path": "microsoft.extensions.options.configurationextensions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
+        "microsoft.extensions.options.configurationextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.Extensions.Primitives/9.0.10": {
       "sha512": "3pl8D1O5ZwMpDkZAT2uXrhQ6NipkwEgDLMFuURiHTf72TvkoMP61QYH3Vk1yrzVHnHBdNZk3cQACz8Zc7YGNhQ==",
       "type": "package",
@@ -1207,6 +1340,40 @@
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
         "microsoft.openapi.1.6.25.nupkg.sha512",
         "microsoft.openapi.nuspec"
+      ]
+    },
+    "NodaMoney/2.5.0": {
+      "sha512": "RwbljZ0jwyTSRuDIDRrFy9MHZw23YcqN8r6a8cYTt2WvK6qZEh3Jg/bL1ZiHjjhp9MTdRrktyx2HplJt89MExw==",
+      "type": "package",
+      "path": "nodamoney/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/NodaMoney.dll",
+        "lib/net9.0/NodaMoney.dll",
+        "lib/netstandard2.0/NodaMoney.dll",
+        "lib/netstandard2.1/NodaMoney.dll",
+        "logo_nodamoney.png",
+        "nodamoney.2.5.0.nupkg.sha512",
+        "nodamoney.nuspec"
+      ]
+    },
+    "NodaMoney.DependencyInjection/2.5.0": {
+      "sha512": "ppCoaFs62QDaYRX4B9M4AlK+eXi5yx//r4/HULK0EmAyY4DxqCTL6LJqufKcfR7KhdCxdEt9Gev8RUYfYHOIgw==",
+      "type": "package",
+      "path": "nodamoney.dependencyinjection/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/NodaMoney.DependencyInjection.dll",
+        "lib/net9.0/NodaMoney.DependencyInjection.dll",
+        "lib/netstandard2.0/NodaMoney.DependencyInjection.dll",
+        "lib/netstandard2.1/NodaMoney.DependencyInjection.dll",
+        "logo_nodamoney.png",
+        "nodamoney.dependencyinjection.2.5.0.nupkg.sha512",
+        "nodamoney.dependencyinjection.nuspec"
       ]
     },
     "Npgsql/9.0.4": {
@@ -1309,6 +1476,16 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+    "Breadboard.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj"
+    },
+    "Breadboard.Infra.LightBridge/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Breadboard.Infra.LightBridge/Breadboard.Infra.LightBridge.csproj",
+      "msbuildProject": "../../Infrastructure/Breadboard.Infra.LightBridge/Breadboard.Infra.LightBridge.csproj"
+    },
     "Breadboard.Infra.PostgreSQL/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/Breadboard.Infra.PostgreSQL/Breadboard.Infra.PostgreSQL.csproj",
@@ -1327,6 +1504,8 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Breadboard.Domain >= 1.0.0",
+      "Breadboard.Infra.LightBridge >= 1.0.0",
       "Breadboard.Infra.PostgreSQL >= 1.0.0",
       "Breadboard.Infra.PostgreSQLDapper >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.1.0",
@@ -1366,6 +1545,12 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
+              "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+            },
+            "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj": {
+              "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj"
+            },
             "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {
               "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj"
             },

@@ -653,6 +653,15 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "NodaMoney/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/NodaMoney.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/NodaMoney.dll": {}
+        }
+      },
       "Npgsql/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -915,6 +924,9 @@
       "Breadboard.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "NodaMoney": "2.5.0"
+        },
         "compile": {
           "bin/placeholder/Breadboard.Shared.dll": {}
         },
@@ -2362,6 +2374,23 @@
         "mono.texttemplating.3.0.0.nupkg.sha512",
         "mono.texttemplating.nuspec",
         "readme.md"
+      ]
+    },
+    "NodaMoney/2.5.0": {
+      "sha512": "RwbljZ0jwyTSRuDIDRrFy9MHZw23YcqN8r6a8cYTt2WvK6qZEh3Jg/bL1ZiHjjhp9MTdRrktyx2HplJt89MExw==",
+      "type": "package",
+      "path": "nodamoney/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/NodaMoney.dll",
+        "lib/net9.0/NodaMoney.dll",
+        "lib/netstandard2.0/NodaMoney.dll",
+        "lib/netstandard2.1/NodaMoney.dll",
+        "logo_nodamoney.png",
+        "nodamoney.2.5.0.nupkg.sha512",
+        "nodamoney.nuspec"
       ]
     },
     "Npgsql/9.0.3": {

@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "F3mPW2QLEuM=",
+  "dgSpecHash": "Z1OCGXxQ7MQ=",
   "success": true,
   "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\5.0.0\\microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\nodamoney\\2.5.0\\nodamoney.2.5.0.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\nodamoney.dependencyinjection\\2.5.0\\nodamoney.dependencyinjection.2.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
