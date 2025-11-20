@@ -3,7 +3,7 @@ using Breadboard.Shared.Entities;
 
 namespace Breadboard.Shared.Factories;
 
-public static class ResultFactory
+public static class Resulter
 {
     //todo: implement error returns, consider OneOf or CSharpFunctionalExtensions
     public static Result<T?> Success<T>(T? data = default, string message = null)

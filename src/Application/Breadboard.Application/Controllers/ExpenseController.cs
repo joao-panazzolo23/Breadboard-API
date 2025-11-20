@@ -5,14 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Breadboard.Application.Controllers;
 
 [Route("api/v1/[controller]")]
-public class ExpenseController : ControllerBase
+public class ExpenseController(ILightBridge bridge) : ControllerBase
 {
-    private readonly ILightBridge _bridge;
-    public ExpenseController(ILightBridge bridge)
-    {
-        _bridge = bridge;
-    }
-
+    private readonly ILightBridge _bridge = bridge;
+    
     [HttpPost]
     public IActionResult Add()
     {

@@ -1,3 +1,5 @@
+using Breadboard.Domain.ExpensesCategory.Entities;
+using Breadboard.Shared.LightBridge;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +10,17 @@ namespace Breadboard.Application.Controllers;
 [Route("api/v1/[controller]")]
 public class ExpenseCategoryController
 {
-    public ExpenseCategoryController()
+    public ILightBridge _Bridge { get; set; }
+    public ExpenseCategoryController(ILightBridge bridge)
     {
-        
+        _Bridge = bridge;
     }
 
-    [HttpPost]
-    public IActionResult Add()
-    {
-        //todo: creating expense category handler
-        throw new NotImplementedException();
-    }
+    // [HttpPost]
+    // public Task<IActionResult> Add([FromBody]  expenseCategory)
+    // {
+    //     var response = _Bridge.Send<Nothing>();
+    // }
     
     [HttpGet]
     [Route("{id:guid}")]
