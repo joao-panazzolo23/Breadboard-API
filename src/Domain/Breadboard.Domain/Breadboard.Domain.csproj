@@ -10,6 +10,7 @@
     <Folder Include="Expenses\Commands\" />
     <Folder Include="Expenses\Handlers\" />
     <Folder Include="Expenses\Services\" />
+    <Folder Include="Users\Queries\" />
     <Folder Include="Users\QueryHandlers\" />
   </ItemGroup>
 

@@ -11,23 +11,25 @@ builder.Services.AddSwaggerExtensions()
     .AddApiVersion()
     .AddCaching()
     .ConfigureJsonOptions()
-    .AddQueryRepositories()
+    .AddQueryRepositories(builder.Configuration)
     .AddEntityFrameWork(builder.Configuration)
     .AddControllerNamingConvention()
-    .AddLightBridge(typeof(User).Assembly) 
-    // in this function, any Domain class is required, but the type informed is indifferent
+    .AddLightBridge(typeof(User).Assembly)
+    //any Domain class is required here , but the type informed is indifferent
     ;
 
 var app = builder.Build();
 
-
-//create database & apply pending migrations
-app.Services.EnsureDbCreation();
-app.UseRouting();
 app.AddSwaggerConfiguration()
     .MapEndpoints()
     .UseAuthentication()
-    .UseAuthorization();
+    .UseAuthorization()
+
+    //use routing is supposed to be the last since it breaks method chaining
+    .UseRouting()
+    ;
+
+app.Services.EnsureDbCreation();
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())

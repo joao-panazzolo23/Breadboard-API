@@ -1,10 +1,12 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Breadboard.Infra.PostgreSQLDapper.Extensions;
 
 public static class DapperExtensions
 {
-    public static IServiceCollection AddQueryRepositories(this IServiceCollection services)
+    public static IServiceCollection AddQueryRepositories(this IServiceCollection services,
+        ConfigurationManager config)
     {
         return services;
     }

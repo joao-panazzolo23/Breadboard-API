@@ -6,47 +6,20 @@ namespace Breadboard.Shared.Factories;
 public static class ResultFactory
 {
     //todo: implement error returns, consider OneOf or CSharpFunctionalExtensions
-    public static Result<T> Success<T>()
+    public static Result<T?> Success<T>(T? data = default, string message = null)
     {
-        return new Result<T>()
-        {
-            StatusCode = HttpStatusCode.OK
-        };
+        return new Result<T?>(statusCode: HttpStatusCode.OK, data, message);
     }
-
-    public static Result<T> Success<T>(T data)
+    public static Result<T?> Unauthorized<T>(T? data = default, string message = null)
     {
-        return new Result<T>()
-        {
-            StatusCode = HttpStatusCode.OK,
-            Data = data
-        };
+        return new Result<T?>(statusCode: HttpStatusCode.Unauthorized, data, message);
     }
-
-    public static Result<T> Error<T>()
+    public static Result<T> Error<T>(string? message = null)
     {
-        return new Result<T>()
-        {
-            StatusCode = HttpStatusCode.OK
-        };
+        return new Result<T>(statusCode: HttpStatusCode.BadRequest, message);
     }
-    
-    public static Result<T> Succeded<T>(string message, T data)
-    {
-        return new Result<T>
-        {
-            StatusCode = HttpStatusCode.OK,
-            Message = message,
-            Data = data
-        };
-    }
-    
     public static Result<T> NotFound<T>(string? message = null)
     {
-        return new Result<T>
-        {
-            StatusCode = HttpStatusCode.OK,
-            Message = message
-        };
+        return new Result<T>(HttpStatusCode.NotFound, message);
     }
 }

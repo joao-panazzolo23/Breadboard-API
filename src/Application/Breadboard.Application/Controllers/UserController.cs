@@ -20,10 +20,15 @@ public class UserController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<Result<LoginViewmodel>> Login([FromBody] LoginCommand command)
+    public async Task<ObjectResult> Login([FromBody] LoginCommand command)
     {
-        return await _bridge.Send<LoginViewmodel>(command);
+        var response = await _bridge.Send<LoginViewmodel>(command);
+        return StatusCode(response.StatusCode, response);
     }
+    
+    
+    
+    
     
     [HttpPost("register")]
     public IActionResult Register()
@@ -38,7 +43,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPut("update-password")]
-    public IActionResult UpdatePassword()
+    public  async Task<IActionResult> UpdatePassword()
     {
         throw new NotImplementedException();
     }
