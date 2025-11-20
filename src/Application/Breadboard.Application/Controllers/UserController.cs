@@ -1,3 +1,7 @@
+using Breadboard.Domain.Users.Commands;
+using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Shared.Entities;
+using Breadboard.Shared.LightBridge;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
@@ -6,15 +10,19 @@ namespace Breadboard.Application.Controllers;
 [Route("api/v1/[controller]")]
 public class UserController : ControllerBase
 {
-    public UserController()
+    private ILightBridge _bridge { get; set; }
+    public UserController(ILightBridge bridge)
     {
+        _bridge = bridge;
     }
 
     [HttpPost("login")]
-    public IActionResult Login()
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<Result<LoginViewmodel>> Login([FromBody] LoginCommand command)
     {
-        //todo: authentication service
-        throw new NotImplementedException();
+        return await _bridge.Send<LoginViewmodel>(command);
     }
     
     [HttpPost("register")]

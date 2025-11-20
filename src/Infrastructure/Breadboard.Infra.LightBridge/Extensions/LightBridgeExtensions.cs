@@ -1,4 +1,5 @@
 using System.Reflection;
+using Breadboard.Shared.Entities;
 using Breadboard.Shared.LightBridge;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,7 +20,11 @@ public static class LightBridgeExtensions
             var handlers = assembly.DiscoverHandlers()
                 .ToDictionary(
                     h => h.RequestType,
-                    h => sp.GetRequiredService(h.HandlerType)!
+                    h => new HandlerRegistration(
+                        Instance: sp.GetRequiredService(h.HandlerType)!,
+                        InterfaceType: h.InterfaceType,
+                        ResponseType: h.ResponseType
+                    )
                 );
 
             return new LightBridge.LightBridge(handlers);

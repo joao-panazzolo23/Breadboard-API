@@ -1,6 +1,8 @@
+using Breadboard.Shared.Entities;
+
 namespace Breadboard.Shared.LightBridge;
 
 public interface ILightBridge
 {
-    Task<TResponse> Send<TResponse>(object request);
+    Task<Result<TResponse>> Send<TResponse>(object request);
 }

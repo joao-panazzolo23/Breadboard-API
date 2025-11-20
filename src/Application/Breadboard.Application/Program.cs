@@ -1,5 +1,6 @@
 using System.Reflection;
 using Breadboard.Application.Extensions;
+using Breadboard.Domain.Users.Entities;
 using Breadboard.Infra.LightBridget.Extensions;
 using Breadboard.Infra.PostgreSQL.Extensions;
 using Breadboard.Infra.PostgreSQLDapper.Extensions;
@@ -13,7 +14,8 @@ builder.Services.AddSwaggerExtensions()
     .AddQueryRepositories()
     .AddEntityFrameWork(builder.Configuration)
     .AddControllerNamingConvention()
-    .AddLightBridge(Assembly.GetExecutingAssembly())
+    .AddLightBridge(typeof(User).Assembly) 
+    // in this function, any Domain class is required, but the type informed is indifferent
     ;
 
 var app = builder.Build();
