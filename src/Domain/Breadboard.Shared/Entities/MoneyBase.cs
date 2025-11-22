@@ -6,7 +6,7 @@ public readonly struct MoneyBase
 {
     public Money Value { get; }
 
-    //todo: this variable could be set in appsettings.json
+    //todo: this variable could be set in appsettings.json and achieved through IConfiguration DI
     public MoneyBase(decimal amount, string code = "pt-BR")
     {
         Value = new Money(amount, code);

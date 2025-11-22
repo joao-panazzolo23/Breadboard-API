@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.PostgreSQL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Shared", "src\Domain\Breadboard.Shared\Breadboard.Shared.csproj", "{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.LightBridge", "src\Infrastructure\Breadboard.Infra.LightBridge\Breadboard.Infra.LightBridge.csproj", "{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.COPS", "src\Infrastructure\Breadboard.Infra.LightBridge\Breadboard.Infra.COPS.csproj", "{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,5 +119,8 @@ Global
 		{0299E0B3-9BAE-43E7-835E-665EAF826D15} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
 		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4} = {8B290487-4C16-E85E-E807-F579CBE9FC4D}
 		{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71CAA84E-AC05-46DA-9E14-61693BD3C351}
 	EndGlobalSection
 EndGlobal

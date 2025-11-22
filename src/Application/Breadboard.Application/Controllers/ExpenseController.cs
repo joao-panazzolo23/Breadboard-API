@@ -1,13 +1,13 @@
-using Breadboard.Shared.LightBridge;
+using Breadboard.Shared.Cops;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
 
 [Route("api/v1/[controller]")]
-public class ExpenseController(ILightDispatcher dispatcher) : ControllerBase
+public class ExpenseController(ICops dispatcher) : ControllerBase
 {
-    private readonly ILightDispatcher _dispatcher = dispatcher;
+    private readonly ICops _dispatcher = dispatcher;
     
     [HttpPost]
     public IActionResult Add()

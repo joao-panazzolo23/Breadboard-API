@@ -1,7 +1,7 @@
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.LightBridge;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
@@ -10,10 +10,10 @@ namespace Breadboard.Application.Controllers;
 [Route("api/v1/[controller]")]
 public class UserController : ControllerBase
 {
-    private ILightDispatcher _dispatcher { get; set; }
-    public UserController(ILightDispatcher dispatcher)
+    private ICops _cops { get; set; }
+    public UserController(ICops cops)
     {
-        _dispatcher = dispatcher;
+        _cops = cops;
     }
 
     [HttpPost("login")]
@@ -22,7 +22,7 @@ public class UserController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<ObjectResult> Login([FromBody] LoginCommand command)
     {
-        var response = await _dispatcher.Dispatch<LoginViewmodel>(command);
+        var response = await _cops.Dispatch<LoginViewmodel>(command);
         return StatusCode(response.StatusCode, response);
     }
     
@@ -39,7 +39,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPut("update-password")]
-    public  async Task<IActionResult> UpdatePassword()
+    public async Task<IActionResult> UpdatePassword()
     {
         throw new NotImplementedException();
     }

@@ -1,8 +1,8 @@
 using System.Reflection;
+using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.LightBridge;
 
-namespace Breadboard.Infra.LightBridge.Extensions;
+namespace Breadboard.Infra.COPS.Extensions;
 
 public static class HandlerExtensions
 {

@@ -1,5 +1,5 @@
 using Breadboard.Domain.ExpensesCategory.Entities;
-using Breadboard.Shared.LightBridge;
+using Breadboard.Shared.Cops;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,13 +8,9 @@ namespace Breadboard.Application.Controllers;
 [ApiController]
 [Authorize]
 [Route("api/v1/[controller]")]
-public class ExpenseCategoryController
+public class ExpenseCategoryController(ICops cops)
 {
-    public ILightDispatcher Dispatcher { get; set; }
-    public ExpenseCategoryController(ILightDispatcher dispatcher)
-    {
-        Dispatcher = dispatcher;
-    }
+    private readonly ICops _cops = cops;
 
     // [HttpPost]
     // public Task<IActionResult> Add([FromBody]  expenseCategory)

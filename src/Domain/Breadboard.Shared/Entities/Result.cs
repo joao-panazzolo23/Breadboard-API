@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace Breadboard.Shared.Entities;
 
 /// <summary>
-/// Results SHOULDN'T be created manually. They should be created at ResultFactory for standard-keeping.
+/// Results SHOULDN'T be created manually. They should be created at Result Factories for standard-keeping.
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public class Result<T>
