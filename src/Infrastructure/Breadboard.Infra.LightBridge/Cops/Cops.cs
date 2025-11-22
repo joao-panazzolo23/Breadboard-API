@@ -1,9 +1,9 @@
+using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.LightBridge;
 
-namespace Breadboard.Infra.LightBridget.LightBridge;
+namespace Breadboard.Infra.COPS.Cops;
 
-public class LightDispatcher(Dictionary<Type, HandlerRegistration> handlers) : ILightDispatcher
+public class Cops(Dictionary<Type, HandlerRegistration> handlers) : ICops
 {
     public async Task<Result<TResponse>> Dispatch<TResponse>(object request)
     {

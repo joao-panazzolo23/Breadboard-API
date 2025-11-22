@@ -1,7 +1,6 @@
-
 namespace Breadboard.Application.Extensions
 {
-   public static class SwaggerExtensions
+    public static class SwaggerExtensions
     {
         public static IServiceCollection AddSwaggerExtensions(this IServiceCollection services)
         {

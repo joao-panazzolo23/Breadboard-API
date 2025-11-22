@@ -1,36 +1,35 @@
 using System.Reflection;
 using Breadboard.Infra.LightBridget.Extensions;
-using Breadboard.Infra.LightBridget.LightBridge;
+using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.LightBridge;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Breadboard.Infra.LightBridge.Extensions;
+namespace Breadboard.Infra.COPS.Extensions;
 
-public static class LightBridgeExtensions
+public static class CopsExtensions
 {
-    public static IServiceCollection AddLightBridge(
+    public static IServiceCollection AddCOPS(
         this IServiceCollection services, Assembly assembly)
     {
         foreach (var ht in assembly.DiscoverHandlers())
             services.AddTransient(ht.HandlerType);
 
-        services.AddSingleton<ILightDispatcher>(sp =>
+        services.AddSingleton<ICops>(sp =>
         {
             var handlers = new Dictionary<Type, HandlerRegistration>();
 
             foreach (var h in assembly.DiscoverHandlers())
             {
-                // Gera delegate fortemente tipado
+                // generates heavily typed delegate
                 var dispatcher =
-                    InvokerLight.CreateInvoker(h.RequestType,
+                    InvokeCops.CreateInvoker(h.RequestType,
                         h.ResponseType,
                         sp.GetRequiredService(h.HandlerType));
 
                 handlers[h.RequestType] = new HandlerRegistration(dispatcher);
             }
 
-            return new LightDispatcher(handlers);
+            return new Cops.Cops(handlers);
         });
 
         return services;

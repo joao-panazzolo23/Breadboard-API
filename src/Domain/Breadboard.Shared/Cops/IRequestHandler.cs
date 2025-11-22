@@ -1,6 +1,6 @@
 using Breadboard.Shared.Entities;
 
-namespace Breadboard.Shared.LightBridge;
+namespace Breadboard.Shared.Cops;
 
 public interface IRequestHandler<in TRequest, TResponse>
 {

@@ -1,8 +1,8 @@
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
 using Breadboard.Shared.Factories;
-using Breadboard.Shared.LightBridge;
 
 namespace Breadboard.Domain.Users.Handlers;
 

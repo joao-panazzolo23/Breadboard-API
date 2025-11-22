@@ -1,8 +1,8 @@
-using Breadboard.Shared.LightBridge;
+using Breadboard.Shared.Cops;
 
 namespace Breadboard.Infra.LightBridget.Extensions;
 
-public static class InvokerLight
+public static class InvokeCops
 {
     public static Func<object, Task<object>> CreateInvoker(
         Type requestType, 
