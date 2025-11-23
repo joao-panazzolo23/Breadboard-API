@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
 
-[Route("api/v{version:apiVersion}/[controller]")]
-[DynamicVersion]
-public class ExpenseController(ICops dispatcher) : ControllerBase
+[ControllerRoute]
+[ApiController]
+public class ExpenseController(ICops cops) : ControllerBase
 {
-    private readonly ICops _dispatcher = dispatcher;
-    
+    private readonly ICops _cops = cops;
+
     [HttpPost]
     public IActionResult Add()
     {

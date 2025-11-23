@@ -38,14 +38,14 @@
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj"
               },
-              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj": {
-                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj"
-              },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj"
               },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj"
+              },
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\Breadboard.Infra.Scalar.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\Breadboard.Infra.Scalar.csproj"
               }
             }
           }
@@ -66,6 +66,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.1.0, )"
@@ -73,10 +77,6 @@
             "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
               "target": "Package",
               "version": "[5.1.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[9.0.6, )"
             }
           },
           "imports": [
@@ -327,81 +327,6 @@
         }
       }
     },
-    "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj",
-        "projectName": "Breadboard.Infra.LightBridge",
-        "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.LightBridge.csproj",
-        "packagesPath": "C:\\Users\\Barba\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {
-              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj": {
-                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
-              "target": "Package",
-              "version": "[9.0.10, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -559,6 +484,81 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\Breadboard.Infra.Scalar.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\Breadboard.Infra.Scalar.csproj",
+        "projectName": "Breadboard.Infra.Scalar",
+        "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\Breadboard.Infra.Scalar.csproj",
+        "packagesPath": "C:\\Users\\Barba\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Scalar\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.11.0, )"
             }
           },
           "imports": [

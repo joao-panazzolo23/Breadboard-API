@@ -1,6 +1,4 @@
 using System.Reflection;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Breadboard.Application.TransformCase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
@@ -26,8 +24,9 @@ namespace Breadboard.Application.Extensions
 
         public static IServiceCollection AddControllerNamingConvention(this IServiceCollection services)
         {
+           
             services
-                .AddEndpointsApiExplorer()
+                // .AddEndpointsApiExplorer()
                 .AddControllers(options =>
                 {
                     options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));

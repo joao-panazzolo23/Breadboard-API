@@ -8,7 +8,6 @@ namespace Breadboard.Application.Controllers;
 
 [ApiController]
 [ControllerRoute]
-[DynamicVersion]
 public class UserController(ICops cops) : ControllerBase
 {
     private ICops _cops { get; set; } = cops;
@@ -22,7 +21,7 @@ public class UserController(ICops cops) : ControllerBase
         var response = await _cops.Dispatch<LoginViewmodel>(command);
         return StatusCode(response.StatusCode, response);
     }
-    
+
     [HttpPut("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -31,13 +30,13 @@ public class UserController(ICops cops) : ControllerBase
     {
         throw new NotImplementedException();
     }
-    
+
     [HttpPost]
     public IActionResult Update()
     {
         throw new NotImplementedException();
     }
-    
+
     [HttpPut("[action]")]
     public async Task<IActionResult> UpdatePassword()
     {

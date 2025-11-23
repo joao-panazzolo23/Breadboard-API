@@ -3,15 +3,16 @@
   "WorkspaceRootPath": "D:\\Coding\\dotnet\\Breadboard-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\wwwroot\\swagger-dark.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\wwwroot\\swagger-dark.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\breadboard.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\breadboard.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\extensions\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\extensions\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,47 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Program.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Program.cs",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:58:39.186Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "swagger-dark.css",
-              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\wwwroot\\swagger-dark.css",
-              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\wwwroot\\swagger-dark.css",
-              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\wwwroot\\swagger-dark.css",
-              "RelativeToolTip": "src\\Application\\Breadboard.Application\\wwwroot\\swagger-dark.css",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAkwLEAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-23T01:30:47.659Z",
+              "DocumentIndex": 1,
+              "Title": "ControllerExtensions.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T20:02:43.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAowNQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-23T01:29:33.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Breadboard.Application",
-              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
-              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
-              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
-              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-23T01:29:00.521Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\appsettings.Development.json",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\appsettings.Development.json",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-23T19:58:30.849Z",
               "EditorCaption": ""
             }
           ]
