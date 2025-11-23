@@ -29,8 +29,9 @@ namespace Breadboard.Application.Extensions
                 .AddEndpointsApiExplorer()
                 .AddControllers(options =>
                 {
-                    //options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
-                    options.Conventions.Add(new RoutePrefixConvention());
+                    options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
+                    //very bad kebab case implementation
+                    //options.Conventions.Add(new RoutePrefixConvention());
                 })
                 .ConfigureJsonConvention();
 
