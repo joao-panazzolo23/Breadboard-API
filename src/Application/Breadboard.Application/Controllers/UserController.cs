@@ -1,20 +1,15 @@
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Cops;
-using Breadboard.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class UserController : ControllerBase
+public class UserController(ICops cops) : ControllerBase
 {
-    private ICops _cops { get; set; }
-    public UserController(ICops cops)
-    {
-        _cops = cops;
-    }
+    private ICops _cops { get; set; } = cops;
 
     [HttpPost("login")]
     [ProducesResponseType(StatusCodes.Status200OK)]

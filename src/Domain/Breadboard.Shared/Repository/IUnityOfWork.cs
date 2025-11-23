@@ -1,6 +1,4 @@
-using System.Transactions;
-
-namespace Breadboard.Shared;
+namespace Breadboard.Shared.Repository;
 
 public interface IUnityOfWork
 {

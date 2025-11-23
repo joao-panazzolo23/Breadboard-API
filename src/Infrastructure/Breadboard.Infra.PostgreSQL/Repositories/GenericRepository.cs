@@ -1,5 +1,6 @@
 using Breadboard.Shared;
 using Breadboard.Shared.Entities;
+using Breadboard.Shared.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Breadboard.Infra.PostgreSQL.Repositories;

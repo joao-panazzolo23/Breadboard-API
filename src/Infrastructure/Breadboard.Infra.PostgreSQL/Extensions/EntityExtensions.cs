@@ -1,5 +1,6 @@
 using Breadboard.Infra.PostgreSQL.Repositories;
 using Breadboard.Shared;
+using Breadboard.Shared.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -430,6 +430,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+              },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj"
               }

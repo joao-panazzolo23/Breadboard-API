@@ -12,6 +12,7 @@
     <Folder Include="Expenses\Services\" />
     <Folder Include="Users\Queries\" />
     <Folder Include="Users\QueryHandlers\" />
+    <Folder Include="Users\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

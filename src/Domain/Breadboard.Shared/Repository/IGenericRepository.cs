@@ -1,6 +1,6 @@
 using Breadboard.Shared.Entities;
 
-namespace Breadboard.Shared;
+namespace Breadboard.Shared.Repository;
 
 public interface IGenericRepository<T> where T : Entity
 {

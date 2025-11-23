@@ -1,6 +1,6 @@
 using Breadboard.Shared.Cops;
 
-namespace Breadboard.Infra.LightBridget.Extensions;
+namespace Breadboard.Infra.COPS.Extensions;
 
 public static class InvokeCops
 {

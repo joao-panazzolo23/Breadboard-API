@@ -4,14 +4,14 @@ using Npgsql;
 
 namespace Breadboard.Infra.PostgreSQLDapper.Context;
 
-public class PostgreSQLContext : IDisposable
+public abstract class PostgreSqlContext : IDisposable
 {
-    public IDbConnection _connection;
-
-    public PostgreSQLContext(IConfiguration configuration)
+    public readonly IDbConnection Connection;
+    public PostgreSqlContext(IConfiguration configuration)
     {
-        _connection = new NpgsqlConnection(configuration["DefaultConnection"]);
-        _connection.Open();
+        Connection = new NpgsqlConnection(configuration["DefaultConnection"]);
+        Connection.Open();
     }
-    public void Dispose() => _connection?.Dispose();
+
+    public void Dispose() => Connection?.Dispose();
 }

@@ -20,6 +20,7 @@ namespace Breadboard.Application.Extensions
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Breadboard API V1");
                     c.RoutePrefix = string.Empty;
+                    c.InjectStylesheet("/swagger-dark.css");
                 });
             }
 

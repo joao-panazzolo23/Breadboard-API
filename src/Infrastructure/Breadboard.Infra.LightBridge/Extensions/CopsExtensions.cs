@@ -1,5 +1,4 @@
 using System.Reflection;
-using Breadboard.Infra.LightBridget.Extensions;
 using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,7 +7,7 @@ namespace Breadboard.Infra.COPS.Extensions;
 
 public static class CopsExtensions
 {
-    public static IServiceCollection AddCOPS(
+    public static IServiceCollection AddCops(
         this IServiceCollection services, Assembly assembly)
     {
         foreach (var ht in assembly.DiscoverHandlers())
