@@ -1,4 +1,6 @@
 using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
@@ -10,12 +12,11 @@ namespace Breadboard.Application.Extensions
         {
             //get assembly version from csproj 
             var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
-            var apiVersion = new ApiVersion(assemblyVersion?.Major ?? 1, assemblyVersion?.Minor ?? 0);
 
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
-                options.DefaultApiVersion = apiVersion;
+                options.DefaultApiVersion = new ApiVersion(assemblyVersion?.Major ?? 1, assemblyVersion?.Minor ?? 0);
                 options.ReportApiVersions = true;
             });
 
@@ -24,10 +25,14 @@ namespace Breadboard.Application.Extensions
 
         public static IServiceCollection AddControllerNamingConvention(this IServiceCollection services)
         {
-            services.AddControllers(options =>
-            {
-                options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
-            });
+            services
+                .AddEndpointsApiExplorer()
+                .AddControllers(options =>
+                {
+                    //options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
+                    options.Conventions.Add(new RoutePrefixConvention());
+                })
+                .ConfigureJsonConvention();
 
             return services;
         }

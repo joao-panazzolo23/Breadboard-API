@@ -1,8 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace Breadboard.Application.Extensions
-{
-  public class KebabCaseParameterTransformer : IOutboundParameterTransformer
+namespace Breadboard.Application.Extensions;
+
+public class KebabCaseParameterTransformer : IOutboundParameterTransformer
 {
     public string? TransformOutbound(object? value)
     {
@@ -13,11 +13,7 @@ namespace Breadboard.Application.Extensions
         if (string.IsNullOrEmpty(input))
             return null;
         
-        //dotnet already does that
-        // if (input.EndsWith("Controller", StringComparison.OrdinalIgnoreCase))
-        //     input = input[..^"Controller".Length];
-        
+
         return Regex.Replace(input, "([a-z])([A-Z])", "$1-$2").ToLowerInvariant();
     }
-}
 }

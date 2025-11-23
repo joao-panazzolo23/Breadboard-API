@@ -1,10 +1,11 @@
+using Breadboard.Application.Attributes;
 using Breadboard.Shared.Cops;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
 
-[Route("api/v1/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[DynamicVersion]
 public class ExpenseController(ICops dispatcher) : ControllerBase
 {
     private readonly ICops _dispatcher = dispatcher;

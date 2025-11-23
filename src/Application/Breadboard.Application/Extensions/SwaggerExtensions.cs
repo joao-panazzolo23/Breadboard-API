@@ -4,8 +4,6 @@ namespace Breadboard.Application.Extensions
     {
         public static IServiceCollection AddSwaggerExtensions(this IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
             return services;

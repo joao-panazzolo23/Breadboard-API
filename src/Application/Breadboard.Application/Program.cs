@@ -6,23 +6,23 @@ using Breadboard.Infra.PostgreSQLDapper.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//any Domain class is required. Types are indifferent, the project Assembly is what matters.
 var assembly = typeof(User).Assembly;
 
-builder.Services.AddSwaggerExtensions()
+builder.Services
+    .AddSwaggerExtensions()
     .AddApiVersion()
     .AddCaching()
-    .ConfigureJsonOptions()
-    .AddQueryRepositories(assembly)
     .AddEntityFrameWork(builder.Configuration)
     .AddControllerNamingConvention()
+    .AddQueryRepositories(assembly)
     .AddCops(assembly)
-    //any Domain class is required here, but wich one is completelly indifferent
     ;
 
 var app = builder.Build();
 
 app.AddSwaggerConfiguration()
-    .MapEndpoints()
+    // .MapEndpoints()
     .UseAuthentication()
     .UseAuthorization()
     .UseStaticFiles()
@@ -32,7 +32,9 @@ app.AddSwaggerConfiguration()
     ;
 
 app.Services.EnsureDbCreation();
+app.MapControllers();
 
+// todo: see what changes here
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())
 // {

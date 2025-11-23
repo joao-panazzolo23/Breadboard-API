@@ -9,8 +9,9 @@ namespace Breadboard.Application.Extensions
     {
         public static IServiceCollection AddCaching(this IServiceCollection services)
         {
-            services.AddMemoryCache();
-            services.AddDistributedMemoryCache();
+            services
+                .AddMemoryCache()
+                .AddDistributedMemoryCache();
             return services;
         }
     }
