@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Breadboard.Application.TransformCase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
@@ -38,6 +39,7 @@ namespace Breadboard.Application.Extensions
             return services;
         }
 
+        [Obsolete("Use AddControllerNamingConvention()")]
         public static WebApplication MapEndpoints(this WebApplication application)
         {
             application.MapControllerRoute(

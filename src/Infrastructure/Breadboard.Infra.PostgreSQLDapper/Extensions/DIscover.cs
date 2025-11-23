@@ -16,7 +16,9 @@ public static class DIscover
     /// BUT IF YOU INTEND TO DECLARE MANY REPOSITORIES IN CERTAIN INTERFACE, YOU CAN USE IT BY REQUESTING
     /// IEnumerable<IInterfaceType> AT ANY CONSTRUCTORS, AND IT REALLY WORKS!
     ///
-    /// You can iterate over this list and 
+    /// You can iterate over this list and call its methods like so. It has no real usability in real scenarios.
+    /// It also breaks DRY principle because you cannot any of that injections except for the last one,
+    /// you would need to create another interface to use it. 
     /// </summary>
     /// <param name="assembly"></param>
     /// <returns></returns>
@@ -41,12 +43,9 @@ public static class DIscover
 //IsAssignableFrom: type A can be assigned as T?
 // so typeof(int).IsAssignableFrom(typeof(string)) returns false
 // and typeof(IUserRepository).IsAssignableFrom(typeof(UserRepository)) returns true
-// considering UserRepository is concrete & implements IUserRepository
+// considering UserRepository is concrete e& implements IUserRepository
 
 //get interfaces besides the marker
-      
-//DI CONTAINER DOES NOT CARE AB
-
 
 //single injection?
 //var interfaceType = classType.GetInterfaces().FirstOrDefault(x => x != typeof(IQueryRepository));

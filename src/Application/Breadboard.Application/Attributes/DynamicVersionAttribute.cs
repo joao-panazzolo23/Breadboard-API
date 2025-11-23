@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Breadboard.Application.Attributes;
 
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public class DynamicVersionAttribute : Attribute 
+public class DynamicVersionAttribute : Attribute
 {
     public ApiVersion Version { get; }
 

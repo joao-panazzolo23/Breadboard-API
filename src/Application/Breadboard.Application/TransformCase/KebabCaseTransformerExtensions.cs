@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Application.TransformCase;
 
 public class KebabCaseParameterTransformer : IOutboundParameterTransformer
 {

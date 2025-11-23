@@ -1,3 +1,4 @@
+using Breadboard.Application.Attributes;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Cops;
@@ -6,12 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace Breadboard.Application.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[ControllerRoute]
+[DynamicVersion]
 public class UserController(ICops cops) : ControllerBase
 {
     private ICops _cops { get; set; } = cops;
 
-    [HttpPost("login")]
+    [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -21,7 +23,10 @@ public class UserController(ICops cops) : ControllerBase
         return StatusCode(response.StatusCode, response);
     }
     
-    [HttpPost("register")]
+    [HttpPut("[action]")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public IActionResult Register()
     {
         throw new NotImplementedException();
@@ -33,7 +38,7 @@ public class UserController(ICops cops) : ControllerBase
         throw new NotImplementedException();
     }
     
-    [HttpPut("update-password")]
+    [HttpPut("[action]")]
     public async Task<IActionResult> UpdatePassword()
     {
         throw new NotImplementedException();
