@@ -2,26 +2,21 @@ using Breadboard.Application.Extensions;
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Infra.COPS.Extensions;
 using Breadboard.Infra.PostgreSQL.Extensions;
+using Breadboard.Infra.PostgreSQLDapper.Abstractions;
 using Breadboard.Infra.PostgreSQLDapper.Extensions;
 using Breadboard.Infra.Scalar.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//any Domain class is required. Types are indifferent, the project Assembly is what matters.
-var assembly = typeof(User).Assembly;
 builder.AddAuthenticationController()
     .AddApiVersion()
     .AddCaching()
     .AddEntityFrameWork(builder.Configuration)
     .AddControllerNamingConvention()
-    .AddQueryRepositories(assembly)
-    .AddCops(assembly)
+    .AddQueryRepositories(typeof(IQueryRepository).Assembly) //query infra. assembly
+    .AddCops(typeof(User).Assembly) //domain assembly
     .AddOpenApi();
 
-
-//we're now using Scalar + OpenAPI to match .NET new Standards 
-// builder.AddSwaggerExtensions()
-//app.AddSwaggerConfiguration() 
 
 var app = builder.Build();
 

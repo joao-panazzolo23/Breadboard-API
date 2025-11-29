@@ -7,7 +7,7 @@ namespace Breadboard.Application.Controllers;
 
 [ApiController]
 [Authorize]
-[Route("api/v{version:apiVersion}/[controller]")]
+[AutoRouting]
 [DynamicVersion]
 public class ExpenseCategoryController(ICops cops)
 {

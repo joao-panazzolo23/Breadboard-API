@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Breadboard.Application.Controllers;
 
 [ApiController]
-[ControllerRoute]
+[AutoRouting]
 public class UserController(ICops cops) : ControllerBase
 {
     private ICops _cops { get; set; } = cops;

@@ -12,6 +12,7 @@ public class RoutePrefixConvention : IApplicationModelConvention
     /// such a mess, it  just duplicates everything and that's it
     /// </summary>
     /// <param name="application"></param>
+    [Obsolete("Use KebabCaseTransformer")]
     public void Apply(ApplicationModel application)
     {
         foreach (var controller in application.Controllers)
@@ -35,7 +36,6 @@ public class RoutePrefixConvention : IApplicationModelConvention
                 }
             }
 
-            // Converte actions para kebab-case (opcional se usar [Http*] com template, mas garante consistência)
             foreach (var action in controller.Actions)
             {
                 action.ActionName = action.ActionName.ToKebabCase();

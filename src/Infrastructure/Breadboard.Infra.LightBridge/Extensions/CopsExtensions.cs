@@ -13,7 +13,7 @@ public static class CopsExtensions
         foreach (var ht in assembly.DiscoverHandlers())
             services.AddTransient(ht.HandlerType);
 
-        services.AddSingleton<ICops>(sp =>
+        services.AddScoped<ICops>(sp =>
         {
             var handlers = new Dictionary<Type, HandlerRegistration>();
 

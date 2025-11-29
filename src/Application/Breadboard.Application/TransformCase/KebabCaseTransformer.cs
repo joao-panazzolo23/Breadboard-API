@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace Breadboard.Application.TransformCase;
 
-public class KebabCaseParameterTransformer : IOutboundParameterTransformer
+public class KebabCaseUrlTransformer : IOutboundParameterTransformer
 {
     public string? TransformOutbound(object? value)
     {

@@ -1,6 +1,8 @@
+using Breadboard.Domain.Users.Entities;
 using Breadboard.Domain.Users.QueryRepositories;
+using Breadboard.Infra.PostgreSQLDapper.Abstractions;
 using Breadboard.Infra.PostgreSQLDapper.Context;
-using Breadboard.Shared.Repository;
+using Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
 using Dapper;
 
 namespace Breadboard.Infra.PostgreSQLDapper.QueryRepositories.Users;
@@ -9,7 +11,10 @@ public class UserQueryRepository(PostgreSqlContext context) : IQueryRepository, 
 {
     public Task<dynamic?> GetById(Guid id)
     {
-        var sql = $@"select * from ""Users"" where id = @id";
+        var sql = Query.From<User>()
+                                   .Select(u => u.Id)
+                                   .Where(u => u.Id == id)
+                                   .Build();
 
         return context.Connection.QueryFirstOrDefaultAsync<dynamic>(sql, new { id });
     }

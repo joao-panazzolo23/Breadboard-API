@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Application.Controllers;
 
-[ControllerRoute]
+[AutoRouting]
 [ApiController]
 public class ExpenseController(ICops cops) : ControllerBase
 {
