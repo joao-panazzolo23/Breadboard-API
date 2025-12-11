@@ -12,5 +12,5 @@ public interface ICops
     /// <param name="request"></param>
     /// <typeparam name="TResponse"></typeparam>
     /// <returns></returns>
-    Task<Result<TResponse>> Dispatch<TResponse>(object request);
+    Task<TypedResult<TResponse>> Dispatch<TResponse>(object request);
 }

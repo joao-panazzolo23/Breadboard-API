@@ -1,4 +1,3 @@
-using System.Reflection;
 using Breadboard.Application.TransformCase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
@@ -7,15 +6,20 @@ namespace Breadboard.Application.Extensions
 {
     public static class ControllerExtensions
     {
+        [Obsolete("Use AddControllerNamingConvention()")]
         public static IServiceCollection AddApiVersion(this IServiceCollection services)
         {
             //get assembly version from csproj 
-            var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
+
+            //todo: remove this method and find a way to make it Controller-friendly
+            //and not stupidly overengineered getting within assembly
+            
+            // var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
-                options.DefaultApiVersion = new ApiVersion(assemblyVersion?.Major ?? 1, assemblyVersion?.Minor ?? 0);
+                options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ReportApiVersions = true;
             });
 
@@ -24,7 +28,6 @@ namespace Breadboard.Application.Extensions
 
         public static IServiceCollection AddControllerNamingConvention(this IServiceCollection services)
         {
-           
             services
                 // .AddEndpointsApiExplorer()
                 .AddControllers(options =>

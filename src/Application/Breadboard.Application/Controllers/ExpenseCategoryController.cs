@@ -8,7 +8,7 @@ namespace Breadboard.Application.Controllers;
 [ApiController]
 [Authorize]
 [AutoRouting]
-[DynamicVersion]
+[ApiVersion("1")]
 public class ExpenseCategoryController(ICops cops)
 {
     private readonly ICops _cops = cops;

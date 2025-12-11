@@ -16,10 +16,10 @@ public class LoginHandler : IRequestHandler<LoginCommand, LoginViewmodel?>
         _rep = rep;
     }
 
-    public async Task<Result<LoginViewmodel?>> Handle(LoginCommand request)
+    public async Task<TypedResult<LoginViewmodel?>> Handle(LoginCommand request)
     {
         var response = await _rep.GetById(Guid.Empty);
         await Task.CompletedTask;
-        return Resulter.Success<LoginViewmodel>(new LoginViewmodel());
+        return Result.Success<LoginViewmodel>(new LoginViewmodel());
     }
 }

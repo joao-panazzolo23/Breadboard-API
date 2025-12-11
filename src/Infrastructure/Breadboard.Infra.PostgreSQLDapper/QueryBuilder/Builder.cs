@@ -11,6 +11,7 @@ public class Builder<T>
     private readonly List<string> _order = [];
     private string? _from = typeof(T).Name;
 
+    //find a way to type this without object
     public Builder<T> Select(Expression<Func<T, object>> selector)
     {
         var prop = ExpressionUtils.GetPropName(selector);
@@ -24,8 +25,14 @@ public class Builder<T>
         return this;
     }
 
+    /// <summary>
+    /// todo: add @ before params for Dapper params replacement
+    /// </summary>
+    /// <param name="predicate"></param>
+    /// <returns></returns>
     public Builder<T> Where(Expression<Func<T, bool>> predicate)
     {
+        //actually this is just transforming a lambda to a SQL condition
         var body = new SqlExpressionVisitor().Translate(predicate);
         _where.Add(body);
         return this;

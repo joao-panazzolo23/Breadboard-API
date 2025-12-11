@@ -7,15 +7,15 @@ namespace Breadboard.Shared.Entities;
 /// Results SHOULDN'T be created manually. They should be created at Result Factories for standard-keeping.
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class Result<T>
+public class TypedResult<T>
 {
-    public Result(HttpStatusCode statusCode, T data, string message = null)
+    public TypedResult(HttpStatusCode statusCode, T data, string message = null)
     {
         _statusCode = statusCode;
         Data = data;
         Message = message; 
     }
-    public Result(HttpStatusCode statusCode, string? message = null)
+    public TypedResult(HttpStatusCode statusCode, string? message = null)
     {
         _statusCode = statusCode;
         Message = message; 
@@ -25,6 +25,5 @@ public class Result<T>
     [JsonIgnore] public int StatusCode => (int)_statusCode ;  
     public string? Message { get; set; }
     public T? Data { get; set; }
-    
     // public List<ResultError>? Errors { get; set; }
 }

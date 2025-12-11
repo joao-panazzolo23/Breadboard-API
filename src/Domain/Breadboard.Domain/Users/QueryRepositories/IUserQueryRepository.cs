@@ -1,3 +1,5 @@
+using Breadboard.Domain.Users.Viewmodels;
+
 namespace Breadboard.Domain.Users.QueryRepositories;
 
 /// <summary>
@@ -5,10 +7,10 @@ namespace Breadboard.Domain.Users.QueryRepositories;
 /// </summary>
 public interface IUserQueryRepository
 {
-    Task<dynamic?> GetById(Guid id);
+    Task<UserViewmodel?> GetById(Guid Id);
     /// <summary>
     /// todo: filters here
     /// </summary>
     /// <returns></returns>
-    Task<dynamic> List();
+    Task<IEnumerable<UserViewmodel>> List();
 }

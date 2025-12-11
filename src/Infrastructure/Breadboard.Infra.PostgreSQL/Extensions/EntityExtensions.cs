@@ -16,9 +16,7 @@ public static class EntityExtensions
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
         );
-
-        services.AddRepositories();
-        return services;
+        return services.AddRepositories();
     }
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
@@ -27,7 +25,7 @@ public static class EntityExtensions
         return services;
     }
 
-    public static IServiceProvider EnsureDbCreation(this IServiceProvider serviceProvider)
+    public static IServiceProvider MigrateDataBase(this IServiceProvider serviceProvider)
     {
         serviceProvider.CreateScope()
             .ServiceProvider

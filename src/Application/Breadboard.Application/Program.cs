@@ -8,29 +8,25 @@ using Breadboard.Infra.Scalar.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddAuthenticationController()
-    .AddApiVersion()
+builder.AddOpenApiConfig()
     .AddCaching()
     .AddEntityFrameWork(builder.Configuration)
     .AddControllerNamingConvention()
     .AddQueryRepositories(typeof(IQueryRepository).Assembly) //query infra. assembly
     .AddCops(typeof(User).Assembly) //domain assembly
-    .AddOpenApi();
-
+    .AddOpenApi()
+    .AddApiVersion();
 
 var app = builder.Build();
 
 app.AddScalarInterface(builder)
     .UseAuthentication()
-    .UseAuthorization() //this needs to come after authentication
+    .UseAuthorization() //needs to come after authentication
     .UseStaticFiles()
+    .UseHttpsRedirection()
     //use routing is supposed to be the last since it breaks method chaining
     .UseRouting()
     ;
-
-app.Services.EnsureDbCreation();
+app.Services.MigrateDataBase();
 app.MapControllers();
-
-app.UseHttpsRedirection();
-
 app.Run();

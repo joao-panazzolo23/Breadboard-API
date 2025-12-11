@@ -8,7 +8,7 @@ namespace Breadboard.Application.Controllers;
 
 [ApiController]
 [AutoRouting]
-[ApiVersion("1.0")]
+[ApiVersion("1")]
 public class UserController(ICops cops) : ControllerBase
 {
     private ICops _cops { get; set; } = cops;
