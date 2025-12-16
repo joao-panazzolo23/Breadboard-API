@@ -1,18 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace Breadboard.Application.Extensions;
 
-namespace Breadboard.Application.Extensions
+public static class CacheExtensions
 {
-    public static class CacheExtensions
+    public static IServiceCollection AddCaching(this IServiceCollection services)
     {
-        public static IServiceCollection AddCaching(this IServiceCollection services)
-        {
-            services.AddMemoryCache()
-                .AddDistributedMemoryCache();
+        services.AddMemoryCache()
+            .AddDistributedMemoryCache();
 
-            return services;
-        }
+        return services;
     }
 }

@@ -6,6 +6,6 @@ public class User : Entity
 {
     public string Password { get; set; }
     public string Username { get; set; }
-    public string? ExhibitioName { get; set; }
+    public string? ExhibitionName { get; set; }
     public DateTime? BirthDate { get; set; }
 }
