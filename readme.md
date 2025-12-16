@@ -45,7 +45,7 @@ there's no need to apply migrations to database since it is done whenever has st
 </h4>
   
 <h4>
-   API auto Versioning control (if you change it in application's csproj, endpoints changes by themselves), custom Attributes for kebab-case endpoints 
+   API Versioning control, automapper for endpoints and entities, custom Attributes for kebab-case endpoints 
 </h4>
  
 <h4>
@@ -57,5 +57,11 @@ there's no need to apply migrations to database since it is done whenever has st
 </h4>
 
 <h4>
-   Swagger & Swagger UI (for API documentation)
+   Swagger & Swagger UI (for API documentation) // Scalar + OpenAPI
 </h4>
+
+
+<h4>
+  Generic repositories for entity and SQL Builders for Dapper
+</h4>
+
