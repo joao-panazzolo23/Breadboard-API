@@ -7,19 +7,12 @@ using Breadboard.Shared.Factories;
 
 namespace Breadboard.Domain.Users.Handlers;
 
-public class LoginHandler : IRequestHandler<LoginCommand, LoginViewmodel?>
+public class LoginHandler(IUserQueryRepository rep) : IRequestHandler<LoginCommand, LoginViewmodel?>
 {
-    private readonly IUserQueryRepository _rep;
+    private readonly IUserQueryRepository _rep = rep;
 
-    public LoginHandler(IUserQueryRepository rep)
+    public Task<TypedResult<LoginViewmodel?>> Handle(LoginCommand request)
     {
-        _rep = rep;
-    }
-
-    public async Task<TypedResult<LoginViewmodel?>> Handle(LoginCommand request)
-    {
-        var response = await _rep.GetById(Guid.Empty);
-        await Task.CompletedTask;
-        return Result.Success<LoginViewmodel>(new LoginViewmodel());
+        throw new NotImplementedException();
     }
 }

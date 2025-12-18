@@ -3,47 +3,46 @@ using System.Text;
 
 namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
 
-public class SqlExpressionVisitor : ExpressionVisitor
+internal class SqlExpressionVisitor : ExpressionVisitor
 {
-    private StringBuilder _sql = new();
+    private readonly StringBuilder _sql = new();
+    private readonly Dictionary<string, object?> _params = new();
 
-    public string Translate(Expression exp)
+    public SqlCondition Translate(Expression exp)
     {
         Visit(exp);
-        return _sql.ToString();
+        return new SqlCondition(_sql.ToString(), _params);
     }
+
 
     protected override Expression VisitBinary(BinaryExpression node)
     {
-        _sql.Append("(");
-        Visit(node.Left);
+        if (node.Left is not MemberExpression { Expression: ParameterExpression } left)
+            throw new NotSupportedException(nameof(Translate));
 
-        _sql.Append(node.NodeType switch
-        {
-            ExpressionType.Equal => " = ",
-            ExpressionType.GreaterThan => " > ",
-            ExpressionType.GreaterThanOrEqual => " >= ",
-            ExpressionType.LessThan => " < ",
-            ExpressionType.LessThanOrEqual => " <= ",
-            ExpressionType.NotEqual => " <> ",
-            _ => throw new NotSupportedException("Operator not supported")
-        });
-
-        Visit(node.Right);
-        _sql.Append(")");
+        var columnName = left.Member.Name;
+        
+        _sql.Append(columnName);
+        _sql.Append(GetSqlOperator(node.NodeType));
+        _sql.Append("@").Append(columnName.ToLower());
 
         return node;
     }
 
-    protected override Expression VisitMember(MemberExpression node)
+    private static string GetSqlOperator(ExpressionType type) => type switch
     {
-        _sql.Append(node.Member.Name.ToLower());
-        return node;
-    }
+        ExpressionType.Equal => " = ",
+        ExpressionType.NotEqual => " <> ",
+        ExpressionType.GreaterThan => " > ",
+        ExpressionType.GreaterThanOrEqual => " >= ",
+        ExpressionType.LessThan => " < ",
+        ExpressionType.LessThanOrEqual => " <= ",
+        _ => throw new NotSupportedException(type.ToString())
+    };
 
     protected override Expression VisitConstant(ConstantExpression node)
     {
-        _sql.Append(node.Value?.ToString());
+        _sql.Append(node.Value);
         return node;
     }
 }

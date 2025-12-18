@@ -4,21 +4,23 @@ using Breadboard.Shared.Extensions;
 
 namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
 
-public class Builder<T>
+internal class Builder<T>
 {
     private readonly List<string> _selects = [];
     private readonly List<string> _where = [];
     private readonly List<string> _order = [];
     private string? _from = typeof(T).Name;
+    private readonly Dictionary<string, object?> _parameters = new();
 
     //find a way to type this without object
     public Builder<T> Select(Expression<Func<T, object>> selector)
     {
         var prop = ExpressionUtils.GetPropName(selector);
-        _selects.Add(prop);
+        _selects.Add($@"""{prop}""");
         return this;
     }
-
+    
+    //kinda unnecessary 
     public Builder<T> From()
     {
         _from = nameof(T);
@@ -33,8 +35,13 @@ public class Builder<T>
     public Builder<T> Where(Expression<Func<T, bool>> predicate)
     {
         //actually this is just transforming a lambda to a SQL condition
-        var body = new SqlExpressionVisitor().Translate(predicate);
-        _where.Add(body);
+        var condition = new SqlExpressionVisitor().Translate(predicate);
+
+        _where.Add(condition.Sql);
+
+        foreach (var p in condition.Parameters)
+            _parameters[p.Key] = p.Value;
+
         return this;
     }
 

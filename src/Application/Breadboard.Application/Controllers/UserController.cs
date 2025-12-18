@@ -1,6 +1,8 @@
 using Breadboard.Application.Attributes;
 using Breadboard.Domain.Users.Commands;
+using Breadboard.Domain.Users.Queries;
 using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Infra.COPS.Cops;
 using Breadboard.Shared.Cops;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +13,7 @@ namespace Breadboard.Application.Controllers;
 [ApiVersion("1")]
 public class UserController(ICops cops) : ControllerBase
 {
-    private ICops _cops { get; set; } = cops;
+    private readonly ICops _cops = cops;
 
     [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -30,6 +32,16 @@ public class UserController(ICops cops) : ControllerBase
     public IActionResult Register()
     {
         throw new NotImplementedException();
+    }
+
+    [HttpGet("[action]/{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IActionResult> GetById([FromRoute]GetUserQueryCommand command)
+    {
+        var response = await _cops.Dispatch<GetUserQueryCommand>(command);
+        return StatusCode(response.StatusCode, response);
     }
 
     [HttpPost]

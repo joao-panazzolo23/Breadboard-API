@@ -7,7 +7,7 @@ namespace Breadboard.Shared.Entities;
 /// Results SHOULDN'T be created manually. They should be created at Result Factories for standard-keeping.
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class TypedResult<T>
+public sealed class TypedResult<T>
 {
     public TypedResult(HttpStatusCode statusCode, T data, string message = null)
     {

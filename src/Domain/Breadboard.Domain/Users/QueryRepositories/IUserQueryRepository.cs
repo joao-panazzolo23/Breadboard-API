@@ -7,7 +7,7 @@ namespace Breadboard.Domain.Users.QueryRepositories;
 /// </summary>
 public interface IUserQueryRepository
 {
-    Task<UserViewmodel?> GetById(Guid Id);
+    Task<UserViewmodel?> GetById(Guid id);
     /// <summary>
     /// todo: filters here
     /// </summary>

@@ -14,18 +14,11 @@ public static class ExpressionUtils
     /// <exception cref="InvalidOperationException"></exception>
     public static string GetPropName<T>(Expression<Func<T, object>> exp)
     {
-        if (exp.Body is MemberExpression member)
-            return member.Member.Name;
-
-        if (exp.Body is UnaryExpression u && u.Operand is MemberExpression m)
-            return m.Member.Name;
-
-        // if (exp.Body is NewExpression n)
-        //     return n.Arguments
-        //         .OfType<MemberExpression>()
-        //         .Select(a => a.Member.Name)
-        //         .ToList();
-
-        throw new InvalidOperationException("Invalid expression");
+        return exp.Body switch
+        {
+            MemberExpression member => member.Member.Name,
+            UnaryExpression { Operand: MemberExpression m } => m.Member.Name,
+            _ => throw new InvalidOperationException("Invalid expression")
+        };
     }
 }

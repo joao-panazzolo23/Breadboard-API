@@ -4,7 +4,7 @@ namespace Breadboard.Shared.Entities;
 
 public readonly struct MoneyBase    
 {
-    public Money Value { get; }
+    private Money Value { get; }
 
     //todo: this variable could be set in appsettings.json and achieved through IConfiguration DI
     public MoneyBase(decimal amount, string code = "pt-BR")
