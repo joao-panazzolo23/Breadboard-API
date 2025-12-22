@@ -1,8 +1,9 @@
 using Breadboard.Shared.Entities;
+using Breadboard.Shared.Results;
 
 namespace Breadboard.Shared.Cops;
 
 public interface IRequestHandler<in TRequest, TResponse>
 {
-    Task<TypedResult<TResponse>> Handle(TRequest request);
+    Task<Result<TResponse>> Handle(TRequest request);
 }

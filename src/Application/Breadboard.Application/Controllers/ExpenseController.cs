@@ -6,7 +6,6 @@ namespace Breadboard.Application.Controllers;
 
 [AutoRouting]
 [ApiController]
-[ApiVersion("1")]
 public class ExpenseController(ICops cops) : ControllerBase
 {
     private readonly ICops _cops = cops;

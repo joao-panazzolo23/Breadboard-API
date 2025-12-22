@@ -24,6 +24,13 @@ public static class EntityExtensions
         return services;
     }
 
+    /// <summary>
+    /// review: we're doing two things inside this function: getting Database Context & updating db
+    /// maybe this isn't the best approach for this function, but creating another one is also useless
+    /// it won't be used anywhere else 
+    /// </summary>
+    /// <param name="serviceProvider"></param>
+    /// <returns></returns>
     public static IServiceProvider MigrateDataBase(this IServiceProvider serviceProvider)
     {
         serviceProvider.CreateScope()

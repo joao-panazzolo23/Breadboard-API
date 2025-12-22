@@ -1,4 +1,5 @@
 using Breadboard.Shared.Entities;
+using Breadboard.Shared.Results;
 
 namespace Breadboard.Shared.Cops;
 /// <summary>
@@ -12,5 +13,5 @@ public interface ICops
     /// <param name="request"></param>
     /// <typeparam name="TResponse"></typeparam>
     /// <returns></returns>
-    Task<TypedResult<TResponse>> Dispatch<TResponse>(object request);
+    Task<Result<TResponse>> Dispatch<TResponse>(object request);
 }

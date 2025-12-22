@@ -1,21 +1,21 @@
 using System.Net;
 using System.Text.Json.Serialization;
 
-namespace Breadboard.Shared.Entities;
+namespace Breadboard.Shared.Results;
 
 /// <summary>
 /// Results SHOULDN'T be created manually. They should be created at Result Factories for standard-keeping.
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public sealed class TypedResult<T>
+public sealed class Result<T>
 {
-    public TypedResult(HttpStatusCode statusCode, T data, string message = null)
+    public Result(HttpStatusCode statusCode, T data, string message = null)
     {
         _statusCode = statusCode;
         Data = data;
         Message = message; 
     }
-    public TypedResult(HttpStatusCode statusCode, string? message = null)
+    public Result(HttpStatusCode statusCode, string? message = null)
     {
         _statusCode = statusCode;
         Message = message; 

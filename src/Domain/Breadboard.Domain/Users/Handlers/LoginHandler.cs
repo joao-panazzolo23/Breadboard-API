@@ -3,7 +3,7 @@ using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.Factories;
+using Breadboard.Shared.Results;
 
 namespace Breadboard.Domain.Users.Handlers;
 
@@ -11,7 +11,7 @@ public class LoginHandler(IUserQueryRepository rep) : IRequestHandler<LoginComma
 {
     private readonly IUserQueryRepository _rep = rep;
 
-    public Task<TypedResult<LoginViewmodel?>> Handle(LoginCommand request)
+    public Task<Result<LoginViewmodel?>> Handle(LoginCommand request)
     {
         throw new NotImplementedException();
     }

@@ -8,7 +8,6 @@ namespace Breadboard.Application.Controllers;
 [ApiController]
 [Authorize]
 [AutoRouting]
-[ApiVersion("1")]
 public class ExpenseCategoryController(ICops cops)
 {
     private readonly ICops _cops = cops;
@@ -28,6 +27,9 @@ public class ExpenseCategoryController(ICops cops)
         throw new NotImplementedException();
     }
 
+    [HttpPut]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     [HttpPut]
     public IActionResult Update()
     {

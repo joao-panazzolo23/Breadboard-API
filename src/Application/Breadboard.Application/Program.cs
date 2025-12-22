@@ -15,8 +15,8 @@ builder.AddOpenApiConfig()
     .AddQueryRepositories(typeof(IQueryRepository).Assembly) //query infra. assembly
     .AddCops(typeof(User).Assembly) //domain assembly
     .AddOpenApi()
-    .AddApiVersion();
-
+    // .AddApiVersion();
+    ;
 var app = builder.Build();
 
 app.AddScalarInterface(builder)

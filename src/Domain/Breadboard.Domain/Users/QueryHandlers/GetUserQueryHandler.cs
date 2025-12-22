@@ -4,7 +4,7 @@ using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Cops;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.Factories;
+using Breadboard.Shared.Results;
 
 namespace Breadboard.Domain.Users.QueryHandlers;
 
@@ -12,9 +12,9 @@ public class GetUserQueryHandler(IUserQueryRepository repo) : IRequestHandler<Ge
 {
     private readonly IUserQueryRepository _repo = repo;
 
-    public async Task<TypedResult<UserViewmodel?>> Handle(GetUserQueryCommand request)
+    public async Task<Result<UserViewmodel?>> Handle(GetUserQueryCommand request)
     {
         var user = await _repo.GetById(request.Id);
-        return user is null ? Result.NotFound<UserViewmodel?>() : Result.Success(user);
+        return user is null ? Results.NotFound<UserViewmodel?>() : Results.Success(user);
     }
 }
