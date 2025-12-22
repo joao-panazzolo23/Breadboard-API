@@ -12,7 +12,7 @@ A custom API project using **.NET 9** based on **Domain-Driven Design (DDD)**.
 
 ###  Clone this repository
 ```
-git clone https://github.com/wearenomad/ddd-core-template 
+git clone https://github.com/joao-panazzolo23/Breadboard-API
 ```
 
 ### Configuring Database
@@ -57,6 +57,6 @@ OpenAPI Documentation
 Migrations
 
     Step 01 - cd src/Infrastructure/Icone.Infrastructure.PostgreSQL/
-    Step 02 - dotnet ef migrations add <NAME> -o Migrations -s ../../Application/Breadboard.Application/Icone.Application.csproj
-    Step 03 - dotnet ef database update  -s ../../Application/Icone.Application/Breadboard.Application.csproj
+    Step 02 - dotnet ef migrations add <NAME> -o Migrations -s ../../Application/Breadboard-API.Application/Icone.Application.csproj
+    Step 03 - dotnet ef database update  -s ../../Application/Icone.Application/Breadboard-API.Application.csproj
 
