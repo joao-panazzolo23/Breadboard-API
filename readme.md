@@ -2,7 +2,6 @@
 
 [![.NET](https://img.shields.io/badge/.NET-9-blue)](https://dotnet.microsoft.com/) 
 [![EF Core](https://img.shields.io/badge/EF%20Core-7.0-blue)](https://learn.microsoft.com/ef/core/) 
-[![Template Status](https://img.shields.io/badge/template-ready-brightgreen)]()
 
 A custom API project using **.NET 9** based on **Domain-Driven Design (DDD)**.
 
@@ -52,7 +51,7 @@ OpenAPI Documentation
 ##
 Migrations
 
-    Step 01 - cd src/Infrastructure/Icone.Infrastructure.PostgreSQL/
-    Step 02 - dotnet ef migrations add <NAME> -o Migrations -s ../../Application/Breadboard-API.Application/Icone.Application.csproj
-    Step 03 - dotnet ef database update  -s ../../Application/Icone.Application/Breadboard-API.Application.csproj
+    Step 01 - cd src/Infrastructure/Breadboard-API.Infrastructure.PostgreSQL/
+    Step 02 - dotnet ef migrations add <NAME> -o Migrations -s ../../Application/Breadboard-API.Application/Breadboard-API.Application.csproj
+    Step 03 - dotnet ef database update  -s ../../Application/Breadboard-API.Application/Breadboard-API.Application.csproj
 
