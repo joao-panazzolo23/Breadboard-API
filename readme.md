@@ -17,7 +17,7 @@ git clone https://github.com/joao-panazzolo23/Breadboard-API
 ### Configuring Database
 Change appsettings.json with your desired database (Remember: This was made using PostgreSQL):
  ```
- dotnet new install .
+"DefaultConnection": "Host=localhost;Port=5432;Database=breadboard;Username=postgres;Password=postgres;"
  ```
 
 Framework version: This project is using .NET 9, but it is intended to get an upgrade soon.
@@ -34,18 +34,35 @@ dotnet sln add <newCsprojPath> (adds to main solution)
 
 ## Framworks used:
 
-Dapper (Queries) & EF Core (Writings)
-xUnit & Moq & Bogus for Unit testing
-Scalar & OpenAPI for documentation.
-
+<p>
+ Dapper (Queries) & EF Core (Writings)
+</p>
+<p>
+ xUnit & Moq & Bogus for Unit testing
+</p>
+<p>
+ Scalar & OpenAPI for documentation.
+</p>
 
 ## Designs & Microdesigns
-
-Domain-Driven Design
-Mediator Pattern (GoF directives-friendly)
-Result Pattern
-Command & Query Resposability Segregation 
+<p>
+ Domain-Driven Design
+</p>
+<p> 
+ Mediator Pattern (GoF directives-friendly)
+</p>
+<p>
+ Result Pattern
+</p>
+<p>
+ Command & Query Resposability Segregation (CQRS
+</p>
+<p>
 OpenAPI Documentation
+</p>
+
+
+
 
 
 ##
