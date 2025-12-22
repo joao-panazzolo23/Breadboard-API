@@ -20,9 +20,6 @@ Change appsettings.json with your desired database (Remember: This was made usin
  ```
  dotnet new install .
  ```
-<p>
-    Note: There's no need to configure anything manually, but all settings reside in the template.json file inside .template.config folder.
-</p>
 
 Framework version: This project is using .NET 9, but it is intended to get an upgrade soon.
 
@@ -31,7 +28,6 @@ Framework version: This project is using .NET 9, but it is intended to get an up
 dotnet new <projectType> -n <name> (creates a new project)
 ```
 and then add to solution using 
-
 ```
 dotnet sln add <newCsprojPath> (adds to main solution)
 ```
