@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Coding\\dotnet\\Breadboard-API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.lightbridge\\breadboard.infra.cops.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.lightbridge\\breadboard.infra.cops.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\extensions\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\extensions\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.lightbridge\\extensions\\copsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.lightbridge\\extensions\\copsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.lightbridge\\cops\\cops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EBE1F47-93CF-49C8-9C78-463C5B3F95C5}|src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.lightbridge\\cops\\cops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EF97A6B-6107-43BB-A548-8ED467433E1B}|src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.jwtbearer\\breadboard.infra.jwtbearer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9EF97A6B-6107-43BB-A548-8ED467433E1B}|src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.jwtbearer\\breadboard.infra.jwtbearer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +30,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Program.cs",
               "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Program.cs",
               "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Program.cs",
               "RelativeToolTip": "src\\Application\\Breadboard.Application\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T19:58:39.186Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ControllerExtensions.cs",
-              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
-              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
-              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Extensions\\ControllerExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T20:02:43.964Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\appsettings.Development.json",
-              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\appsettings.Development.json",
-              "RelativeToolTip": "src\\Application\\Breadboard.Application\\appsettings.Development.json",
+              "Title": "CopsExtensions.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Extensions\\CopsExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Extensions\\CopsExtensions.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Extensions\\CopsExtensions.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Extensions\\CopsExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T01:17:18.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cops.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Cops\\Cops.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Cops\\Cops.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Cops\\Cops.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Cops\\Cops.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T01:17:13.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Breadboard.Infra.COPS.csproj",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
+              "RelativeToolTip": "src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-23T01:15:27.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BreadBoard.Infra.JWTBearer.csproj",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
+              "RelativeToolTip": "src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-23T19:58:30.849Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-23T01:15:25.318Z",
               "EditorCaption": ""
             }
           ]

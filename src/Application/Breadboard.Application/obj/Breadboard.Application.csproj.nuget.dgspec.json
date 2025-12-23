@@ -35,8 +35,8 @@
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
               },
-              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj": {
-                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj"
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.JwtBearer\\Breadboard.Infra.JwtBearer.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.JwtBearer\\Breadboard.Infra.JwtBearer.csproj"
               },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj"
@@ -147,16 +147,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "NodaMoney": {
-              "target": "Package",
-              "version": "[2.5.0, )"
-            },
-            "NodaMoney.DependencyInjection": {
-              "target": "Package",
-              "version": "[2.5.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -248,14 +238,14 @@
         }
       }
     },
-    "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj": {
+    "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
-        "projectName": "Breadboard.Infra.COPS",
-        "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\Breadboard.Infra.COPS.csproj",
+        "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
+        "projectName": "BreadBoard.Infra.JWTBearer",
+        "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\BreadBoard.Infra.JWTBearer.csproj",
         "packagesPath": "C:\\Users\\Barba\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.LightBridge\\obj\\",
+        "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\BreadBoard.Infra.JWTBearer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -276,6 +266,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+              },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Shared\\Breadboard.Shared.csproj"
               }
@@ -298,9 +291,21 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[9.0.10, )"
+              "version": "[9.0.11, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.15.0, )"
             }
           },
           "imports": [

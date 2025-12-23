@@ -511,22 +511,6 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Binder/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.DependencyInjection/9.0.10": {
         "type": "package",
         "dependencies": {
@@ -638,26 +622,6 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "5.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
-          "Microsoft.Extensions.Options": "5.0.0",
-          "Microsoft.Extensions.Primitives": "5.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Primitives/9.0.10": {
         "type": "package",
         "compile": {
@@ -696,22 +660,6 @@
         },
         "runtime": {
           "lib/net9.0/NodaMoney.dll": {}
-        }
-      },
-      "NodaMoney.DependencyInjection/2.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "[5.0.0, 10.0.0)",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "[5.0.0, 10.0.0)",
-          "Microsoft.Extensions.Options": "[5.0.0, 10.0.0)",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "[5.0.0, 10.0.0)",
-          "NodaMoney": "2.5.0"
-        },
-        "compile": {
-          "lib/net9.0/NodaMoney.DependencyInjection.dll": {}
-        },
-        "runtime": {
-          "lib/net9.0/NodaMoney.DependencyInjection.dll": {}
         }
       },
       "Npgsql/9.0.3": {
@@ -977,9 +925,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Breadboard.Shared": "1.0.0",
-          "NodaMoney": "2.5.0",
-          "NodaMoney.DependencyInjection": "2.5.0"
+          "Breadboard.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Breadboard.Domain.dll": {}
@@ -2164,26 +2110,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Configuration.Binder/5.0.0": {
-      "sha512": "Of1Irt1+NzWO+yEYkuDh5TpT4On7LKl98Q9iLqCdOZps6XXEWDj3AKtmyvzJPVXZe4apmkJJIiDL7rR1yC+hjQ==",
-      "type": "package",
-      "path": "microsoft.extensions.configuration.binder/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
-        "microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
-        "microsoft.extensions.configuration.binder.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "Microsoft.Extensions.DependencyInjection/9.0.10": {
       "sha512": "iEtXCkNd5XhjNJAOb/wO4IhDRdLIE2CsPxZggZQWJ/q2+sa8dmEPC393nnsiqdH8/4KV8Xn25IzgKPR1UEQ0og==",
       "type": "package",
@@ -2418,26 +2344,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/5.0.0": {
-      "sha512": "280RxNJqOeQqq47aJLy5D9LN61CAWeuRA83gPToQ8B9jl9SNdQ5EXjlfvF66zQI5AXMl+C/3hGnbtIEN+X3mqA==",
-      "type": "package",
-      "path": "microsoft.extensions.options.configurationextensions/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
-        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
-        "microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
-        "microsoft.extensions.options.configurationextensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "Microsoft.Extensions.Primitives/9.0.10": {
       "sha512": "3pl8D1O5ZwMpDkZAT2uXrhQ6NipkwEgDLMFuURiHTf72TvkoMP61QYH3Vk1yrzVHnHBdNZk3cQACz8Zc7YGNhQ==",
       "type": "package",
@@ -2498,23 +2404,6 @@
         "logo_nodamoney.png",
         "nodamoney.2.5.0.nupkg.sha512",
         "nodamoney.nuspec"
-      ]
-    },
-    "NodaMoney.DependencyInjection/2.5.0": {
-      "sha512": "ppCoaFs62QDaYRX4B9M4AlK+eXi5yx//r4/HULK0EmAyY4DxqCTL6LJqufKcfR7KhdCxdEt9Gev8RUYfYHOIgw==",
-      "type": "package",
-      "path": "nodamoney.dependencyinjection/2.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net8.0/NodaMoney.DependencyInjection.dll",
-        "lib/net9.0/NodaMoney.DependencyInjection.dll",
-        "lib/netstandard2.0/NodaMoney.DependencyInjection.dll",
-        "lib/netstandard2.1/NodaMoney.DependencyInjection.dll",
-        "logo_nodamoney.png",
-        "nodamoney.dependencyinjection.2.5.0.nupkg.sha512",
-        "nodamoney.dependencyinjection.nuspec"
       ]
     },
     "Npgsql/9.0.3": {

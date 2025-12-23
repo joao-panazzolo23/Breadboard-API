@@ -8,6 +8,7 @@ namespace Breadboard.Domain.Users.QueryRepositories;
 public interface IUserQueryRepository
 {
     Task<UserViewmodel?> GetById(Guid id);
+    Task<UserViewmodel?> GetByUserName(string username);
     /// <summary>
     /// todo: filters here
     /// </summary>

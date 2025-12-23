@@ -24,6 +24,11 @@ public class UserQueryRepository(PostgreSqlContext context) : IQueryRepository, 
         return context.Connection.QueryFirstOrDefaultAsync<UserViewmodel>(sql, parameters);
     }
 
+    public Task<UserViewmodel?> GetByUserName(string username)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<IEnumerable<UserViewmodel>> List()
     {
         throw new NotImplementedException();

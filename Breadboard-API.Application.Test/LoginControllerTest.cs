@@ -1,4 +1,6 @@
-﻿namespace Breadboard_API.Application.Test;
+﻿using Breadboard.Infra.PostgreSQL;
+
+namespace Breadboard_API.Application.Test;
 
 public class LoginControllerTest
 {

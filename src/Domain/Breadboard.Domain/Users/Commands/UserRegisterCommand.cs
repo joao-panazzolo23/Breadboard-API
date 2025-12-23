@@ -1,6 +1,6 @@
 using Breadboard.Domain.Users.Enums;
 
-namespace Breadboard.Domain.Users.Handlers;
+namespace Breadboard.Domain.Users.Commands;
 
 public class UserRegisterCommand
 {

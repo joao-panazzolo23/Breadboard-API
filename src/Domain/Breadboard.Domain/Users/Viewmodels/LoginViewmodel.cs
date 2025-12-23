@@ -1,6 +1,6 @@
 namespace Breadboard.Domain.Users.Viewmodels;
 
-public class LoginViewmodel
+public record LoginViewmodel(string token)
 {
-    public string Id { get; set; }
+    public string JwtToken { get; set; } = token;
 }

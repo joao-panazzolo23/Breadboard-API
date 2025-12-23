@@ -1,34 +1,44 @@
 using System.IdentityModel.Tokens.Jwt;
-using Breadboard.Domain.Users.Repositories;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using System.Security.Claims;
+using System.Text;
+using Breadboard.Domain.Services;
+using Breadboard.Domain.Users.Entities;
+using Breadboard.Shared.Options;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BreadBoard.Infra.JWTBearer.Services;
 
-/// <summary>
-/// TODO: INJECT THIS CLASS AS A SERVICE
-/// </summary>
-/// <param name="_rep"></param>
-/// <param name="_config"></param>
-public class AuthenticationService(IUserRepository _rep, IConfiguration _config)
+public class AuthenticationService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
 {
-    /// <summary>
-    /// hash this pw to compare it
-    /// </summary>
-    /// <param name="username"></param>
-    /// <param name="password"></param>
-    /// <returns></returns>
-    public async Task<string?> GenerateToken(string username, string password)
+    private JwtSettings _jwtSettings { get; set; } = jwtSettings.Value;
+    public string GenerateToken(User user)
     {
-        var user = await _rep.GetByUsername(username);
-        if (user is not null || !user.Password.Equals(password)) return null;
+        var claims = new[]
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim("role", user.Role)
+        };
 
-        var handler = new JwtSecurityTokenHandler();
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
+        var signInCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
+        var token = new JwtSecurityToken(
+            issuer: _jwtSettings.Issuer,
+            audience: _jwtSettings.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.TokenExpirationMinutes),
+            signingCredentials: signInCredentials
+        );
+        
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
 
-
-        throw new ApplicationException();
+    public Task<ClaimsPrincipal> Validate(string token)
+    {
+        throw new NotImplementedException();
     }
 }
 
