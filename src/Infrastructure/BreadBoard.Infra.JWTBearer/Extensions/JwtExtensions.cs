@@ -30,8 +30,7 @@ public static class JwtExtensions
 
         builder.Services.AddSingleton(jwtSettings);
 
-        builder.Services.AddScoped<IJwtAuthService, JwtAuthenticationService>();
-
+       
         builder.Services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -52,4 +51,15 @@ public static class JwtExtensions
 
         return builder;
     }
+
+    public static IServiceCollection AddJwtDependencies(this IServiceCollection services)
+    {
+
+        services.AddScoped<IJwtAuthService, JwtAuthenticationService>();
+
+        return services;
+    }
+
+
+
 }

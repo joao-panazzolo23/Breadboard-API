@@ -574,6 +574,20 @@
           "bin/placeholder/Breadboard.Domain.dll": {}
         }
       },
+      "Breadboard.Infra.COPS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Breadboard.Shared": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Breadboard.Infra.COPS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Infra.COPS.dll": {}
+        }
+      },
       "BreadBoard.Infra.JWTBearer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1499,6 +1513,11 @@
       "path": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj",
       "msbuildProject": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj"
     },
+    "Breadboard.Infra.COPS/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Breadboard.Infra.COPS/Breadboard.Infra.COPS.csproj",
+      "msbuildProject": "../../Infrastructure/Breadboard.Infra.COPS/Breadboard.Infra.COPS.csproj"
+    },
     "BreadBoard.Infra.JWTBearer/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/BreadBoard.Infra.JWTBearer/BreadBoard.Infra.JWTBearer.csproj",
@@ -1529,6 +1548,7 @@
     "net9.0": [
       "BreadBoard.Infra.JWTBearer >= 1.0.0",
       "Breadboard.Domain >= 1.0.0",
+      "Breadboard.Infra.COPS >= 1.0.0",
       "Breadboard.Infra.PostgreSQL >= 1.0.0",
       "Breadboard.Infra.PostgreSQLDapper >= 1.0.0",
       "Breadboard.Infra.Scalar >= 1.0.0",
@@ -1570,6 +1590,9 @@
           "projectReferences": {
             "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
               "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+            },
+            "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.COPS\\Breadboard.Infra.COPS.csproj": {
+              "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.COPS\\Breadboard.Infra.COPS.csproj"
             },
             "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.JwtBearer\\Breadboard.Infra.JwtBearer.csproj": {
               "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.JwtBearer\\Breadboard.Infra.JwtBearer.csproj"

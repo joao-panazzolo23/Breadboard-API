@@ -1,10 +1,11 @@
 using Breadboard.Application.Extensions;
 using Breadboard.Domain.Users.Entities;
+using Breadboard.Infra.COPS.Extensions;
 using Breadboard.Infra.PostgreSQL.Extensions;
 using Breadboard.Infra.PostgreSQLDapper.Abstractions;
 using Breadboard.Infra.PostgreSQLDapper.Extensions;
 using Breadboard.Infra.Scalar.Extensions;
-using Breadboard.Infra..Extension;
+using BreadBoard.Infra.JWTBearer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.AddOpenApiConfig()
     .AddQueryRepositories(typeof(IQueryRepository).Assembly)
     .AddCops(typeof(User).Assembly)
     .AddOpenApi()
+    .AddJwtDependencies()
     // .AddApiVersion();
     ;
 var app = builder.Build();
