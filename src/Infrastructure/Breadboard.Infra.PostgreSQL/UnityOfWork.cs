@@ -1,4 +1,3 @@
-using Breadboard.Shared;
 using Breadboard.Shared.Repository;
 
 namespace Breadboard.Infra.PostgreSQL;

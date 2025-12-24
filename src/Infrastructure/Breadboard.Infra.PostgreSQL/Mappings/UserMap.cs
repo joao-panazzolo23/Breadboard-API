@@ -1,4 +1,3 @@
-using System.Xml.Schema;
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Infra.PostgreSQL.EntityMapper;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

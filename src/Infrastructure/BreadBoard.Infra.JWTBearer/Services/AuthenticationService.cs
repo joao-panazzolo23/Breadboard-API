@@ -9,6 +9,10 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace BreadBoard.Infra.JWTBearer.Services;
 
+/// <summary>
+/// Todo: refactor this
+/// </summary>
+/// <param name="jwtSettings"></param>
 public class AuthenticationService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
 {
     private JwtSettings _jwtSettings { get; set; } = jwtSettings.Value;
@@ -32,7 +36,7 @@ public class AuthenticationService(IOptions<JwtSettings> jwtSettings) : IJwtAuth
             expires: DateTime.UtcNow.AddMinutes(_jwtSettings.TokenExpirationMinutes),
             signingCredentials: signInCredentials
         );
-        
+
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 

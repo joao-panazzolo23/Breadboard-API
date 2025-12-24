@@ -6,7 +6,7 @@ namespace Breadboard.Infra.Scalar.Extensions;
 
 public static class ScalarExtensions
 {
-    public static WebApplication AddScalarInterface(this WebApplication app, WebApplicationBuilder builder)
+    public static WebApplication AddScalarInterface(this WebApplication app)
     {
         if (!app.Environment.IsDevelopment()) return app;
 

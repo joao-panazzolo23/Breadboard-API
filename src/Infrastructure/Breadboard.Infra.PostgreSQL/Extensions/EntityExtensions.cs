@@ -1,20 +1,26 @@
 using Breadboard.Infra.PostgreSQL.Repositories;
+using Breadboard.Shared.Options;
 using Breadboard.Shared.Repository;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 
 namespace Breadboard.Infra.PostgreSQL.Extensions;
 
 public static class EntityExtensions
 {
-    public static IServiceCollection AddEntityFrameWork(this IServiceCollection services,
-        IConfiguration configuration)
+    public static IServiceCollection AddEntityFrameWork(this IServiceCollection services)
     {
-        services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
-        );
+        services.AddDbContext<AppDbContext>((sp, options) =>
+        {
+            var dbSettings = sp
+                .GetRequiredService<IOptions<DatabaseOptions>>()
+                .Value;
+
+            options.UseNpgsql(dbSettings.DefaultConnection);
+            
+        });
         return services.AddRepositories();
     }
 

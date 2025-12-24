@@ -1,10 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Breadboard.Shared.Options;
 
-public class JwtSettings
+public sealed record JwtSettings
 {
-     public string Issuer { get; set; }
-     public string Audience { get; set; }
-     public string Secret { get; set; }
-     public int TokenExpirationMinutes { get; set; }
-     public int RefreshTokenExpirationDays { get; set; }
+    [Required]
+    public string Issuer { get; set; }
+    [Required]
+    public string Audience { get; set; }
+    [Required]
+    [MinLength(32)]
+    public string Secret { get; set; }
+    [Range(1, int.MaxValue)]
+    public int TokenExpirationMinutes { get; set; }
+    [Range(1, int.MaxValue)]
+    public int RefreshTokenExpirationDays { get; set; }
 }

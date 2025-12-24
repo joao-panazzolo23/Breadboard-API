@@ -4,9 +4,6 @@ using Npgsql;
 
 namespace Breadboard.Infra.PostgreSQLDapper.Context;
 
-/// <summary>
-/// THIS CLASS WASN'T SUPPOSED TO BE ABSTRACT? ofc not what am I doing
-/// </summary>
 public class PostgreSqlContext : IDisposable
 {
     public readonly IDbConnection Connection;

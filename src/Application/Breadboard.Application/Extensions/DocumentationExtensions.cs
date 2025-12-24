@@ -2,9 +2,9 @@ using Breadboard.Application.Transformers;
 
 namespace Breadboard.Application.Extensions;
 
-public static class OpenApiExtensions
+public static class DocumentationExtensions
 {
-    public static IServiceCollection AddOpenApiConfig(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddDocuments(this WebApplicationBuilder builder)
     {
         if (builder.Environment.IsDevelopment())
         {
@@ -16,6 +16,6 @@ public static class OpenApiExtensions
             });
         }
 
-        return builder.Services;
+        return builder;
     }
 }

@@ -1,7 +1,6 @@
 using System.Text;
 using Breadboard.Domain.Services;
 using Breadboard.Shared.Options;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -16,50 +15,58 @@ public static class JwtExtensions
     /// TODO:This method is doing both configuration for JwtSettings AND Jwt itself.
     ///
     /// And also, I need to make sure it is a secure authorization method as well
-    ///
-    /// And damn, that's nasty.
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    public static WebApplicationBuilder UseJwtBearer(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddJwtBearerDependencies(this WebApplicationBuilder builder)
     {
-        var jwtSettings = builder.Configuration
-            .GetSection("JwtSettings")
-            .Get<JwtSettings>()
-            ?? throw new InvalidOperationException("JwtSettings not configured");
+        var config = builder.Configuration.GetSection("JwtSettings");
 
-        builder.Services.AddSingleton(jwtSettings);
+        builder.Services.AddOptions<JwtSettings>()
+                        .Bind(config)
+                        .ValidateDataAnnotations()
+                        .ValidateOnStart();
 
-       
-        builder.Services
-            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidAudience = jwtSettings.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(jwtSettings.Secret)),
-                    ClockSkew = TimeSpan.Zero
-                };
-            });
+        builder.Services.ConfigureJwtToken(config.Get<JwtSettings>()!)
+                        .AddJwtDependencies();
 
         return builder;
     }
 
-    public static IServiceCollection AddJwtDependencies(this IServiceCollection services)
+    /// <summary>
+    /// todo: refactor this
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="settings"></param>
+    /// <returns></returns>
+    public static IServiceCollection ConfigureJwtToken(this IServiceCollection services, JwtSettings settings)
     {
-
-        services.AddScoped<IJwtAuthService, JwtAuthenticationService>();
+        services
+          .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+          .AddJwtBearer(options =>
+          {
+              options.TokenValidationParameters = new TokenValidationParameters
+              {
+                  ValidateIssuer = true,
+                  ValidateAudience = true,
+                  ValidateLifetime = true,
+                  ValidateIssuerSigningKey = true,
+                  ValidIssuer = settings.Issuer,
+                  ValidAudience = settings.Audience,
+                  IssuerSigningKey = new SymmetricSecurityKey(
+                      Encoding.UTF8.GetBytes(settings.Secret)),
+                  ClockSkew = TimeSpan.Zero
+              };
+          });
 
         return services;
+
     }
 
-
+    public static IServiceCollection AddJwtDependencies(this IServiceCollection services)
+    {
+        services.AddScoped<IJwtAuthService, JwtAuthenticationService>();
+        return services;
+    }
 
 }

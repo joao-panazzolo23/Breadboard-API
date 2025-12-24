@@ -2,11 +2,10 @@ namespace Breadboard.Application.Extensions;
 
 public static class CacheExtensions
 {
-    public static IServiceCollection AddCaching(this IServiceCollection services)
+    public static WebApplicationBuilder AddCaching(this WebApplicationBuilder builder)
     {
-        services.AddMemoryCache()
-            .AddDistributedMemoryCache();
-
-        return services;
+        builder.Services.AddMemoryCache()
+                       .AddDistributedMemoryCache();
+        return builder;
     }
 }

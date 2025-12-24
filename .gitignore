@@ -13,3 +13,14 @@ obj/
 
 # User-specific files
 *.user
+/.vs/Breadboard-API/v17/DocumentLayout.json
+/.vs/Breadboard-API/v17/DocumentLayout.backup.json
+/.vs/Breadboard-API/v17/.suo
+*.manifest
+*.testlog
+/.vs/Breadboard-API/FileContentIndex
+/.vs/Breadboard-API/DesignTimeBuild/.dtbcache.v2
+*.db-wal
+*.db-shm
+/.vs/Breadboard-API/CopilotIndices/17.14.786.1071/SemanticSymbols.db
+/.vs/Breadboard-API/CopilotIndices/17.14.786.1071/CodeChunks.db
