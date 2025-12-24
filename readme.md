@@ -1,67 +1,74 @@
-<h1>Welcome to Breadboard! </h1>
+﻿# Welcome to Breadboard!
 
-<p> This is supposed to be an stupidly overengineered project just for fun and games. </p>
+[![.NET](https://img.shields.io/badge/.NET-9-blue)](https://dotnet.microsoft.com/) 
+[![EF Core](https://img.shields.io/badge/EF%20Core-7.0-blue)](https://learn.microsoft.com/ef/core/) 
 
-<h2>
-to add a new project
-</h2>
+A custom API project using **.NET 9** based on **Domain-Driven Design (DDD)**.
+
+---
+
+## 🚀 Getting started
+
+###  Clone this repository
+```
+git clone https://github.com/joao-panazzolo23/Breadboard-API
+```
+
+### Configuring Database
+Change appsettings.json with your desired database (Remember: This was made using PostgreSQL):
+ ```
+"DefaultConnection": "Host=localhost;Port=5432;Database=breadboard;Username=postgres;Password=postgres;"
+ ```
+
+Framework version: This project is using .NET 9, but it is intended to get an upgrade soon.
+
+### Adding a new project (VS Code)
+```
+dotnet new <projectType> -n <name> (creates a new project)
+```
+and then add to solution using 
+```
+dotnet sln add <newCsprojPath> (adds to main solution)
+```
+###
+
+## Framworks used:
 
 <p>
--> dotnet new <projectType> -n <name> (creates a new project)
+ Dapper (Queries) & EF Core (Writings)
 </p>
 <p>
--> dotnet sln add <newCsprojPath> (adds to main solution)
+ xUnit & Moq & Bogus for Unit testing
 </p>
 <p>
--> (if extensions are needed) dotnet add Application/Breadboard.Application reference <pathToYourProject.csproj> (reference your project to your web API)
+ Scalar & OpenAPI for documentation.
 </p>
 
-<h2>
-to run your migrations
-</h2>
-
+## Designs & Microdesigns
 <p>
--> cd src\Infrastructure\Infrastructure.PostgreSQL (select your entity framework project, assuming you're at root pathway)
+ Domain-Driven Design
 </p>
-
+<p> 
+ Mediator Pattern (GoF directives-friendly)
+</p>
 <p>
--> <strong> dotnet ef migrations add <migrationName> -p src\Infrastructure\Infrastructure.PostgreSQL\Infrastructure.PostgreSQL.csproj </strong>
+ Result Pattern
 </p>
-
-
 <p>
-there's no need to apply migrations to database since it is done whenever has started running. This API is also supposed to be running with Breadboard's Angular project. You can find it in here: https://github.com/joao-panazzolo23/breadboard
-
+ Command & Query Resposability Segregation (CQRS
+</p>
+<p>
+OpenAPI Documentation
 </p>
 
-<h1> Tecnologies & Patterns used: </h1>
-
-<h4>
-   COPS - A Custom and lightweight Mediator (According to GOF directives) 
-</h4>
- 
-<h4>
-  Command & Query Responsabilty Segregation (CQRS) using Dapper & Entity framework
-</h4>
-  
-<h4>
-   API Versioning control, automapper for endpoints and entities, custom Attributes for kebab-case endpoints 
-</h4>
- 
-<h4>
-  Domain Driven Design (DDD), SOLID, DRY, KISS. The goal was to keep performance and scalability at the higher standards possible, even it is not going to scale.
-</h4>
-
-<h4>
-    Dotnet 9.0 (I'm thinking about updating to 10 since it was release this month)
-</h4>
-
-<h4>
-   Swagger & Swagger UI (for API documentation) // Scalar + OpenAPI
-</h4>
 
 
-<h4>
-  Generic repositories for entity and SQL Builders for Dapper
-</h4>
+
+
+##
+Migrations
+
+    Step 01 - cd src/Infrastructure/Breadboard-API.Infrastructure.PostgreSQL/
+    Step 02 - dotnet ef migrations add <NAME> -o Migrations -s ../../Application/Breadboard-API.Application/Breadboard-API.Application.csproj
+    Step 03 - dotnet ef database update  -s ../../Application/Breadboard-API.Application/Breadboard-API.Application.csproj
 
