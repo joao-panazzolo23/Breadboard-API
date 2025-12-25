@@ -10,10 +10,8 @@ namespace Breadboard.Application.Controllers;
 
 [ApiController]
 [AutoRouting]
-public class UserController(ICops cops) : ControllerBase
+public class UserController(ICops _cops) : ControllerBase
 {
-    private readonly ICops _cops = cops;
-
     [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -28,9 +26,10 @@ public class UserController(ICops cops) : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public IActionResult Register()
+    public async Task<ActionResult<Nothing>> Register(UserRegisterCommand command)
     {
-        throw new NotImplementedException();
+        var response = await _cops.Dispatch<Nothing>(command);
+        return StatusCode(response.StatusCode, response);
     }
 
     [HttpGet("[action]/{id:guid}")]
@@ -43,12 +42,18 @@ public class UserController(ICops cops) : ControllerBase
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPost]
+    [HttpPost("[action]")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public Task<IActionResult> Update()
     {
         throw new NotImplementedException();
     }
 
+    [HttpPost("[action]")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [HttpPut("[action]")]
     public async Task<IActionResult> UpdatePassword()
     {

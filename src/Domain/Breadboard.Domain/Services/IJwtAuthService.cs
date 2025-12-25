@@ -9,5 +9,5 @@ namespace Breadboard.Domain.Services;
 public interface IJwtAuthService
 {
     string GenerateToken(User user);
-    Task<ClaimsPrincipal> Validate(string token);
+    string RefreshToken(User user);
 }

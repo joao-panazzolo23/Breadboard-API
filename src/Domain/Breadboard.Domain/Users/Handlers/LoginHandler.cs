@@ -1,32 +1,34 @@
 using Breadboard.Domain.Services;
 using Breadboard.Domain.Users.Commands;
-using Breadboard.Domain.Users.QueryRepositories;
+using Breadboard.Domain.Users.Repositories;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Cops;
 using Breadboard.Shared.Results;
 
 namespace Breadboard.Domain.Users.Handlers;
 
-public class LoginHandler(IUserQueryRepository rep, IJwtAuthService authentication)
+public class LoginHandler(
+    IUserRepository _rep,
+    IJwtAuthService _authentication,
+    IPasswordHasher _passwordHasher
+)
     : IRequestHandler<LoginCommand, LoginViewmodel>
 {
+    /// <summary>
+    /// Unnecessary to differentiate not found from wrong password, it is a security flaw. 
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
     public async Task<Result<LoginViewmodel>> Handle(LoginCommand request)
     {
         //todo: solve this after implementing authorization
-        // var user = await rep.GetByUserName(request.Username);
-        //
-        // if (user == null)
-        //     return Results.NotFound<LoginViewmodel>();   
-        //
-        // // if (!await authentication.Validate(request.Token))
-        // //     return Results.Unauthorized<LoginViewmodel>();
-        // //
-        // // var login = new LoginViewmodel(await authentication.GenerateToken(user.Username, 
-        // //                                                                    user.Password, 
-        // //
-        // // user.Email));
-        // return Results.Success()!;
+        var user = await _rep.GetByUsername(request.Username);
 
-        throw new NotImplementedException();
+        if (user == null || !_passwordHasher.Verify(request.Password, user.Password))
+            return Results.Unauthorized<LoginViewmodel>();
+
+        var token = _authentication.GenerateToken(user);
+
+        return Results.Success(new LoginViewmodel(token))!;
     }
 }

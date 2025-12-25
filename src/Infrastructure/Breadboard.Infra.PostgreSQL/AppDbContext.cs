@@ -1,4 +1,5 @@
 using Breadboard.Infra.PostgreSQL.EntityMapper;
+using Breadboard.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Breadboard.Infra.PostgreSQL;
@@ -14,5 +15,23 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.RegisterAllMaps();
+    }
+    
+    public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+    {
+        foreach (var entry in ChangeTracker.Entries<Entity>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Added:
+                    entry.Entity.CreatedAt = DateTime.UtcNow;
+                    break;
+
+                case EntityState.Modified:
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+                    break;
+            }
+        }
+        return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
     }
 }

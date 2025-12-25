@@ -11,10 +11,9 @@ public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
 
     public async Task Add(T entity) => await _dbSet.AddAsync(entity);
 
-    public Task Update(T entity)
+    public void Update(T entity)
     {
-        _dbSet.Update(entity);
-        return Task.CompletedTask;
+        _dbSet.Attach(entity);
     }
 
     public async Task Delete(Guid id)

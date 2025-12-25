@@ -1,5 +1,6 @@
 using System.Text;
 using Breadboard.Domain.Services;
+using BreadBoard.Infra.JWTBearer.Services;
 using Breadboard.Shared.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +40,7 @@ public static class JwtExtensions
     /// <param name="services"></param>
     /// <param name="settings"></param>
     /// <returns></returns>
-    public static IServiceCollection ConfigureJwtToken(this IServiceCollection services, JwtSettings settings)
+    private static IServiceCollection ConfigureJwtToken(this IServiceCollection services, JwtSettings settings)
     {
         services
           .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -63,9 +64,9 @@ public static class JwtExtensions
 
     }
 
-    public static IServiceCollection AddJwtDependencies(this IServiceCollection services)
+    private static IServiceCollection AddJwtDependencies(this IServiceCollection services)
     {
-        services.AddScoped<IJwtAuthService, JwtAuthenticationService>();
+        services.AddScoped<IJwtAuthService, AuthService>();
         return services;
     }
 

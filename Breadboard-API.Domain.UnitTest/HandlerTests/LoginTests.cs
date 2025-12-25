@@ -18,7 +18,7 @@ public class LoginTests
     private readonly ITestOutputHelper _testOutputHelper;
     private readonly Mock<IUserQueryRepository> _mockRepo = new();
     private readonly Mock<IJwtAuthService> _mockAuth = new();
-    private readonly LoginCommand _command = new LoginCommand("john", "senha123", Token:"");
+    private readonly LoginCommand _command = new LoginCommand("john", "senha123", Token: "");
     private readonly UserViewmodel _user = MockUsers.Create("john").Generate();
 
     public LoginTests(ITestOutputHelper testOutputHelper)
@@ -69,7 +69,9 @@ public class LoginTests
 
     private async Task<Result<LoginViewmodel>> Execute()
     {
-        var handler = new LoginHandler(_mockRepo.Object, _mockAuth.Object);
-        return await handler.Handle(_command);
+        // var handler = new LoginHandler(_mockRepo.Object, _mockAuth.Object);
+        // return await handler.Handle(_command);
+
+        throw new NotImplementedException();
     }
 }

@@ -13,17 +13,20 @@ namespace BreadBoard.Infra.JWTBearer.Services;
 /// Todo: refactor this
 /// </summary>
 /// <param name="jwtSettings"></param>
-public class AuthenticationService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
+public class AuthService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
 {
-    private JwtSettings _jwtSettings { get; set; } = jwtSettings.Value;
+    private readonly JwtSettings _jwtSettings = jwtSettings.Value;
+    private IJwtAuthService _jwtAuthService;
+
     public string GenerateToken(User user)
     {
+        //Role will be related from Users or UserRoles?
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim("role", user.Role)
+            new Claim(ClaimTypes.Role, user.Role)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
@@ -40,10 +43,8 @@ public class AuthenticationService(IOptions<JwtSettings> jwtSettings) : IJwtAuth
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    public Task<ClaimsPrincipal> Validate(string token)
+    public string RefreshToken(User user)
     {
         throw new NotImplementedException();
     }
 }
-
-
