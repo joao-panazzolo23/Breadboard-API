@@ -7,7 +7,7 @@ namespace Breadboard.Infra.PostgreSQL.Repositories;
 public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
     where T : Entity
 {
-    private readonly DbSet<T> _dbSet = context.Set<T>();
+    protected readonly DbSet<T> _dbSet = context.Set<T>();
 
     public async Task Create(T entity) => await _dbSet.AddAsync(entity);
 

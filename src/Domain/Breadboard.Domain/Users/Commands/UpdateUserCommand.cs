@@ -5,10 +5,12 @@ public record UpdateUserCommand(
     string Email,
     string Password,
     string ExhibitionName,
-    DateTime? BirthDate) :
-        RegisterUserCommand(
-            Username,
-            Email,
-            Password,
-            ExhibitionName,
-            BirthDate);
+    DateTime? BirthDate,
+    string? ConfirmPassword) :
+    RegisterUserCommand(
+        Username,
+        Email,
+        Password,
+        ExhibitionName,
+        BirthDate,
+        ConfirmPassword);

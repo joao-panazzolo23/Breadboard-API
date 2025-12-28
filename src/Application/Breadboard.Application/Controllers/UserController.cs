@@ -32,11 +32,11 @@ public class UserController(ICops _cops) : ControllerBase
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<ActionResult<UserViewmodel?>> GetById([FromRoute] GetUserQueryCommand command)
+    public async Task<ActionResult<UserViewmodel?>> GetById([FromQuery] GetUserQueryCommand command)
     {
         var response = await _cops.Dispatch<UserViewmodel?>(command);
         return StatusCode(response.StatusCode, response);

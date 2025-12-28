@@ -8,7 +8,8 @@ builder.AddSecurity()
     .AddDocuments()
     .AddControllersScheme()
     .AddCaching()
-    .AddMediator();
+    .AddMediator()
+    .AddValidations();
 
 var app = builder.Build();
 
