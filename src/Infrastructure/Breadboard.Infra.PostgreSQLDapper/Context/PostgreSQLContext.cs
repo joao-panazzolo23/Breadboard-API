@@ -18,5 +18,5 @@ public class PostgreSqlContext : IDisposable
         Connection.Open();
     }
 
-    public void Dispose() => Connection?.Dispose();
+    void IDisposable.Dispose() => Connection.Dispose();
 }

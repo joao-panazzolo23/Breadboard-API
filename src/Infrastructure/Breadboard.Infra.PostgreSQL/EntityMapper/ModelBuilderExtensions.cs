@@ -6,10 +6,13 @@ public static class ModelBuilderExtensions
 {
     private static IEnumerable<Type> GetMappedClasses(this ModelBuilder builder)
     {
-        return typeof(AppDbContext).Assembly
-            .GetTypes()
-            .Where(x => x.IsSubclassOf(typeof(BaseMapper<>)) &&
-                        x.IsAssignableFrom(typeof(IBaseMapper)));
+        return typeof(AppDbContext).Assembly.GetTypes()
+            .Where(x => !x.IsAbstract && typeof(IBaseMapper).IsAssignableFrom(x));
+
+        // return typeof(AppDbContext).Assembly
+        //     .GetTypes()
+        //     .Where(x => x.IsSubclassOf(typeof(BaseMapper<>)) &&
+        //                 typeof(IBaseMapper).IsAssignableFrom(x));
     }
 
     public static ModelBuilder RegisterAllMaps(this ModelBuilder builder)

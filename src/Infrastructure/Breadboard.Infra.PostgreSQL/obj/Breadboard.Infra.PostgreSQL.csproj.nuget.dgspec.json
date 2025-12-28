@@ -53,6 +53,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Riok.Mapperly": {
+              "target": "Package",
+              "version": "[5.0.0-next.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

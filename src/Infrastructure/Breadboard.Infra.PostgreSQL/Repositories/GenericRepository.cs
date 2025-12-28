@@ -9,7 +9,7 @@ public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
 {
     private readonly DbSet<T> _dbSet = context.Set<T>();
 
-    public async Task Add(T entity) => await _dbSet.AddAsync(entity);
+    public async Task Create(T entity) => await _dbSet.AddAsync(entity);
 
     public void Update(T entity)
     {

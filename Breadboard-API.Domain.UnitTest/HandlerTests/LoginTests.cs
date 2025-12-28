@@ -3,7 +3,6 @@ using Breadboard_API.Domain.Test.Extensions;
 using Breadboard_API.Domain.Test.MockEntities;
 using Breadboard.Domain.Services;
 using Breadboard.Domain.Users.Commands;
-using Breadboard.Domain.Users.Handlers;
 using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Shared.Results;
@@ -13,18 +12,12 @@ using Xunit.Abstractions;
 
 namespace Breadboard_API.Domain.Test.HandlerTests;
 
-public class LoginTests
+public class LoginTests(ITestOutputHelper testOutputHelper)
 {
-    private readonly ITestOutputHelper _testOutputHelper;
     private readonly Mock<IUserQueryRepository> _mockRepo = new();
     private readonly Mock<IJwtAuthService> _mockAuth = new();
     private readonly LoginCommand _command = new LoginCommand("john", "senha123", Token: "");
     private readonly UserViewmodel _user = MockUsers.Create("john").Generate();
-
-    public LoginTests(ITestOutputHelper testOutputHelper)
-    {
-        _testOutputHelper = testOutputHelper;
-    }
 
     private void _setup(UserViewmodel? user) => _mockRepo.Setup(r =>
             r.GetByUserName("john"))
@@ -38,7 +31,7 @@ public class LoginTests
 
         var result = await Execute();
 
-        _testOutputHelper.WriteLine(result.StatusCode.ToString());
+        testOutputHelper.WriteLine(result.StatusCode.ToString());
         result.TestSuccess();
 
         // _mockAuth.Verify(a => a.Validate(It.IsAny<string>(),

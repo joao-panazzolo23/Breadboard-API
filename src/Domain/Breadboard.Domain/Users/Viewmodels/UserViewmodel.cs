@@ -1,5 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-
 namespace Breadboard.Domain.Users.Viewmodels;
 
 public record UserViewmodel

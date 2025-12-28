@@ -1,3 +1,4 @@
+using Breadboard.Domain.Users.Repositories;
 using Breadboard.Infra.PostgreSQL.Repositories;
 using Breadboard.Shared.Options;
 using Breadboard.Shared.Repository;
@@ -25,7 +26,9 @@ public static class EntityExtensions
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>))
+            .AddScoped<IUnityOfWork, UnityOfWork>()
+            .AddScoped<IUserRepository, UserRepository>();
         return services;
     }
 

@@ -10,7 +10,7 @@ public static class ControllerExtensions
         builder.Services
             .AddControllers(options =>
             {
-                options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseUrlTransformer())); ;
+                options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseUrlTransformer()));
             })
             .ConfigureJsonConvention();
 

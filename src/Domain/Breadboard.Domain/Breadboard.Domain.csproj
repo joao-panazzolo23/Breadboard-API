@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Breadboard.Shared\Breadboard.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Riok.Mapperly" Version="5.0.0-next.0" />
+  </ItemGroup>
+
 </Project>

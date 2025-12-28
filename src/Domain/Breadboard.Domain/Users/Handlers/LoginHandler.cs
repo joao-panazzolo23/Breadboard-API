@@ -1,3 +1,4 @@
+using Breadboard.Domain.Authentication;
 using Breadboard.Domain.Services;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Repositories;
@@ -29,6 +30,6 @@ public class LoginHandler(
 
         var token = _authentication.GenerateToken(user);
 
-        return Results.Success(new LoginViewmodel(token))!;
+        return Results.Ok(new LoginViewmodel(token))!;
     }
 }

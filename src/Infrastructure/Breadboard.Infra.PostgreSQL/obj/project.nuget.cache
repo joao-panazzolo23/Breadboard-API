@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5thtQG3lwxE=",
+  "dgSpecHash": "jI6G23Glx+U=",
   "success": true,
   "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Barba\\.nuget\\packages\\nodamoney\\2.5.0\\nodamoney.2.5.0.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\Barba\\.nuget\\packages\\riok.mapperly\\5.0.0-next.0\\riok.mapperly.5.0.0-next.0.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

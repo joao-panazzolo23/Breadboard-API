@@ -696,6 +696,22 @@
           }
         }
       },
+      "Riok.Mapperly/5.0.0-next.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
       "System.CodeDom/6.0.0": {
         "type": "package",
         "compile": {
@@ -925,7 +941,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Breadboard.Shared": "1.0.0"
+          "Breadboard.Shared": "1.0.0",
+          "Riok.Mapperly": "5.0.0-next.0"
         },
         "compile": {
           "bin/placeholder/Breadboard.Domain.dll": {}
@@ -2436,6 +2453,30 @@
         "npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
+      ]
+    },
+    "Riok.Mapperly/5.0.0-next.0": {
+      "sha512": "JlFu0r/n+fp5/z9BM9EvQXr0SzUdifRzl2zYYJ38S+pA5p6A4wRBLTUoTMDIEis1x/Ga5dIyaPs0P6ZkQa2+NQ==",
+      "type": "package",
+      "path": "riok.mapperly/5.0.0-next.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/roslyn4.11/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.11/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn4.14/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.14/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn4.8/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.8/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn5.0/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn5.0/dotnet/cs/Riok.Mapperly.dll",
+        "build/Riok.Mapperly.targets",
+        "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll",
+        "lib/netstandard2.0/Riok.Mapperly.Abstractions.xml",
+        "logo.png",
+        "riok.mapperly.5.0.0-next.0.nupkg.sha512",
+        "riok.mapperly.nuspec"
       ]
     },
     "System.CodeDom/6.0.0": {

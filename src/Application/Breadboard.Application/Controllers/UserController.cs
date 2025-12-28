@@ -22,11 +22,11 @@ public class UserController(ICops _cops) : ControllerBase
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpPut("[action]")]
+    [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<ActionResult<Nothing>> Register(UserRegisterCommand command)
+    public async Task<ActionResult<Nothing>> Register(RegisterUserCommand command)
     {
         var response = await _cops.Dispatch<Nothing>(command);
         return StatusCode(response.StatusCode, response);

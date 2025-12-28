@@ -1,6 +1,5 @@
 using System.Net;
 using System.Text.Json.Serialization;
-using Breadboard.Shared.Extensions;
 
 namespace Breadboard.Shared.Results;
 
@@ -10,7 +9,7 @@ namespace Breadboard.Shared.Results;
 /// <typeparam name="T"></typeparam>
 public sealed class Result<T>
 {
-    public Result(HttpStatusCode statusCode, T data, string message = null)
+    public Result(HttpStatusCode statusCode, T data, string? message = null)
     {
         _statusCode = statusCode;
         Data = data;

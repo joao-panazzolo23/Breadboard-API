@@ -1,4 +1,4 @@
-namespace Breadboard.Domain.Services;
+namespace Breadboard.Domain.Authentication;
 
 public interface IPasswordHasher
 {

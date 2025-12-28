@@ -1,5 +1,4 @@
 using Bogus;
-using Breadboard.Domain.Users.Entities;
 using Breadboard.Domain.Users.Viewmodels;
 
 namespace Breadboard_API.Domain.Test.MockEntities;

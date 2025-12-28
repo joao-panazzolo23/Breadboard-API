@@ -9,8 +9,8 @@ public static class ScalarExtensions
     public static WebApplication AddScalarInterface(this WebApplication app)
     {
         if (!app.Environment.IsDevelopment()) return app;
-
-        app.MapOpenApi("/openapi/{documentName}.json");
+        
+        app.MapOpenApi();
 
         app.MapScalarApiReference(options =>
         {

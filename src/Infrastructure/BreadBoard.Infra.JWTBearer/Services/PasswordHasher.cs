@@ -1,3 +1,4 @@
+using Breadboard.Domain.Authentication;
 using Breadboard.Domain.Services;
 
 namespace BreadBoard.Infra.JWTBearer.Services;

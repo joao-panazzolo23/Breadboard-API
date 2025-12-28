@@ -15,7 +15,7 @@ public static class InvokeCops
         var method = handlerInterface.GetMethod("Handle")!;
 
         // compiles heavily typed functions within app startup
-        return async (object request) =>
+        return async request =>
         {
             var resultTask = (Task)method.Invoke(handlerInstance, new[] { request })!;
             await resultTask.ConfigureAwait(false);

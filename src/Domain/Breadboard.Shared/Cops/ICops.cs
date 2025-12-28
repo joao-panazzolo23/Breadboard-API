@@ -1,4 +1,3 @@
-using Breadboard.Shared.Entities;
 using Breadboard.Shared.Results;
 
 namespace Breadboard.Shared.Cops;
