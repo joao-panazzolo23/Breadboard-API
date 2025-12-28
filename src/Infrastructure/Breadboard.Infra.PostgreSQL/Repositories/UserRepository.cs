@@ -3,9 +3,14 @@ using Breadboard.Domain.Users.Repositories;
 
 namespace Breadboard.Infra.PostgreSQL.Repositories;
 
-public class UserRepository : IUserRepository
+internal class UserRepository(AppDbContext context) : GenericRepository<User>(context), IUserRepository
 {
     public Task<User?> GetByUsername(string username)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Delete(User user)
     {
         throw new NotImplementedException();
     }

@@ -11,16 +11,12 @@ public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
 
     public async Task Create(T entity) => await _dbSet.AddAsync(entity);
 
-    public void Update(T entity)
-    {
-        _dbSet.Attach(entity);
-    }
+    public void Update(T entity) => 
+       _dbSet.Entry(entity).State = EntityState.Modified;
+    
 
-    public async Task Delete(Guid id)
-    {
-        var entity = await _dbSet.FindAsync(id);
-        if (entity != null)
-            _dbSet.Remove(entity);
-    }
+    public void Delete(T entity) => 
+           _dbSet.Remove(entity);
+    
     public async Task<T?> GetById(Guid id) => await _dbSet.FindAsync(id);
 }

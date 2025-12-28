@@ -16,8 +16,4 @@ public static class Results
         new(HttpStatusCode.NotFound, message);
     public static Result<T> Conflict<T>(string? message = null) => 
         new(HttpStatusCode.Conflict, message);
-    public static Result<Nothing> Unauthorized(string? message = null) =>
-        new(statusCode: HttpStatusCode.Unauthorized, message);
-    public static Result<Nothing> NotFound(string? message = null) =>
-        Results.NotFound<Nothing>(message);
 }

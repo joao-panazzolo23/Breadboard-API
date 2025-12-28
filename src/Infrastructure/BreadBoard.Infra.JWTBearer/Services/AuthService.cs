@@ -20,14 +20,15 @@ public class AuthService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
 
     public string GenerateToken(User user)
     {
-        //Role will be related from Users or UserRoles?
+        // remove master from role and add role system
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, "master")
         };
+
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
         var signInCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

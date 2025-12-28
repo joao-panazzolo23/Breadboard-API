@@ -9,21 +9,21 @@ internal class Builder<T>
     private readonly List<string> _selects = [];
     private readonly List<string> _where = [];
     private readonly List<string> _order = [];
-    private string? _from = typeof(T).Name;
+    private string? _from = $"\"{typeof(T).Name}\"";
     private readonly Dictionary<string, object?> _parameters = new();
 
     //find a way to type this without object
     public Builder<T> Select(Expression<Func<T, object>> selector)
     {
         var prop = ExpressionUtils.GetPropName(selector);
-        _selects.Add($@"""{prop}""");
+        _selects.Add($"\"{prop}\"");
         return this;
     }
     
     //kinda unnecessary 
     public Builder<T> From()
     {
-        _from = nameof(T);
+        _from = $"""{nameof(T)}""";
         return this;
     }
 

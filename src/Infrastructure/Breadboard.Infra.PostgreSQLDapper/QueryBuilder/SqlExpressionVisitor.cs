@@ -17,14 +17,12 @@ internal class SqlExpressionVisitor : ExpressionVisitor
 
     protected override Expression VisitBinary(BinaryExpression node)
     {
-        if (node.Left is not MemberExpression { Expression: ParameterExpression } left)
-            throw new NotSupportedException(nameof(Translate));
 
-        var columnName = left.Member.Name;
-        
-        _sql.Append(columnName);
-        _sql.Append(GetSqlOperator(node.NodeType));
-        _sql.Append("@").Append(columnName.ToLower());
+        Visit(node.Left);
+
+        _sql.Append($" {GetSqlOperator(node.NodeType)} ");
+
+        Visit(node.Right);
 
         return node;
     }
@@ -44,5 +42,30 @@ internal class SqlExpressionVisitor : ExpressionVisitor
     {
         _sql.Append(node.Value);
         return node;
+    }
+
+    protected override Expression VisitMember(MemberExpression node)
+    {
+        if (node.Expression is ParameterExpression)
+        {
+            _sql.Append($"\"{node.Member.Name}\"");
+            return node;
+        }
+        
+        var columnName = node.Member.Name;
+        var value = GetValue(node);
+
+        var paramName = $"@{columnName}";
+        _params[paramName] = value;
+
+        _sql.Append(paramName);
+        return node;
+    }
+    private static object? GetValue(MemberExpression member)
+    {
+        // Compila e executa a expressão
+        var objectMember = Expression.Convert(member, typeof(object));
+        var getter = Expression.Lambda<Func<object?>>(objectMember).Compile();
+        return getter();
     }
 }

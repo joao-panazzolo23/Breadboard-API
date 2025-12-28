@@ -5,7 +5,7 @@ namespace Breadboard.Domain.Users.QueryRepositories;
 /// <summary>
 /// Todo: change to its own viewmodel
 /// </summary>
-public interface IUserQueryRepository
+public interface IUserQueryRepository 
 {
     Task<UserViewmodel?> GetById(Guid id);
     Task<UserViewmodel?> GetByUserName(string username);

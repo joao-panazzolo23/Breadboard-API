@@ -15,6 +15,7 @@ public static class ModelBuilderExtensions
         //                 typeof(IBaseMapper).IsAssignableFrom(x));
     }
 
+    [Obsolete("There is a prebuilt method in EF Core called ApplyConfigurationsFromAssembly in ModelBuilder class")]
     public static ModelBuilder RegisterAllMaps(this ModelBuilder builder)
     {
         var types = builder.GetMappedClasses();

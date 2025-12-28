@@ -5,5 +5,4 @@ public record RegisterUserCommand(
     string Email,
     string Password,
     string ExhibitionName,
-    DateTime? BirthDate,
-    string Role);
+    DateTime? BirthDate);

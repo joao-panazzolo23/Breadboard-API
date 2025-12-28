@@ -32,13 +32,13 @@ public class UserController(ICops _cops) : ControllerBase
         return StatusCode(response.StatusCode, response);
     }
 
-    [HttpGet("[action]/{id:guid}")]
+    [HttpGet("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<ActionResult<GetUserQueryCommand>> GetById([FromRoute] GetUserQueryCommand command)
+    public async Task<ActionResult<UserViewmodel?>> GetById([FromRoute] GetUserQueryCommand command)
     {
-        var response = await _cops.Dispatch<GetUserQueryCommand>(command);
+        var response = await _cops.Dispatch<UserViewmodel?>(command);
         return StatusCode(response.StatusCode, response);
     }
 
@@ -58,5 +58,15 @@ public class UserController(ICops _cops) : ControllerBase
     public async Task<IActionResult> UpdatePassword()
     {
         throw new NotImplementedException();
+    }
+
+    [HttpDelete("[action]")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [HttpPut("[action]")]
+    public async Task<ActionResult<Nothing>> UpdatePassword(DeleteUserCommand command)
+    {
+        var result = await _cops.Dispatch<Nothing>(command);
+        return StatusCode(result.StatusCode, result);
     }
 }

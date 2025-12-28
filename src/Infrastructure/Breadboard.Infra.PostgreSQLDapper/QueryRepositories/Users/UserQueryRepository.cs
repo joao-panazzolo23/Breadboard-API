@@ -19,9 +19,7 @@ public class UserQueryRepository(PostgreSqlContext context) : IQueryRepository, 
             .Where(u => u.Id == id)
             .Build();
 
-        var parameters = ParamBuild.BuildParameters<User>(x => x.Id == id);
-
-        return context.Connection.QueryFirstOrDefaultAsync<UserViewmodel>(sql, parameters);
+        return context.Connection.QueryFirstOrDefaultAsync<UserViewmodel>(sql, new {id});
     }
 
     public Task<UserViewmodel?> GetByUserName(string username)

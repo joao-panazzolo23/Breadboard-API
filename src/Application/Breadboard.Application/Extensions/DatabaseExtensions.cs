@@ -1,4 +1,5 @@
 ﻿using Breadboard.Infra.PostgreSQL.Extensions;
+using Breadboard.Infra.PostgreSQLDapper.Extensions;
 using Breadboard.Shared.Options;
 
 namespace Breadboard.Application.Extensions;
@@ -9,7 +10,7 @@ public static class DatabaseExtensions
     {
         builder.ConfigureDbOptions();
 
-        builder.Services.AddEntityFrameWork();
+        builder.Services.AddEntityFrameWork().AddQueryRepositories();
 
         return builder;
     }
