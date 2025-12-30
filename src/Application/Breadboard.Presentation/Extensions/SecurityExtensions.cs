@@ -1,6 +1,6 @@
 ﻿using BreadBoard.Infra.JWTBearer.Extensions;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class SecurityExtensions
 {

@@ -1,7 +1,7 @@
 using Breadboard.Domain.Users.Commands;
 using FluentValidation;
 
-namespace Breadboard.Application.Validators.User;
+namespace Breadboard.Presentation.Validators.User;
 
 internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {

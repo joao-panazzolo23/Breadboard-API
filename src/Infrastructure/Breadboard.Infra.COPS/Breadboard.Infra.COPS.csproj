@@ -13,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\Application\Breadboard.Application\Breadboard.Application.csproj" />
 		<ProjectReference Include="..\..\Domain\Breadboard.Shared\Breadboard.Shared.csproj" />
 	</ItemGroup>
 

@@ -1,4 +1,3 @@
-using Breadboard.Domain.Users.Mappers;
 using Breadboard.Infra.PostgreSQL.Mappings;
 using Breadboard.Shared.Entities;
 using Microsoft.EntityFrameworkCore;

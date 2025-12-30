@@ -1,6 +1,7 @@
-using Breadboard.Application.Transformers;
+using Breadboard.Presentation.Transformers;
+using Microsoft.AspNetCore.OpenApi;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class DocumentationExtensions
 {

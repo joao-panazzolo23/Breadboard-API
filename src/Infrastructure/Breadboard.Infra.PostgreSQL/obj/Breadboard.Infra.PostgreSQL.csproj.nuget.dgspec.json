@@ -4,6 +4,85 @@
     "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj": {}
   },
   "projects": {
+    "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
+        "projectName": "Breadboard.Application",
+        "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
+        "packagesPath": "C:\\Users\\Barba\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -75,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -146,7 +225,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -178,6 +257,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj": {
+                "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj"
+              },
               "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
                 "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
               },
@@ -242,7 +324,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

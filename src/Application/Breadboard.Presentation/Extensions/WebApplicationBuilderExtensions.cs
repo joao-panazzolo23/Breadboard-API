@@ -2,7 +2,7 @@
 using System.Reflection;
 using Breadboard.Domain.Users.Entities;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class WebApplicationBuilderExtensions
 {

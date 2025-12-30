@@ -2,7 +2,7 @@ using Breadboard.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Breadboard.Application.TransformCase;
+namespace Breadboard.Presentation.TransformCase;
 
 public class RoutePrefixConvention : IApplicationModelConvention
 {

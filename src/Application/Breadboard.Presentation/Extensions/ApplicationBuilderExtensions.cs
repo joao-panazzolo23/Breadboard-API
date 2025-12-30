@@ -1,7 +1,6 @@
 ﻿using Breadboard.Infra.PostgreSQL.Extensions;
-using Breadboard.Infra.Scalar.Extensions;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class ApplicationBuilderExtensions
 {

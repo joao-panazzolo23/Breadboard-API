@@ -4,7 +4,7 @@ using Breadboard.Shared.Cops;
 using Breadboard.Shared.Repository;
 using Breadboard.Shared.Results;
 
-namespace Breadboard.Domain.Users.Handlers;
+namespace Breadboard.Application.Users.Handlers;
 
 public class DeleteUserHandler(
     IUserRepository _repository,

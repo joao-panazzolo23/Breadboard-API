@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 internal static class ValidationsExtensions
 {

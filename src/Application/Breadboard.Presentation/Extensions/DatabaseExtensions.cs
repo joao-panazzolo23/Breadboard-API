@@ -2,7 +2,7 @@
 using Breadboard.Infra.PostgreSQLDapper.Extensions;
 using Breadboard.Shared.Options;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class DatabaseExtensions
 {

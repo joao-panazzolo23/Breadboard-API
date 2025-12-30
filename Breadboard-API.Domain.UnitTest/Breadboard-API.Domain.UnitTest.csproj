@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\src\Application\Breadboard.Application\Breadboard.Application.csproj" />
       <ProjectReference Include="..\src\Domain\Breadboard.Domain\Breadboard.Domain.csproj" />
     </ItemGroup>
 

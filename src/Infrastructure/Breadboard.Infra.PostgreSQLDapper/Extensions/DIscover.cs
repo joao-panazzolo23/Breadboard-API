@@ -1,7 +1,6 @@
 using System.Reflection;
 using Breadboard.Infra.PostgreSQLDapper.Abstractions;
 using Breadboard.Shared.Entities;
-using Breadboard.Shared.Repository;
 
 namespace Breadboard.Infra.PostgreSQLDapper.Extensions;
 

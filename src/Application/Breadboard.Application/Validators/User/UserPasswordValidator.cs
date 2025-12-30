@@ -1,4 +1,3 @@
-using Breadboard.Domain.Authentication;
 using Breadboard.Domain.Users.Commands;
 using FluentValidation;
 
@@ -10,7 +9,7 @@ public class UserPasswordValidator : AbstractValidator<ChangePasswordCommand>
     //1. OldPassword is correct
     //2. Password doesn't match new password
     //3. Pas
-    public UserPasswordValidator(IPasswordHasher hasher)
+    public UserPasswordValidator()
     {
         RuleFor(z => z.NewPassword).Matches(x => x.ConfirmPassword);
 

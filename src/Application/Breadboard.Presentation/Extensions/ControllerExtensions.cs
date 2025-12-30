@@ -1,7 +1,7 @@
-using Breadboard.Application.TransformCase;
+using Breadboard.Presentation.TransformCase;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class ControllerExtensions
 {

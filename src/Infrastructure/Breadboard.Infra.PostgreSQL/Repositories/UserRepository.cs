@@ -1,18 +1,32 @@
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Domain.Users.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 namespace Breadboard.Infra.PostgreSQL.Repositories;
 
-internal class UserRepository(AppDbContext context) : GenericRepository<User>(context), IUserRepository
+internal class UserRepository(AppDbContext context) : IUserRepository
 {
-    /// <summary>
-    /// Isn't it supposed to be for query repository?
-    /// </summary>
-    /// <param name="username"></param>
-    /// <returns></returns>
+    public Task Create(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Update(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Delete(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<User?> GetById(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<User?> GetByUsername(string username)
     {
-        return _dbSet.FirstOrDefaultAsync(x => x.Username == username);
+        throw new NotImplementedException();
     }
 }

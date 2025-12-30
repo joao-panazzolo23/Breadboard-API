@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Breadboard.Application.Extensions
+namespace Breadboard.Presentation.Extensions
 {
  public static class JsonExtensions
     {

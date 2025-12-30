@@ -1,4 +1,4 @@
-namespace Breadboard.Application.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class CacheExtensions
 {

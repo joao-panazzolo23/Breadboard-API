@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
 using Scalar.AspNetCore;
 
-namespace Breadboard.Infra.Scalar.Extensions;
+namespace Breadboard.Presentation.Extensions;
 
 public static class ScalarExtensions
 {
