@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Breadboard.Domain.Services;
+using Breadboard.Application.Authentication;
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Shared.Options;
 using Microsoft.Extensions.Options;

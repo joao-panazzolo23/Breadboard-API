@@ -1,8 +1,8 @@
+using Breadboard.Application.Cops;
+using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Users.Queries;
 using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Results;
 
 namespace Breadboard.Domain.Users.QueryHandlers;
 

@@ -1,8 +1,7 @@
 using System.Reflection;
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Entities;
+using Breadboard.Application.CopsConcrete.Models;
 
-namespace Breadboard.Infra.COPS.Extensions;
+namespace Breadboard.Application.Cops.Implementations;
 
 public static class HandlerExtensions
 {

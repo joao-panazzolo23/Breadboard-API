@@ -1,7 +1,6 @@
 using System.Net;
-using Breadboard.Shared.Cops;
 
-namespace Breadboard.Shared.Results;
+namespace Breadboard.Application.ResultPattern;
 
 public static class Results
 {

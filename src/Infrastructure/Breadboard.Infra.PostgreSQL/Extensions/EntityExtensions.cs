@@ -1,3 +1,4 @@
+using Breadboard.Application;
 using Breadboard.Domain.Users.Repositories;
 using Breadboard.Infra.PostgreSQL.Repositories;
 using Breadboard.Shared.Options;

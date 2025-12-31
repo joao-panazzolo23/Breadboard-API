@@ -1,4 +1,5 @@
-using Breadboard.Infra.PostgreSQL.Mappings;
+using Breadboard.Domain;
+using Breadboard.Domain.Users.Entities;
 using Breadboard.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,7 @@ namespace Breadboard.Infra.PostgreSQL;
 
 public class AppDbContext : DbContext
 {
+    public DbSet<User> Users { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -13,7 +15,7 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.ApplyConfigurationsFromAssembly(typeof(Users).Assembly);
+        builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 
     public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken)

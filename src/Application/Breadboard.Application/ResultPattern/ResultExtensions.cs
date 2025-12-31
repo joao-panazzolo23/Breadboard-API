@@ -1,6 +1,6 @@
 using Breadboard.Shared.Extensions;
 
-namespace Breadboard.Shared.Results;
+namespace Breadboard.Application.ResultPattern;
 
 public static class ResultExtensions
 {

@@ -1,3 +1,4 @@
+using Breadboard.Application;
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Shared.Repository;
 

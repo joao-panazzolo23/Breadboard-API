@@ -1,8 +1,8 @@
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Entities;
-using Breadboard.Shared.Results;
+using Breadboard.Application.Cops;
+using Breadboard.Application.CopsConcrete.Models;
+using Breadboard.Application.ResultPattern;
 
-namespace Breadboard.Infra.COPS.Cops;
+namespace Breadboard.Application.CopsConcrete;
 
 public class Cops(Dictionary<Type, HandlerRegistration> handlers) : ICops
 {

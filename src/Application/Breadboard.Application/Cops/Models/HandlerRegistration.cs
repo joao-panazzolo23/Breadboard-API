@@ -1,4 +1,4 @@
-namespace Breadboard.Shared.Entities;
+namespace Breadboard.Application.CopsConcrete.Models;
 
 public record HandlerRegistration(
     Func<object, Task<object>> HandleAsync

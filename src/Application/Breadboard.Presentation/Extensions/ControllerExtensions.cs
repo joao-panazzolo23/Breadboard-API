@@ -5,15 +5,14 @@ namespace Breadboard.Presentation.Extensions;
 
 public static class ControllerExtensions
 {
-    public static WebApplicationBuilder AddControllersScheme(this WebApplicationBuilder builder)
+    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
     {
-        builder.Services
-            .AddControllers(options =>
+        services.AddControllers(options =>
             {
                 options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseUrlTransformer()));
             })
             .ConfigureJsonConvention();
 
-        return builder;
+        return services;
     }
 }

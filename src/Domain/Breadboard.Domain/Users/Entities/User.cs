@@ -1,15 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using Breadboard.Shared.Entities;
-
 namespace Breadboard.Domain.Users.Entities;
 
 public class User : Entity
 {
     public User(
-        string password, 
+        string password,
         string username,
         string email,
-        DateTime? birthDate, 
+        DateTime? birthDate,
         string? exhibitionName)
     {
         Password = password;
@@ -18,6 +15,7 @@ public class User : Entity
         BirthDate = birthDate;
         ExhibitionName = exhibitionName;
     }
+
     public string Password { get; private set; }
     public string Username { get; private set; }
     public string? ExhibitionName { get; private set; }

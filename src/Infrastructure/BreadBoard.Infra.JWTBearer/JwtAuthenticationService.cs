@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using Breadboard.Domain.Services;
 using Breadboard.Domain.Users.Entities;
 
 namespace BreadBoard.Infra.JWTBearer;

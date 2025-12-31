@@ -4,12 +4,9 @@ namespace Breadboard.Presentation.Extensions;
 
 public static class SecurityExtensions
 {
-    public static WebApplicationBuilder AddSecurity(this WebApplicationBuilder builder)
+    public static IServiceCollection AddSecurity(this IServiceCollection services, IConfiguration configuration)
     {
-        builder.AddJwtBearerDependencies() ;
-
-        builder.Services.AddAuthentication();
-
-        return builder;
+        services.AddJwtBearerDependencies(configuration).AddAuthentication();
+        return services;
     }
 }

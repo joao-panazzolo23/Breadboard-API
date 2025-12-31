@@ -1,4 +1,4 @@
-namespace Breadboard.Shared.Entities;
+namespace Breadboard.Domain;
 
 public abstract class Entity
 {

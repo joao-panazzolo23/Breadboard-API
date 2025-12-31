@@ -17,4 +17,9 @@
 		<ProjectReference Include="..\..\Domain\Breadboard.Shared\Breadboard.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Cops\" />
+	  <Folder Include="Extensions\" />
+	</ItemGroup>
+
 </Project>

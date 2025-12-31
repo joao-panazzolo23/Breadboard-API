@@ -1,6 +1,4 @@
-using Breadboard.Shared.Cops;
-
-namespace Breadboard.Infra.COPS.Extensions;
+namespace Breadboard.Application.Cops.Implementations;
 
 public static class InvokeCops
 {

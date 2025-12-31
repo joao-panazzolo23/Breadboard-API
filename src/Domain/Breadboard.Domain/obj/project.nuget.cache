@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tnjtZ7wwTKs=",
+  "dgSpecHash": "H1LOa4/Rn1E=",
   "success": true,
   "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Barba\\.nuget\\packages\\nodamoney\\2.5.0\\nodamoney.2.5.0.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\riok.mapperly\\5.0.0-next.0\\riok.mapperly.5.0.0-next.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

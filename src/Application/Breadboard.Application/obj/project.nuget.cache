@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "aTiXIf3yZdc=",
+  "dgSpecHash": "srdFY0ujx90=",
   "success": true,
   "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Barba\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\nodamoney\\2.5.0\\nodamoney.2.5.0.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\riok.mapperly\\5.0.0-next.0\\riok.mapperly.5.0.0-next.0.nupkg.sha512"
+    "C:\\Users\\Barba\\.nuget\\packages\\riok.mapperly\\4.3.1\\riok.mapperly.4.3.1.nupkg.sha512"
   ],
   "logs": []
 }

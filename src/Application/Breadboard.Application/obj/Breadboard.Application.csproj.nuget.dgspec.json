@@ -61,6 +61,10 @@
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[12.1.1, )"
+            },
+            "Riok.Mapperly": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [
@@ -132,12 +136,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Riok.Mapperly": {
-              "target": "Package",
-              "version": "[5.0.0-next.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -203,12 +201,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "NodaMoney": {
-              "target": "Package",
-              "version": "[2.5.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

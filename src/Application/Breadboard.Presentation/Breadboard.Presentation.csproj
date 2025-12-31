@@ -8,7 +8,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\Domain\Breadboard.Domain\Breadboard.Domain.csproj" />
-		<ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.COPS\Breadboard.Infra.COPS.csproj" />
 		<ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQL\Breadboard.Infra.PostgreSQL.csproj" />
 		<ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQLDapper\Breadboard.Infra.PostgreSQLDapper.csproj" />
 		<ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.JwtBearer\Breadboard.Infra.JwtBearer.csproj" />

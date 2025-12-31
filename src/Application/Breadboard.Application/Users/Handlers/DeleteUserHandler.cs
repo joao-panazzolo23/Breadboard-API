@@ -1,8 +1,8 @@
+using Breadboard.Application.Cops;
+using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Repositories;
-using Breadboard.Shared.Cops;
 using Breadboard.Shared.Repository;
-using Breadboard.Shared.Results;
 
 namespace Breadboard.Application.Users.Handlers;
 

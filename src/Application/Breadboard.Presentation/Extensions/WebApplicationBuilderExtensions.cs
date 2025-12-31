@@ -1,5 +1,4 @@
-﻿using Breadboard.Infra.COPS.Extensions;
-using System.Reflection;
+﻿using Breadboard.Application.Extensions;
 using Breadboard.Domain.Users.Entities;
 
 namespace Breadboard.Presentation.Extensions;

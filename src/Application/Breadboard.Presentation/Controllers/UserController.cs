@@ -1,9 +1,9 @@
+using Breadboard.Application.Cops;
+using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Queries;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Presentation.Attributes;
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Presentation.Controllers;

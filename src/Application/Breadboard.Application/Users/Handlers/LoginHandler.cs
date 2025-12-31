@@ -1,10 +1,9 @@
-using Breadboard.Domain.Authentication;
-using Breadboard.Domain.Services;
+using Breadboard.Application.Authentication;
+using Breadboard.Application.Cops;
+using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Repositories;
 using Breadboard.Domain.Users.Viewmodels;
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Results;
 
 namespace Breadboard.Domain.Users.Handlers;
 

@@ -1,8 +1,8 @@
-namespace Breadboard.Shared.Entities;
+namespace Breadboard.Application.CopsConcrete.Models;
 
 public record HandlerTypeInfo(
-    Type HandlerType, 
+    Type HandlerType,
     Type RequestType,
     //Type InterfaceType,
     Type ResponseType
-    );
+);

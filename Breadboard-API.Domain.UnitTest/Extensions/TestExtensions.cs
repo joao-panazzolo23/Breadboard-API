@@ -1,5 +1,5 @@
 using System.Net;
-using Breadboard.Shared.Results;
+using Breadboard.Application.ResultPattern;
 using FluentAssertions;
 
 namespace Breadboard_API.Domain.Test.Extensions;

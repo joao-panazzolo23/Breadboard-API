@@ -683,15 +683,6 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
-      "NodaMoney/2.5.0": {
-        "type": "package",
-        "compile": {
-          "lib/net9.0/NodaMoney.dll": {}
-        },
-        "runtime": {
-          "lib/net9.0/NodaMoney.dll": {}
-        }
-      },
       "Npgsql/9.0.3": {
         "type": "package",
         "dependencies": {
@@ -726,7 +717,7 @@
           }
         }
       },
-      "Riok.Mapperly/5.0.0-next.0": {
+      "Riok.Mapperly/4.3.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll": {
@@ -973,7 +964,8 @@
         "dependencies": {
           "Breadboard.Domain": "1.0.0",
           "FluentValidation": "12.1.1",
-          "FluentValidation.DependencyInjectionExtensions": "12.1.1"
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "Riok.Mapperly": "4.3.1"
         },
         "compile": {
           "bin/placeholder/Breadboard.Application.dll": {}
@@ -986,8 +978,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Breadboard.Shared": "1.0.0",
-          "Riok.Mapperly": "5.0.0-next.0"
+          "Breadboard.Shared": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Breadboard.Domain.dll": {}
@@ -999,9 +990,6 @@
       "Breadboard.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "NodaMoney": "2.5.0"
-        },
         "compile": {
           "bin/placeholder/Breadboard.Shared.dll": {}
         },
@@ -2481,23 +2469,6 @@
         "readme.md"
       ]
     },
-    "NodaMoney/2.5.0": {
-      "sha512": "RwbljZ0jwyTSRuDIDRrFy9MHZw23YcqN8r6a8cYTt2WvK6qZEh3Jg/bL1ZiHjjhp9MTdRrktyx2HplJt89MExw==",
-      "type": "package",
-      "path": "nodamoney/2.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net8.0/NodaMoney.dll",
-        "lib/net9.0/NodaMoney.dll",
-        "lib/netstandard2.0/NodaMoney.dll",
-        "lib/netstandard2.1/NodaMoney.dll",
-        "logo_nodamoney.png",
-        "nodamoney.2.5.0.nupkg.sha512",
-        "nodamoney.nuspec"
-      ]
-    },
     "Npgsql/9.0.3": {
       "sha512": "tPvY61CxOAWxNsKLEBg+oR646X4Bc8UmyQ/tJszL/7mEmIXQnnBhVJZrZEEUv0Bstu0mEsHZD5At3EO8zQRAYw==",
       "type": "package",
@@ -2530,27 +2501,33 @@
         "postgresql.png"
       ]
     },
-    "Riok.Mapperly/5.0.0-next.0": {
-      "sha512": "JlFu0r/n+fp5/z9BM9EvQXr0SzUdifRzl2zYYJ38S+pA5p6A4wRBLTUoTMDIEis1x/Ga5dIyaPs0P6ZkQa2+NQ==",
+    "Riok.Mapperly/4.3.1": {
+      "sha512": "oSE+OVLHyiojrws0QVbQaAT2YKsYbyHqJXPdV7EhGseR/dYgeWS2x1T5qY5I4E+RJkJqMSG+FyZOq4SljWgJWQ==",
       "type": "package",
-      "path": "riok.mapperly/5.0.0-next.0",
+      "path": "riok.mapperly/4.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
+        "analyzers/roslyn4.0/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.0/dotnet/cs/Riok.Mapperly.dll",
         "analyzers/roslyn4.11/dotnet/cs/Riok.Mapperly.Abstractions.dll",
         "analyzers/roslyn4.11/dotnet/cs/Riok.Mapperly.dll",
         "analyzers/roslyn4.14/dotnet/cs/Riok.Mapperly.Abstractions.dll",
         "analyzers/roslyn4.14/dotnet/cs/Riok.Mapperly.dll",
-        "analyzers/roslyn4.8/dotnet/cs/Riok.Mapperly.Abstractions.dll",
-        "analyzers/roslyn4.8/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn4.4/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.4/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn4.5/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.5/dotnet/cs/Riok.Mapperly.dll",
+        "analyzers/roslyn4.7/dotnet/cs/Riok.Mapperly.Abstractions.dll",
+        "analyzers/roslyn4.7/dotnet/cs/Riok.Mapperly.dll",
         "analyzers/roslyn5.0/dotnet/cs/Riok.Mapperly.Abstractions.dll",
         "analyzers/roslyn5.0/dotnet/cs/Riok.Mapperly.dll",
         "build/Riok.Mapperly.targets",
         "lib/netstandard2.0/Riok.Mapperly.Abstractions.dll",
         "lib/netstandard2.0/Riok.Mapperly.Abstractions.xml",
         "logo.png",
-        "riok.mapperly.5.0.0-next.0.nupkg.sha512",
+        "riok.mapperly.4.3.1.nupkg.sha512",
         "riok.mapperly.nuspec"
       ]
     },

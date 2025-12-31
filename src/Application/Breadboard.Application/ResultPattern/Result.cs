@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json.Serialization;
 
-namespace Breadboard.Shared.Results;
+namespace Breadboard.Application.ResultPattern;
 
 /// <summary>
 /// Results SHOULDN'T be created manually. They should be created at Result Factories for standard-keeping.

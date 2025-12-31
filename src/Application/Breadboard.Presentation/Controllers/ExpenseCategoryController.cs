@@ -1,5 +1,5 @@
+using Breadboard.Application.Cops;
 using Breadboard.Presentation.Attributes;
-using Breadboard.Shared.Cops;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

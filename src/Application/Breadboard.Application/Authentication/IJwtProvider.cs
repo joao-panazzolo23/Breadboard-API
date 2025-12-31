@@ -1,6 +1,6 @@
 using Breadboard.Domain.Users.Entities;
 
-namespace Breadboard.Domain.Services;
+namespace Breadboard.Application.Authentication;
 
 public interface IJwtProvider
 {

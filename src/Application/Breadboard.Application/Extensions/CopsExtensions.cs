@@ -1,9 +1,11 @@
 using System.Reflection;
-using Breadboard.Shared.Cops;
-using Breadboard.Shared.Entities;
+using Breadboard.Application.Cops;
+using Breadboard.Application.Cops.Implementations;
+using Breadboard.Application.CopsConcrete;
+using Breadboard.Application.CopsConcrete.Models;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Breadboard.Infra.COPS.Extensions;
+namespace Breadboard.Application.Extensions;
 
 public static class CopsExtensions
 {
@@ -28,7 +30,7 @@ public static class CopsExtensions
                 handlers[h.RequestType] = new HandlerRegistration(dispatcher);
             }
 
-            return new Cops.Cops(handlers);
+            return new CopsConcrete.Cops(handlers);
         });
 
         return services;

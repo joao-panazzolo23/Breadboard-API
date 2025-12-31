@@ -1,6 +1,6 @@
-using Breadboard.Shared.Results;
+using Breadboard.Application.ResultPattern;
 
-namespace Breadboard.Shared.Cops;
+namespace Breadboard.Application.Cops;
 /// <summary>
 /// Command Operations Processing Service (COPS)
 /// </summary>

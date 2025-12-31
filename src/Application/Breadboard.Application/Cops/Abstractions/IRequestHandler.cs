@@ -1,6 +1,6 @@
-using Breadboard.Shared.Results;
+using Breadboard.Application.ResultPattern;
 
-namespace Breadboard.Shared.Cops;
+namespace Breadboard.Application.Cops;
 
 public interface IRequestHandler<in TRequest, TResponse>
 {

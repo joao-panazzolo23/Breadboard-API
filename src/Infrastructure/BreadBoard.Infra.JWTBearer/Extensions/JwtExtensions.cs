@@ -1,10 +1,9 @@
 using System.Text;
-using Breadboard.Domain.Services;
+using Breadboard.Application.Authentication;
 using BreadBoard.Infra.JWTBearer.Services;
 using Breadboard.Shared.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -20,19 +19,17 @@ public static class JwtExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    public static WebApplicationBuilder AddJwtBearerDependencies(this WebApplicationBuilder builder)
+    public static IServiceCollection AddJwtBearerDependencies(this IServiceCollection services, IConfiguration configuration)
     {
-        var config = builder.Configuration.GetSection("JwtSettings");
+        var config = configuration.GetSection("JwtSettings");
 
-        builder.Services.AddOptions<JwtSettings>()
+        services.AddOptions<JwtSettings>()
             .Bind(config)
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
-        builder.Services.ConfigureJwtToken(config.Get<JwtSettings>()!)
+        return services.ConfigureJwtToken(config.Get<JwtSettings>()!)
             .AddJwtDependencies();
-
-        return builder;
     }
 
     /// <summary>
@@ -67,7 +64,7 @@ public static class JwtExtensions
     private static IServiceCollection AddJwtDependencies(this IServiceCollection services)
     {
         return services.AddScoped<IJwtAuthService, AuthService>()
-                       .AddScoped<Breadboard.Domain.Authentication.IPasswordHasher, PasswordHasher>();
+                       .AddScoped<IPasswordHasher, PasswordHasher>();
         
     }
 }

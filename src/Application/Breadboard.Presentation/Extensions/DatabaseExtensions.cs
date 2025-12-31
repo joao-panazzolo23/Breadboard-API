@@ -6,21 +6,23 @@ namespace Breadboard.Presentation.Extensions;
 
 public static class DatabaseExtensions
 {
-    public static WebApplicationBuilder AddDatabase(this WebApplicationBuilder builder)
+    public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        builder.ConfigureDbOptions();
+        return services.ConfigureDbOptions()
+                       .AddEntityFrameWork()
+                       .AddQueryRepositories();
 
-        builder.Services.AddEntityFrameWork().AddQueryRepositories();
 
-        return builder;
     }
 
-    private static void ConfigureDbOptions(this WebApplicationBuilder builder)
+    private static IServiceCollection ConfigureDbOptions(this IServiceCollection services)
     {
-        builder.Services.AddOptions<DatabaseOptions>()
-                        .BindConfiguration("ConnectionStrings")
-                        .ValidateDataAnnotations()
-                        .ValidateOnStart();
+        services.AddOptions<DatabaseOptions>()
+                .BindConfiguration("ConnectionStrings")
+                .ValidateDataAnnotations()
+                .ValidateOnStart();
+
+        return services;
     }
 
 }
