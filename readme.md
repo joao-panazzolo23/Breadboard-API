@@ -54,13 +54,19 @@ dotnet sln add <newCsprojPath> (adds to main solution)
 <li>
  Mapperly for Command/Query to Entity;
 </li>
+<li>
+ Fluent Validations for imput validations;
+</li>
 </ul>
 
 ## Designs & Microdesigns
 <ul>
 
 <li>
- Domain-Driven Design
+ Domain Driven Design
+</li>
+<li>
+ Clean Architecture
 </li>
 <li> 
  Mediator Pattern (GoF directives-friendly)

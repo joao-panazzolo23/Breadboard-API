@@ -1,5 +1,6 @@
 using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Mappers;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Entities;

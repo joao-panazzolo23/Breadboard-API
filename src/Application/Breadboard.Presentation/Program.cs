@@ -13,8 +13,8 @@ builder.Services.AddApplication()
 
 var app = builder.Build();
 
-app.UseSecurity()
-    .UseStaticFiles()
+app.UseStaticFiles()
+    .UseSecurity()
     .UseHttpsRedirection()
     .UseRouting()
     .UseDocumentation()

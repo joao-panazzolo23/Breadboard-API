@@ -1,7 +1,8 @@
-using Breadboard.Domain.Users.Commands;
+using Breadboard.Application.ResultPattern;
+using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
-namespace Breadboard.Presentation.Validators.User;
+namespace Breadboard.Application.Users.Validators;
 
 internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {
@@ -9,17 +10,16 @@ internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserComm
     {
         RuleFor(x => x.Email)
             .NotEmpty()
-            .EmailAddress().WithMessage("Invalid email address");
+            .EmailAddress()
+            .WithMessage(Errors.InvalidEmail);
 
         RuleFor(x => x.Username)
-            .NotEmpty().WithMessage("Username is required");
+            .NotEmpty().WithMessage(Errors.InvalidUsername);
 
         RuleFor(x => x.Password)
             .NotEmpty()
-            .WithMessage("Password is required")
             .MinimumLength(8)
-            .WithMessage("Password length must be at least 8 characters long")
             .Matches(x => x.ConfirmPassword)
-            .WithMessage("Passwords must match");
+            .WithMessage(Errors.InvalidPassword(nameof(RegisterUserCommand.Password)));
     }
 }

@@ -1,3 +1,5 @@
+using Breadboard.Application.Users.Commands;
+
 namespace Breadboard.Domain.Users.Commands;
 
 public record UpdateUserCommand(

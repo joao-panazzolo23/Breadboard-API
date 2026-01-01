@@ -1,5 +1,6 @@
 using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.Users.Commands;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Queries;
 using Breadboard.Domain.Users.Viewmodels;
@@ -60,10 +61,9 @@ public class UserController(ICops _cops) : ControllerBase
         throw new NotImplementedException();
     }
 
-    [HttpDelete("[action]")]
+    [HttpPatch("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [HttpPut("[action]")]
     public async Task<ActionResult<Nothing>> UpdatePassword(DeleteUserCommand command)
     {
         var result = await _cops.Dispatch<Nothing>(command);
