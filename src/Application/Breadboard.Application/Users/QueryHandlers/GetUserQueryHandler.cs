@@ -1,6 +1,7 @@
 using Breadboard.Application.Cops;
+using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Domain.Users.Queries;
+using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;
 

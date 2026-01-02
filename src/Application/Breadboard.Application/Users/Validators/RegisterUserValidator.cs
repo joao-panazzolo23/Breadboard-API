@@ -14,7 +14,8 @@ internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserComm
             .WithMessage(Errors.InvalidEmail);
 
         RuleFor(x => x.Username)
-            .NotEmpty().WithMessage(Errors.InvalidUsername);
+            .NotEmpty()
+            .WithMessage(Errors.InvalidUsername);
 
         RuleFor(x => x.Password)
             .NotEmpty()

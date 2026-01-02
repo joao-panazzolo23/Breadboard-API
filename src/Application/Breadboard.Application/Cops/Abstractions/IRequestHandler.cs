@@ -1,6 +1,6 @@
 using Breadboard.Application.ResultPattern;
 
-namespace Breadboard.Application.Cops;
+namespace Breadboard.Application.Cops.Abstractions;
 
 public interface IRequestHandler<in TRequest, TResponse>
 {

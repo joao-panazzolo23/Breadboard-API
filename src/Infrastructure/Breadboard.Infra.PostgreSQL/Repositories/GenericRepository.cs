@@ -9,7 +9,7 @@ namespace Breadboard.Infra.PostgreSQL.Repositories;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 /// <param name="context"></param>
-public class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
+public abstract class GenericRepository<T>(AppDbContext context) : IGenericRepository<T>
     where T : Entity
 {
     protected readonly DbSet<T> _dbSet = context.Set<T>();

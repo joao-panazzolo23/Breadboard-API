@@ -1,3 +1,7 @@
-namespace Breadboard.Domain.Users.Queries;
+using Breadboard.Application.ResultPattern;
+using Breadboard.Domain.Users.Viewmodels;
+using Mediator;
 
-public record GetUserQueryCommand(Guid Id);
+namespace Breadboard.Application.Users.Queries;
+
+public record GetUserQueryCommand(Guid Id) : ICommand<Result<UserViewmodel>>;

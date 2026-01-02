@@ -1,17 +1,17 @@
 using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
-using Breadboard.Domain.Users.Commands;
-using Breadboard.Domain.Users.Queries;
+using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.Viewmodels;
 using Breadboard.Presentation.Attributes;
+using Mediator;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Presentation.Controllers;
 
 [ApiController]
 [AutoRouting]
-public class UserController(ICops _cops) : ControllerBase
+public class UserController(IMediator _mediator) : ControllerBase
 {
     [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -19,7 +19,7 @@ public class UserController(ICops _cops) : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<ActionResult<Result<LoginViewmodel>>> Login([FromBody] LoginCommand command)
     {
-        var response = await _cops.Dispatch<LoginViewmodel>(command);
+        var response = await _mediator.Send(command);
         return StatusCode(response.StatusCode, response);
     }
 
@@ -27,9 +27,9 @@ public class UserController(ICops _cops) : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<ActionResult<Nothing>> Register(RegisterUserCommand command)
+    public async Task<ActionResult<Nothing>> Register([FromBody] RegisterUserCommand command)
     {
-        var response = await _cops.Dispatch<Nothing>(command);
+        var response = await _mediator.Send(command);
         return StatusCode(response.StatusCode, response);
     }
 
@@ -39,7 +39,7 @@ public class UserController(ICops _cops) : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<ActionResult<UserViewmodel?>> GetById([FromQuery] GetUserQueryCommand command)
     {
-        var response = await _cops.Dispatch<UserViewmodel?>(command);
+        var response = await _mediator.Send(command);
         return StatusCode(response.StatusCode, response);
     }
 
@@ -52,21 +52,12 @@ public class UserController(ICops _cops) : ControllerBase
         throw new NotImplementedException();
     }
 
-    [HttpPost("[action]")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [HttpPut("[action]")]
-    public async Task<IActionResult> UpdatePassword()
-    {
-        throw new NotImplementedException();
-    }
-
     [HttpPatch("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public async Task<ActionResult<Nothing>> UpdatePassword(DeleteUserCommand command)
+    public async Task<ActionResult<Nothing>> Delete(DeleteUserCommand command)
     {
-        var result = await _cops.Dispatch<Nothing>(command);
+        var result = await _mediator.Send(command);
         return StatusCode(result.StatusCode, result);
     }
 }

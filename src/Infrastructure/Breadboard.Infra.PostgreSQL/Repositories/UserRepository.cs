@@ -1,5 +1,5 @@
+using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Domain.Users.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Breadboard.Infra.PostgreSQL.Repositories;

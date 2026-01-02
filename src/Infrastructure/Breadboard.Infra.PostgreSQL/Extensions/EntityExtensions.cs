@@ -1,8 +1,7 @@
 using Breadboard.Application;
-using Breadboard.Domain.Users.Repositories;
+using Breadboard.Application.Users.Repositories;
 using Breadboard.Infra.PostgreSQL.Repositories;
 using Breadboard.Shared.Options;
-using Breadboard.Shared.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -27,8 +26,7 @@ public static class EntityExtensions
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>))
-            .AddScoped<IUnityOfWork, UnityOfWork>()
+        services.AddScoped<IUnityOfWork, UnityOfWork>()
             .AddScoped<IUserRepository, UserRepository>();
         return services;
     }

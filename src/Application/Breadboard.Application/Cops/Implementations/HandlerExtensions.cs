@@ -1,4 +1,5 @@
 using System.Reflection;
+using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.CopsConcrete.Models;
 
 namespace Breadboard.Application.Cops.Implementations;

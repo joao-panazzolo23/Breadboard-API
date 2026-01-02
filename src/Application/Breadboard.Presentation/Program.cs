@@ -4,12 +4,11 @@ using Breadboard.Presentation.Extensions;
 //I think program.cs is good enough by now. It could get even better, but I have no idea how.
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddApplication()
-                .AddSecurity(builder.Configuration)
-                .AddDatabase(builder.Configuration)
-                .AddDocuments(builder.Environment)
-                .AddControllersScheme()
-                .AddCaching();
+builder.Services.AddSecurity(builder.Configuration)
+    .AddDatabase(builder.Configuration)
+    .AddDocuments(builder.Environment)
+    .AddControllersScheme()
+    .AddCaching();
 
 var app = builder.Build();
 
@@ -20,5 +19,8 @@ app.UseStaticFiles()
     .UseDocumentation()
     .UseDatabase()
     .UseControllers();
+
+//jesus
+builder.Services.AddApplication(app.Services);
 
 app.Run();

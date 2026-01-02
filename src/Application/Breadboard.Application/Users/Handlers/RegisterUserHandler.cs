@@ -1,14 +1,15 @@
 using Breadboard.Application.Cops;
+using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Mappers;
+using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Shared.Repository;
 
 namespace Breadboard.Application.Users.Handlers;
 
-public class RegisterUserHandler(IGenericRepository<User> _repository, IUnityOfWork _unity)
+public class RegisterUserHandler(IUserRepository _repository, IUnityOfWork _unity)
     : IRequestHandler<RegisterUserCommand, Nothing>
 {
     public async Task<Result<Nothing>> Handle(RegisterUserCommand request)

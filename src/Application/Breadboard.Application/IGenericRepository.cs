@@ -5,6 +5,7 @@ namespace Breadboard.Application;
 
 /// <summary>
 /// Yes, this is wrong in DDD theoretical therms.
+/// BUT, I'm using it to reduce boilerplate, not for using it as a concrete class.
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public interface IGenericRepository<T> where T : Entity

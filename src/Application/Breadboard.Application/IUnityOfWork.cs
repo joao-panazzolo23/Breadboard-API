@@ -1,4 +1,4 @@
-namespace Breadboard.Shared.Repository;
+namespace Breadboard.Application;
 
 public interface IUnityOfWork
 {

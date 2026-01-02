@@ -1,6 +1,6 @@
 using Breadboard.Application.ResultPattern;
 
-namespace Breadboard.Application.Cops;
+namespace Breadboard.Application.Cops.Abstractions;
 /// <summary>
 /// Command Operations Processing Service (COPS)
 /// </summary>
@@ -11,6 +11,7 @@ public interface ICops
     /// </summary>
     /// <param name="request"></param>
     /// <typeparam name="TResponse"></typeparam>
+    /// <typeparam name="TRequest"></typeparam>
     /// <returns></returns>
-    Task<Result<TResponse>> Dispatch<TResponse>(object request);
+    Task<Result<TResponse>> Dispatch<TRequest, TResponse>(TRequest request);
 }

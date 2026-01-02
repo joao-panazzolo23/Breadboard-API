@@ -1,25 +1,21 @@
 using Breadboard.Application.Authentication;
-using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Domain.Users.Commands;
-using Breadboard.Domain.Users.Repositories;
+using Breadboard.Application.Users.Commands;
+using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.Viewmodels;
+using Mediator;
 
-namespace Breadboard.Domain.Users.Handlers;
+namespace Breadboard.Application.Users.Handlers;
 
 public class LoginHandler(
     IUserRepository _rep,
     IJwtAuthService _authentication,
     IPasswordHasher _passwordHasher
 )
-    : IRequestHandler<LoginCommand, LoginViewmodel>
+    : ICommandHandler<LoginCommand, Result<LoginViewmodel>>
 {
-    /// <summary>
-    /// Unnecessary to differentiate not found from wrong password, it is a security flaw. 
-    /// </summary>
-    /// <param name="request"></param>
-    /// <returns></returns>
-    public async Task<Result<LoginViewmodel>> Handle(LoginCommand request)
+
+    public async ValueTask<Result<LoginViewmodel>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         //todo: solve this after implementing authorization
         var user = await _rep.GetByUsername(request.Username);

@@ -3,6 +3,7 @@ using Breadboard_API.Domain.Test.Extensions;
 using Breadboard_API.Domain.Test.MockEntities;
 using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.Users.Commands;
 using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.QueryRepositories;
 using Breadboard.Domain.Users.Viewmodels;

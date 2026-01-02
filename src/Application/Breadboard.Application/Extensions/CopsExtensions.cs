@@ -1,7 +1,6 @@
 using System.Reflection;
-using Breadboard.Application.Cops;
+using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.Cops.Implementations;
-using Breadboard.Application.CopsConcrete;
 using Breadboard.Application.CopsConcrete.Models;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +9,9 @@ namespace Breadboard.Application.Extensions;
 public static class CopsExtensions
 {
     public static IServiceCollection AddCops(
-        this IServiceCollection services, Assembly assembly)
+        this IServiceCollection services,
+        Assembly assembly, 
+        IServiceProvider provider)
     {
         foreach (var ht in assembly.DiscoverHandlers())
             services.AddTransient(ht.HandlerType);
@@ -30,7 +31,7 @@ public static class CopsExtensions
                 handlers[h.RequestType] = new HandlerRegistration(dispatcher);
             }
 
-            return new CopsConcrete.Cops(handlers);
+            return new Cops.Implementations.Cops(handlers);
         });
 
         return services;

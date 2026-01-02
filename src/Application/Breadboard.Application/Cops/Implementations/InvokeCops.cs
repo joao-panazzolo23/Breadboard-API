@@ -1,3 +1,5 @@
+using Breadboard.Application.Cops.Abstractions;
+
 namespace Breadboard.Application.Cops.Implementations;
 
 public static class InvokeCops
