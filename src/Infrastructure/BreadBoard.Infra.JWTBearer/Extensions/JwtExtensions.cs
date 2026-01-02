@@ -19,7 +19,9 @@ public static class JwtExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    public static IServiceCollection AddJwtBearerDependencies(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddJwtBearerDependencies(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
         var config = configuration.GetSection("JwtSettings");
 
@@ -64,7 +66,6 @@ public static class JwtExtensions
     private static IServiceCollection AddJwtDependencies(this IServiceCollection services)
     {
         return services.AddScoped<IJwtAuthService, AuthService>()
-                       .AddScoped<IPasswordHasher, PasswordHasher>();
-        
+            .AddScoped<IPasswordHasher, PasswordHasher>();
     }
 }

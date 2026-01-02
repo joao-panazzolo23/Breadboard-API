@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Breadboard.Application.Users.Validators;
 
-internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
+public sealed class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {
     public RegisterUserValidator()
     {
@@ -20,7 +20,7 @@ internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserComm
         RuleFor(x => x.Password)
             .NotEmpty()
             .MinimumLength(8)
-            .Matches(x => x.ConfirmPassword)
+            .Equal(x => x.ConfirmPassword) 
             .WithMessage(Errors.InvalidPassword(nameof(RegisterUserCommand.Password)));
     }
 }

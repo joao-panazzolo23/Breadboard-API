@@ -57,6 +57,9 @@ dotnet sln add <newCsprojPath> (adds to main solution)
 <li>
  Fluent Validations for imput validations;
 </li>
+<li>
+ Martin Othamar's Source Generator Mediator (Mediator Pattern);
+</li>
 </ul>
 
 ## Designs & Microdesigns

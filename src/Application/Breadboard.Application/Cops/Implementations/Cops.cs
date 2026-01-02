@@ -1,8 +1,6 @@
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.CopsConcrete.Models;
 using Breadboard.Application.ResultPattern;
-using FluentValidation;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Breadboard.Application.Cops.Implementations;
 

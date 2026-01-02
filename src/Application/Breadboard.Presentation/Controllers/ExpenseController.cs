@@ -1,4 +1,3 @@
-using Breadboard.Application.Cops;
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Presentation.Attributes;
 using Microsoft.AspNetCore.Mvc;
