@@ -4,7 +4,10 @@ using Breadboard_API.Domain.Test.MockEntities;
 using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
+using Breadboard.Application.Users.Handlers;
+using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.DTOs;
+using Breadboard.Domain.Users.Entities;
 using Breadboard.Domain.Users.QueryRepositories;
 using FluentAssertions;
 using Moq;
@@ -12,49 +15,65 @@ using Xunit.Abstractions;
 
 namespace Breadboard_API.Domain.Test.HandlerTests;
 
-public class LoginTests(ITestOutputHelper testOutputHelper)
+public class LoginTests(ITestOutputHelper _console)
 {
-    private readonly Mock<IUserQueryRepository> _mockRepo = new();
+    private readonly Mock<IUserRepository> _mockRepo = new();
     private readonly Mock<IJwtAuthService> _mockAuth = new();
-    private readonly LoginCommand _command = new LoginCommand("john", "senha123", Token: "");
-    private readonly UserDto _user = MockUsers.Create("john").Generate();
+    private readonly Mock<IPasswordHasher> _mockPass = new();
+    private readonly LoginCommand _command = new LoginCommand("john", "senha123");
 
-    private void _setup(UserDto? user) => _mockRepo.Setup(r =>
-            r.GetByUserName("john"))
+    private void _setup(User? user) => _mockRepo.Setup(r =>
+            r.GetByUsername("john"))
         .ReturnsAsync(user);
 
 
-    [Fact]
-    public async Task LoginTest_ReturnsUser()
+    private User? GetUser()
     {
-        _setup(_user);
-
-        var result = await Execute();
-
-        testOutputHelper.WriteLine(result.StatusCode.ToString());
-        result.TestSuccess();
-
-        // _mockAuth.Verify(a => a.Validate(It.IsAny<string>(),
-        //         It.IsAny<string>()),
-        //     Times.Once);
+        return MockUsers.CreateUser("john", "senha123").Generate();
     }
 
     [Fact]
-    public async Task LoginTest_UserNotFound()
+    public async Task Login_ReturnsUser()
+    {
+        var hash = "HASH_OK";
+        var pass = "senha123";
+
+        _mockPass
+            .Setup(p => p.Hash(pass))
+            .Returns(hash);
+
+        _mockPass
+            .Setup(p => p.Verify(pass, hash))
+            .Returns(true);
+
+        var user = MockUsers.CreateUser("john", hash).Generate();
+
+        _setup(user);
+
+        var result = await Execute();
+
+        result.TestSuccess();
+        result.Data.Should().NotBeNull();
+    }
+
+
+    [Fact]
+    public async Task Login_UserNotFound()
     {
         _setup(null);
 
-        //object returns the concrete class 
         var result = await Execute();
 
         result.IsSucess().Should().BeFalse();
-        result.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
+        result.StatusCode.Should().Be((int)HttpStatusCode.Unauthorized);
     }
 
     [Fact]
     public async Task LoginTest_Unauthorized()
     {
-        _setup(_user);
+        var user = GetUser();
+
+        _setup(user);
         var result = await Execute();
 
         result.ShouldBe(HttpStatusCode.Unauthorized);
@@ -62,9 +81,7 @@ public class LoginTests(ITestOutputHelper testOutputHelper)
 
     private async Task<Result<LoginDto>> Execute()
     {
-        // var handler = new LoginHandler(_mockRepo.Object, _mockAuth.Object);
-        // return await handler.Handle(_command);
-
-        throw new NotImplementedException();
+        var handler = new LoginHandler(_mockRepo.Object, _mockAuth.Object, _mockPass.Object);
+        return await handler.Handle(_command, CancellationToken.None);
     }
 }

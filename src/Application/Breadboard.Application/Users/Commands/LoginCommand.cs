@@ -6,5 +6,5 @@ namespace Breadboard.Application.Users.Commands;
 
 public record LoginCommand(
     string Username,
-    string Password, 
-    string Token ) : ICommand<Result<LoginDto>>;
+    string Password
+) : ICommand<Result<LoginDto?>>;

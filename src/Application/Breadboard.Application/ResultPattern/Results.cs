@@ -1,4 +1,5 @@
 using System.Net;
+using Breadboard.Domain.Users.DTOs;
 
 namespace Breadboard.Application.ResultPattern;
 

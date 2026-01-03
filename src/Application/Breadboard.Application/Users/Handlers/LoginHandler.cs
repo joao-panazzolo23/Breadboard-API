@@ -12,19 +12,19 @@ public class LoginHandler(
     IJwtAuthService _authentication,
     IPasswordHasher _passwordHasher
 )
-    : ICommandHandler<LoginCommand, Result<LoginDto>>
+    : ICommandHandler<LoginCommand, Result<LoginDto?>>
 {
+    public async ValueTask<Result<LoginDto?>> Handle(LoginCommand request, CancellationToken cancellationToken)
+    {
+        //todo: solve this after implementing authorization
+        var user = await _rep.GetByUsername(request.Username);
 
-    public async ValueTask<Result<LoginDto>> Handle(LoginCommand request, CancellationToken cancellationToken)
-         {
-             //todo: solve this after implementing authorization
-             var user = await _rep.GetByUsername(request.Username);
-     
-             if (user == null || !_passwordHasher.Verify(request.Password, user.Password))
-                 return Results.Unauthorized<LoginDto>();
-     
-             var token = _authentication.GenerateToken(user);
-     
-             return Results.Ok(new LoginDto(token))!;
-         }
-} 
+        if (user == null || !_passwordHasher.Verify(request.Password, user.Password))
+            return Results.Unauthorized<LoginDto>();
+
+
+        var token = _authentication.GenerateToken(user);
+
+        return Results.Ok(new LoginDto(token))!;
+    }
+}

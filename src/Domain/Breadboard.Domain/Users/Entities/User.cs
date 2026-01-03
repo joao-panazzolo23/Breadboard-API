@@ -16,6 +16,14 @@ public class User : Entity
         ExhibitionName = exhibitionName;
     }
 
+    /// <summary>
+    /// Unit testing requires parameterless constructors
+    /// </summary>
+    public User()
+    {
+    }
+
+
     public User WithPassword(string hash)
     {
         Password = hash;

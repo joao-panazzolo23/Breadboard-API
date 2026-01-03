@@ -11,10 +11,9 @@ public class LoginValidator : AbstractValidator<LoginCommand>
     {
         var lst = ValidationHelpers.Fields<LoginCommand>(
             x => x.Password,
-            x => x.Username,
-            x => x.Token
-            );
-        
+            x => x.Username
+        );
+
         foreach (var exp in lst)
         {
             RuleFor(exp).NotEmpty().WithMessage(Errors.InvalidField(nameof(exp.Name)));

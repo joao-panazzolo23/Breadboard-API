@@ -1,5 +1,6 @@
 using Bogus;
 using Breadboard.Domain.Users.DTOs;
+using Breadboard.Domain.Users.Entities;
 
 namespace Breadboard_API.Domain.Test.MockEntities;
 
@@ -16,4 +17,13 @@ public static class MockUsers
             .RuleFor(u => u.Username, f => username)
             .RuleFor(u => u.Email, f => f.Internet.Email())
             .RuleFor(u => u.Password, f => f.Internet.Password());
+    
+    public static Faker<User> CreateUser(string username, string password) =>
+        new Faker<User>()
+            .RuleFor(u => u.Id, f => f.Random.Guid())
+            .RuleFor(u => u.Username, f => username)
+            .RuleFor(u => u.Email, f => f.Internet.Email())
+            .RuleFor(u => u.Password, f => password);
+    
+    
 }
