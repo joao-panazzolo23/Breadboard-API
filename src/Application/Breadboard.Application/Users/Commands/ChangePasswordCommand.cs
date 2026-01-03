@@ -1,6 +1,4 @@
-using System.Reflection.Metadata.Ecma335;
-
-namespace Breadboard.Domain.Users.Commands;
+namespace Breadboard.Application.Users.Commands;
 
 public record ChangePasswordCommand(
     Guid Id,

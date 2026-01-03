@@ -1,6 +1,5 @@
 using Breadboard.Application.Users.Commands;
 using Breadboard.Domain;
-using Breadboard.Domain.Users.Commands;
 using Breadboard.Domain.Users.Entities;
 using Riok.Mapperly.Abstractions;
 
@@ -13,5 +12,6 @@ public static partial class UserMapper
     [MapperIgnoreTarget(nameof(Entity.CreatedAt))]
     [MapperIgnoreTarget(nameof(Entity.UpdatedAt))]
     [MapperIgnoreSource(nameof(RegisterUserCommand.ConfirmPassword))]
-    public static partial User Map(this RegisterUserCommand command);
+    public static partial User Map( this RegisterUserCommand command);
+
 }

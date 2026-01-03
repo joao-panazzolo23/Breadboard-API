@@ -1,4 +1,4 @@
-namespace Breadboard.Application.CopsConcrete.Models;
+namespace Breadboard.Application.Cops.Models;
 
 public record HandlerTypeInfo(
     Type HandlerType,

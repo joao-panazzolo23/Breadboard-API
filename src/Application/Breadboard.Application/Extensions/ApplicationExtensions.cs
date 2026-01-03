@@ -26,6 +26,4 @@ public static class ApplicationExtensions
     {
         return services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }
-    
-
 }

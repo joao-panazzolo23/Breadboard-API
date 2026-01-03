@@ -1,7 +1,7 @@
 using System.Reflection;
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.Cops.Implementations;
-using Breadboard.Application.CopsConcrete.Models;
+using Breadboard.Application.Cops.Models;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Breadboard.Application.Extensions;

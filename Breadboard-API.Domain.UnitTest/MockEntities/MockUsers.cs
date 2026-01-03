@@ -1,5 +1,5 @@
 using Bogus;
-using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Domain.Users.DTOs;
 
 namespace Breadboard_API.Domain.Test.MockEntities;
 
@@ -10,8 +10,8 @@ public static class MockUsers
     /// </summary>
     /// <param name="username"></param>
     /// <returns></returns>
-    public static Faker<UserViewmodel> Create(string username) =>
-        new Faker<UserViewmodel>()
+    public static Faker<UserDto> Create(string username) =>
+        new Faker<UserDto>()
             .RuleFor(u => u.Id, f => f.Random.Guid())
             .RuleFor(u => u.Username, f => username)
             .RuleFor(u => u.Email, f => f.Internet.Email())

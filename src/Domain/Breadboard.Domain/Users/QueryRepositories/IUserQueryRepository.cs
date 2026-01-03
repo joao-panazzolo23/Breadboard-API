@@ -1,4 +1,4 @@
-using Breadboard.Domain.Users.Viewmodels;
+using Breadboard.Domain.Users.DTOs;
 
 namespace Breadboard.Domain.Users.QueryRepositories;
 
@@ -7,11 +7,11 @@ namespace Breadboard.Domain.Users.QueryRepositories;
 /// </summary>
 public interface IUserQueryRepository 
 {
-    Task<UserViewmodel?> GetById(Guid id);
-    Task<UserViewmodel?> GetByUserName(string username);
+    Task<UserDto?> GetById(Guid id);
+    Task<UserDto?> GetByUserName(string username);
     /// <summary>
     /// todo: filters here
     /// </summary>
     /// <returns></returns>
-    Task<IEnumerable<UserViewmodel>> List();
+    Task<IEnumerable<UserDto>> List();
 }

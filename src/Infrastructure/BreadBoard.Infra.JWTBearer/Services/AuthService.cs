@@ -44,6 +44,7 @@ public class AuthService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
+    //todo: create a refresh token 
     public string RefreshToken(User user)
     {
         throw new NotImplementedException();

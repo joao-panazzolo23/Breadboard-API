@@ -1,4 +1,4 @@
-namespace Breadboard.Application.Cops;
+namespace Breadboard.Application.Cops.Models;
 
 /// <summary>
 /// This is a joke with VB.NET Null value, called Nothing.

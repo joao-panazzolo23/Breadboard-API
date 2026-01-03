@@ -21,6 +21,6 @@ public sealed class RegisterUserValidator : AbstractValidator<RegisterUserComman
             .NotEmpty()
             .MinimumLength(8)
             .Equal(x => x.ConfirmPassword) 
-            .WithMessage(Errors.InvalidPassword(nameof(RegisterUserCommand.Password)));
+            .WithMessage(Errors.InvalidField(nameof(RegisterUserCommand.Password)));
     }
 }

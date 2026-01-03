@@ -16,6 +16,12 @@ public class User : Entity
         ExhibitionName = exhibitionName;
     }
 
+    public User WithPassword(string hash)
+    {
+        Password = hash;
+        return this;
+    }
+
     public string Password { get; private set; }
     public string Username { get; private set; }
     public string? ExhibitionName { get; private set; }

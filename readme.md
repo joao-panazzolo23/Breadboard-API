@@ -78,7 +78,7 @@ dotnet sln add <newCsprojPath> (adds to main solution)
  Result Pattern
 </li>
 <li>
- Command & Query Resposability Segregation (CQRS
+ Command & Query Resposability Segregation (CQRS)
 </li>
 <li>
 OpenAPI Documentation

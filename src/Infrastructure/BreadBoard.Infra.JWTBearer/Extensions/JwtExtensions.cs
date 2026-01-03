@@ -3,7 +3,6 @@ using Breadboard.Application.Authentication;
 using BreadBoard.Infra.JWTBearer.Services;
 using Breadboard.Shared.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;

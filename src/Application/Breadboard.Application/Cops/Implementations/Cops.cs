@@ -1,5 +1,5 @@
 using Breadboard.Application.Cops.Abstractions;
-using Breadboard.Application.CopsConcrete.Models;
+using Breadboard.Application.Cops.Models;
 using Breadboard.Application.ResultPattern;
 
 namespace Breadboard.Application.Cops.Implementations;

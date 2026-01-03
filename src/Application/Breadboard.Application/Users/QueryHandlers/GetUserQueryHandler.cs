@@ -1,18 +1,17 @@
-using Breadboard.Application.Cops;
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Queries;
+using Breadboard.Domain.Users.DTOs;
 using Breadboard.Domain.Users.QueryRepositories;
-using Breadboard.Domain.Users.Viewmodels;
 
-namespace Breadboard.Domain.Users.QueryHandlers;
+namespace Breadboard.Application.Users.QueryHandlers;
 
-public class GetUserQueryHandler(IUserQueryRepository _repo) : IRequestHandler<GetUserQueryCommand, UserViewmodel?>
+public class GetUserQueryHandler(IUserQueryRepository _repo) : IRequestHandler<GetUserQueryCommand, UserDto?>
 {
-    public async Task<Result<UserViewmodel?>> Handle(GetUserQueryCommand request)
+    public async Task<Result<UserDto?>> Handle(GetUserQueryCommand request)
     {
         var user = await _repo.GetById(request.Id);
 
-        return user is null ? Results.NotFound<UserViewmodel?>() : Results.Ok(user);
+        return user is null ? Results.NotFound<UserDto?>() : Results.Ok(user);
     }
 }

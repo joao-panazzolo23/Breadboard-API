@@ -1,3 +1,4 @@
+using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Mappers;
@@ -9,15 +10,16 @@ namespace Breadboard.Application.Users.Handlers;
 
 public class RegisterUserHandler(
     IUserRepository _repository, 
-    IUnityOfWork _unity
+    IUnityOfWork _unity, 
+    IPasswordHasher _hasher
     )
     : ICommandHandler<RegisterUserCommand, Result<Unit>>
 {
 
     public async ValueTask<Result<Unit>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        var user = request.Map();
-
+        var user = request.Map().WithPassword(_hasher.Hash(request.Password));
+        
         await _repository.Create(user);
 
         await _unity.Commit();

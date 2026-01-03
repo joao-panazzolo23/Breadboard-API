@@ -4,9 +4,8 @@ using Breadboard_API.Domain.Test.MockEntities;
 using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
-using Breadboard.Domain.Users.Commands;
+using Breadboard.Domain.Users.DTOs;
 using Breadboard.Domain.Users.QueryRepositories;
-using Breadboard.Domain.Users.Viewmodels;
 using FluentAssertions;
 using Moq;
 using Xunit.Abstractions;
@@ -18,9 +17,9 @@ public class LoginTests(ITestOutputHelper testOutputHelper)
     private readonly Mock<IUserQueryRepository> _mockRepo = new();
     private readonly Mock<IJwtAuthService> _mockAuth = new();
     private readonly LoginCommand _command = new LoginCommand("john", "senha123", Token: "");
-    private readonly UserViewmodel _user = MockUsers.Create("john").Generate();
+    private readonly UserDto _user = MockUsers.Create("john").Generate();
 
-    private void _setup(UserViewmodel? user) => _mockRepo.Setup(r =>
+    private void _setup(UserDto? user) => _mockRepo.Setup(r =>
             r.GetByUserName("john"))
         .ReturnsAsync(user);
 
@@ -61,7 +60,7 @@ public class LoginTests(ITestOutputHelper testOutputHelper)
         result.ShouldBe(HttpStatusCode.Unauthorized);
     }
 
-    private async Task<Result<LoginViewmodel>> Execute()
+    private async Task<Result<LoginDto>> Execute()
     {
         // var handler = new LoginHandler(_mockRepo.Object, _mockAuth.Object);
         // return await handler.Handle(_command);
