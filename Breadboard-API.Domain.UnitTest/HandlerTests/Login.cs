@@ -8,14 +8,12 @@ using Breadboard.Application.Users.Handlers;
 using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.DTOs;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Domain.Users.QueryRepositories;
 using FluentAssertions;
 using Moq;
-using Xunit.Abstractions;
 
 namespace Breadboard_API.Domain.Test.HandlerTests;
-
-public class LoginTests(ITestOutputHelper _console)
+// ITestOutputHelper _console
+public class Login
 {
     private readonly Mock<IUserRepository> _mockRepo = new();
     private readonly Mock<IJwtAuthService> _mockAuth = new();
