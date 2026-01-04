@@ -11,6 +11,13 @@ public sealed class ValidationBehavior<TMessage, TResponse>(
     where TMessage : IMessage
     where TResponse : IResult
 {
+    /// <summary>
+    /// Todo: find 
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="next"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async ValueTask<TResponse> Handle(
         TMessage message,
         MessageHandlerDelegate<TMessage, TResponse> next,
@@ -30,11 +37,8 @@ public sealed class ValidationBehavior<TMessage, TResponse>(
             .ToList();
 
         if (errors.Count == 0) return await next(message, cancellationToken);
-        
-        //return (TResponse)(object)Result<object>.BadRequest(errors:  errors);
 
+        //throw new ValidationException(errors);
         return ErrorFactory.InvalidRequest<TResponse>(errors);
     }
-
-    
 }
