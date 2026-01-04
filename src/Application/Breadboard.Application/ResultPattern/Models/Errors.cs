@@ -1,4 +1,4 @@
-namespace Breadboard.Application.ResultPattern;
+namespace Breadboard.Application.ResultPattern.Models;
 
 public static class Errors
 {

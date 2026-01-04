@@ -1,11 +1,15 @@
+using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ValidationPipeline.Factory;
 using FluentValidation;
 using Mediator;
 
-namespace Breadboard.Application.Behaviors;
+namespace Breadboard.Application.ValidationPipeline;
 
 public sealed class ValidationBehavior<TMessage, TResponse>(
     IEnumerable<IValidator<TMessage>> validators
-) : IPipelineBehavior<TMessage, TResponse> where TMessage : IMessage
+) : IPipelineBehavior<TMessage, TResponse>
+    where TMessage : IMessage
+    where TResponse : IResult
 {
     public async ValueTask<TResponse> Handle(
         TMessage message,
@@ -20,17 +24,17 @@ public sealed class ValidationBehavior<TMessage, TResponse>(
         var validationResults = await Task.WhenAll(
             validators.Select(v => v.ValidateAsync(context, cancellationToken)));
 
-        var failures = validationResults
+        var errors = validationResults
             .SelectMany(r => r.Errors)
             .Where(f => f != null)
             .ToList();
 
-        if (failures.Count != 0)
-        {
-            //return custom results or throw exceptions?
-            throw new ValidationException(failures);
-        }
+        if (errors.Count == 0) return await next(message, cancellationToken);
+        
+        //return (TResponse)(object)Result<object>.BadRequest(errors:  errors);
 
-        return await next(message, cancellationToken);
+        return ErrorFactory.InvalidRequest<TResponse>(errors);
     }
+
+    
 }

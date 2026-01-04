@@ -1,5 +1,6 @@
 using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ResultPattern.Factory;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Repositories;
 using Mediator;
@@ -16,12 +17,12 @@ public class DeleteUserHandler(
     {
         var user = await _repository.GetById(request.Id);
 
-        if (user == null) return Results.NotFound<Unit>();
+        if (user == null) return ResultFactory<Unit>.NotFound();
 
         _repository.Delete(user);
 
         await _unity.Commit();
 
-        return Results.Ok<Unit>();
+        return ResultFactory<Unit>.Ok();
     }
 }

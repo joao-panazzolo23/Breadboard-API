@@ -1,5 +1,6 @@
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ResultPattern.Factory;
 using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.DTOs;
 using Breadboard.Domain.Users.QueryRepositories;
@@ -12,6 +13,6 @@ public class GetUserQueryHandler(IUserQueryRepository _repo) : IRequestHandler<G
     {
         var user = await _repo.GetById(request.Id);
 
-        return user is null ? Results.NotFound<UserDto?>() : Results.Ok(user);
+        return user is null ? ResultFactory<UserDto?>.NotFound() : ResultFactory<UserDto?>.Ok(user);
     }
 }

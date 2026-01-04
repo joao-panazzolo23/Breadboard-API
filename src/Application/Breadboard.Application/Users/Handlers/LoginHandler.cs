@@ -1,5 +1,6 @@
 using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ResultPattern.Factory;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.DTOs;
@@ -20,11 +21,11 @@ public class LoginHandler(
         var user = await _rep.GetByUsername(request.Username);
 
         if (user == null || !_passwordHasher.Verify(request.Password, user.Password))
-            return Results.Unauthorized<LoginDto>();
+            return ResultFactory<LoginDto>.Unauthorized();
 
 
         var token = _authentication.GenerateToken(user);
 
-        return Results.Ok(new LoginDto(token))!;
+        return ResultFactory<LoginDto>.Ok(new LoginDto(token))!;
     }
 }

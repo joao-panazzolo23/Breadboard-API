@@ -8,7 +8,7 @@ public class User(
     string? exhibitionName)
     : Entity
 {
-    public User WithPassword(string hash)
+    public User HasPassword(string hash)
     {
         Password = hash;
         return this;

@@ -55,7 +55,7 @@ dotnet sln add <newCsprojPath> (adds to main solution)
  Mapperly for Command/Query to Entity;
 </li>
 <li>
- Fluent Validations for imput validations;
+ Fluent Validations & Fluent Results for input validations;
 </li>
 <li>
  Martin Othamar's Source Generator Mediator (Mediator Pattern);

@@ -1,4 +1,5 @@
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ResultPattern.Models;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
@@ -20,6 +21,7 @@ public sealed class RegisterUserValidator : AbstractValidator<RegisterUserComman
         RuleFor(x => x.Password)
             .NotEmpty()
             .MinimumLength(8)
+            .WithErrorCode("400")
             .Equal(x => x.ConfirmPassword) 
             .WithMessage(Errors.InvalidField(nameof(RegisterUserCommand.Password)));
     }

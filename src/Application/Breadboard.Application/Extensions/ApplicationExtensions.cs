@@ -1,4 +1,4 @@
-using Breadboard.Application.Behaviors;
+using Breadboard.Application.ValidationPipeline;
 using FluentValidation;
 using Mediator;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,15 +10,9 @@ public static class ApplicationExtensions
     public static IServiceCollection AddApplication(
         this IServiceCollection services)
     {
-        var assembly = typeof(ApplicationExtensions).Assembly;
-        
-        return services.AddValidatorsFromAssembly(assembly)
+        return services.AddValidatorsFromAssembly(typeof(ApplicationExtensions).Assembly)
             .AddPipelineBehaviors()
-            .AddMediator(options =>
-            {
-                options.ServiceLifetime = ServiceLifetime.Scoped;
-            });
-       
+            .AddMediator(options => { options.ServiceLifetime = ServiceLifetime.Scoped; });
     }
 
     private static IServiceCollection AddPipelineBehaviors(

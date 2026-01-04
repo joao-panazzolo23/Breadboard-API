@@ -1,4 +1,5 @@
 using Breadboard.Application.ResultPattern;
+using Breadboard.Application.ResultPattern.Models;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
