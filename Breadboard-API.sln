@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{22BAF98C-8415-17C4-B26A-D537657BC863}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{22BAF98C-8415-17C4-B26A-D537657BC863}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation", "src\Application\Breadboard.Presentation\Breadboard.Presentation.csproj", "{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}"
 	ProjectSection(ProjectDependencies) = postProject

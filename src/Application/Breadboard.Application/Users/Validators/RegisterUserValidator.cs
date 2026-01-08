@@ -1,5 +1,3 @@
-using Breadboard.Application.ResultPattern;
-using Breadboard.Application.ResultPattern.Models;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
@@ -11,18 +9,15 @@ public sealed class RegisterUserValidator : AbstractValidator<RegisterUserComman
     {
         RuleFor(x => x.Email)
             .NotEmpty()
-            .EmailAddress()
-            .WithMessage(Errors.InvalidEmail);
+            .EmailAddress();
 
         RuleFor(x => x.Username)
-            .NotEmpty()
-            .WithMessage(Errors.InvalidUsername);
+            .NotEmpty();
 
         RuleFor(x => x.Password)
             .NotEmpty()
             .MinimumLength(8)
             .WithErrorCode("400")
-            .Equal(x => x.ConfirmPassword) 
-            .WithMessage(Errors.InvalidField(nameof(RegisterUserCommand.Password)));
+            .Equal(x => x.ConfirmPassword);
     }
 }

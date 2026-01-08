@@ -9,7 +9,8 @@ builder.Services.AddSecurity(builder.Configuration)
     .AddDocuments(builder.Environment)
     .AddControllersScheme()
     .AddCaching()
-    .AddApplication();
+    .AddApplication()
+    .AddExceptionHandling();
 
 var app = builder.Build();
 
@@ -19,6 +20,7 @@ app.UseStaticFiles()
     .UseRouting()
     .UseDocumentation()
     .UseDatabase()
-    .UseControllers();
+    .UseControllers()
+    .UseExceptionHandler();
 
 app.Run();

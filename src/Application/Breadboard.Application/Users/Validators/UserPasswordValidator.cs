@@ -1,5 +1,3 @@
-using Breadboard.Application.ResultPattern;
-using Breadboard.Application.ResultPattern.Models;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
@@ -14,15 +12,12 @@ public class UserPasswordValidator : AbstractValidator<ChangePasswordCommand>
     public UserPasswordValidator()
     {
         RuleFor(z => z.NewPassword)
-            .Matches(x => x.ConfirmPassword)
-            .WithMessage(Errors.InvalidField(nameof(ChangePasswordCommand.ConfirmPassword)));
+            .Matches(x => x.ConfirmPassword);
 
         RuleFor(z => z.OldPassword)
-            .NotEqual(x => x.NewPassword)
-            .WithMessage(Errors.InvalidField(nameof(ChangePasswordCommand.NewPassword)));
+            .NotEqual(x => x.NewPassword);
 
         RuleFor(z => z.NewPassword)
-            .Matches(x => x.NewPassword)
-            .WithMessage(Errors.InvalidField(nameof(ChangePasswordCommand.NewPassword)));
+            .Matches(x => x.NewPassword);
     }
 }

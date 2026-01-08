@@ -4,6 +4,16 @@ using FluentValidation.Results;
 
 namespace Breadboard.Application.ResultPattern;
 
+/// <summary>
+/// Todo: this method is totally coupled with FluentValidation package
+/// change ValidationFailure to a custom record and build a mapper extension maybe
+/// this is breaking decoupling, 
+/// </summary>
+/// <param name="statusCode"></param>
+/// <param name="data"></param>
+/// <param name="message"></param>
+/// <param name="errors"></param>
+/// <typeparam name="T"></typeparam>
 public class Result<T>(
     HttpStatusCode statusCode,
     T? data,

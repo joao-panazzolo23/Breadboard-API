@@ -1,9 +1,10 @@
+using Breadboard.Application.Exceptions;
+using Breadboard.Application.Exceptions.Exceptions;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Application.ValidationPipeline.Factory;
 using FluentValidation;
 using Mediator;
 
-namespace Breadboard.Application.ValidationPipeline;
+namespace Breadboard.Application.Pipelines;
 
 public sealed class ValidationBehavior<TMessage, TResponse>(
     IEnumerable<IValidator<TMessage>> validators
@@ -38,7 +39,6 @@ public sealed class ValidationBehavior<TMessage, TResponse>(
 
         if (errors.Count == 0) return await next(message, cancellationToken);
 
-        //throw new ValidationException(errors);
-        return ErrorFactory.InvalidRequest<TResponse>(errors);
+        throw new AppValidationException(errors);
     }
 }

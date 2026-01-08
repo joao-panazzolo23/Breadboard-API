@@ -1,6 +1,4 @@
 using Breadboard.Application.Helpers;
-using Breadboard.Application.ResultPattern;
-using Breadboard.Application.ResultPattern.Models;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
 
@@ -17,7 +15,7 @@ public class LoginValidator : AbstractValidator<LoginCommand>
 
         foreach (var exp in lst)
         {
-            RuleFor(exp).NotEmpty().WithMessage(Errors.InvalidField(nameof(exp.Name)));
+            RuleFor(exp).NotEmpty();
         }
     }
 }

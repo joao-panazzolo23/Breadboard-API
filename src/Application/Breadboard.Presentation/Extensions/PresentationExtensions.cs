@@ -1,8 +1,28 @@
+using Breadboard.Presentation.TransformCase;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+
 namespace Breadboard.Presentation.Extensions;
 
-public static class FileExtensions
+public static class PresentationExtensions
 {
-    /// <summary>
+    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
+    {
+        services.AddControllers(options =>
+            {
+                options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseUrlTransformer()));
+            })
+            .ConfigureJsonConvention();
+
+        return services;
+    }
+    
+    public static IServiceCollection AddCaching(this IServiceCollection services)
+    {
+        return services.AddMemoryCache()
+            .AddDistributedMemoryCache();
+    }
+    
+        /// <summary>
     /// https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-10.0
     /// 
     /// With .NET 9 release, Static files received a new directive called by IApplicationBuilder.MapStaticFiles

@@ -1,4 +1,4 @@
-using Breadboard.Application.ValidationPipeline;
+using Breadboard.Application.Pipelines;
 using FluentValidation;
 using Mediator;
 using Microsoft.Extensions.DependencyInjection;

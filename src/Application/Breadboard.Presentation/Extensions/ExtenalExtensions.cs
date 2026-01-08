@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Breadboard.Presentation.Extensions
 {
- public static class JsonExtensions
+ public static class ExtenalExtensions
     {
         public static IServiceCollection ConfigureJsonConvention(this IMvcBuilder builder)
         {
