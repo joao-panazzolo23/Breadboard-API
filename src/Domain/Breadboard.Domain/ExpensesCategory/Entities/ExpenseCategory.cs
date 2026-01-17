@@ -1,5 +1,5 @@
 namespace Breadboard.Domain.ExpensesCategory.Entities;
-
-public class ExpenseCategory : Entity
-{
-}
+//
+// public class ExpenseCategory : Entity
+// {
+// }

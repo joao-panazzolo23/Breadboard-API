@@ -10,7 +10,7 @@ namespace Breadboard.Application.Users.Handlers;
 
 public class LoginHandler(
     IUserRepository _rep,
-    IJwtAuthService _authentication,
+    ITokenService _authentication,
     IPasswordHasher _passwordHasher
 )
     : ICommandHandler<LoginCommand, Result<LoginDto?>>
@@ -24,7 +24,7 @@ public class LoginHandler(
             return ResultFactory<LoginDto>.Unauthorized();
 
 
-        var token = _authentication.GenerateToken(user);
+        var token = _authentication.Generate(user);
 
         return ResultFactory<LoginDto>.Ok(new LoginDto(token))!;
     }

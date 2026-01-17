@@ -19,4 +19,6 @@ public class User(
     public string? ExhibitionName { get; private set; } = exhibitionName;
     public DateTime? BirthDate { get; private set; } = birthDate;
     public string Email { get; private set; } = email;
+    public string Role { get; set; }
+    public bool IsEmailVerified { get; set; }
 }

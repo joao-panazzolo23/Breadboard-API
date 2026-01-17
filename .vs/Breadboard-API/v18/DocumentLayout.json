@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\Coding\\dotnet\\Breadboard-API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9EF97A6B-6107-43BB-A548-8ED467433E1B}|src\\Infrastructure\\Breadboard.Infra.Jwt\\Breadboard.Infra.Jwt.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.jwt\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EF97A6B-6107-43BB-A548-8ED467433E1B}|src\\Infrastructure\\Breadboard.Infra.Jwt\\Breadboard.Infra.Jwt.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.jwt\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\authentication\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\authentication\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\authentication\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\authentication\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\application\\breadboard.application\\authentication\\ijwtauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{785B39F7-7211-439E-8228-E42543CE77D1}|src\\Application\\Breadboard.Application\\Breadboard.Application.csproj|solutionrelative:src\\application\\breadboard.application\\authentication\\ijwtauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{06F73863-3055-4556-9417-EA009A1085EE}|src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj|d:\\coding\\dotnet\\breadboard-api\\src\\infrastructure\\breadboard.infra.postgresql\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06F73863-3055-4556-9417-EA009A1085EE}|src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\Breadboard.Infra.PostgreSQL.csproj|solutionrelative:src\\infrastructure\\breadboard.infra.postgresql\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,12 +43,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Jwt\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Breadboard.Infra.Jwt\\Services\\AuthService.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.Jwt\\Services\\AuthService.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Breadboard.Infra.Jwt\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T16:05:19.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IPasswordHasher.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IPasswordHasher.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Authentication\\IPasswordHasher.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IPasswordHasher.cs",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Authentication\\IPasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T16:04:26.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IJwtProvider.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IJwtProvider.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Authentication\\IJwtProvider.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IJwtProvider.cs",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Authentication\\IJwtProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T16:04:26.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IJwtAuthService.cs",
+              "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IJwtAuthService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Breadboard.Application\\Authentication\\IJwtAuthService.cs",
+              "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Authentication\\IJwtAuthService.cs",
+              "RelativeToolTip": "src\\Application\\Breadboard.Application\\Authentication\\IJwtAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T16:04:25.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\AppDbContext.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\AppDbContext.cs",
               "ToolTip": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\AppDbContext.cs",
               "RelativeToolTip": "src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-31T01:01:30.313Z",
               "EditorCaption": ""

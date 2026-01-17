@@ -5,12 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{22BAF98C-8415-17C4-B26A-D537657BC863}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation", "src\Application\Breadboard.Presentation\Breadboard.Presentation.csproj", "{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4A31CB44-6ABA-4A93-B786-AEB6F67493B4} = {4A31CB44-6ABA-4A93-B786-AEB6F67493B4}
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{22BAF98C-8415-17C4-B26A-D537657BC863}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8B290487-4C16-E85E-E807-F579CBE9FC4D}"
 EndProject
@@ -24,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.PostgreSQL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Shared", "src\Domain\Breadboard.Shared\Breadboard.Shared.csproj", "{4A31CB44-6ABA-4A93-B786-AEB6F67493B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreadBoard.Infra.JWTBearer", "src\Infrastructure\BreadBoard.Infra.JWTBearer\BreadBoard.Infra.JWTBearer.csproj", "{9EF97A6B-6107-43BB-A548-8ED467433E1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Infra.Jwt", "src\Infrastructure\Breadboard.Infra.Jwt\Breadboard.Infra.Jwt.csproj", "{9EF97A6B-6107-43BB-A548-8ED467433E1B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05} = {EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05}
 	EndProjectSection
@@ -37,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Application", "src\Application\Breadboard.Application\Breadboard.Application.csproj", "{785B39F7-7211-439E-8228-E42543CE77D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation", "src\Presentation\Breadboard.Presentation\Breadboard.Presentation.csproj", "{472A4C87-CE24-BA55-265A-FCE1DB52807C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,18 +44,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|x64.Build.0 = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Debug|x86.Build.0 = Debug|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|x64.ActiveCfg = Release|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|x64.Build.0 = Release|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|x86.ActiveCfg = Release|Any CPU
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA}.Release|x86.Build.0 = Release|Any CPU
 		{EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -143,13 +128,24 @@ Global
 		{785B39F7-7211-439E-8228-E42543CE77D1}.Release|x64.Build.0 = Release|Any CPU
 		{785B39F7-7211-439E-8228-E42543CE77D1}.Release|x86.ActiveCfg = Release|Any CPU
 		{785B39F7-7211-439E-8228-E42543CE77D1}.Release|x86.Build.0 = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|x64.Build.0 = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Debug|x86.Build.0 = Debug|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|x64.ActiveCfg = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|x64.Build.0 = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|x86.ActiveCfg = Release|Any CPU
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{22BAF98C-8415-17C4-B26A-D537657BC863} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{F73DB40B-FD2B-4F71-A88A-1CCF5B9E51BA} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 		{8B290487-4C16-E85E-E807-F579CBE9FC4D} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{EAE6FFAD-B8F5-4AFA-8A48-4CD5E2801D05} = {8B290487-4C16-E85E-E807-F579CBE9FC4D}
 		{9048EB7F-3875-A59E-E36B-5BD4C6F2A282} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
@@ -160,6 +156,7 @@ Global
 		{960F8405-367B-4A0A-A8E8-C3D3914A713C} = {8D9ABA0D-C771-4EB6-B8E1-5C9B1BD6BF4C}
 		{F73B7B19-031E-4032-A0B9-737E88A3F4AC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{785B39F7-7211-439E-8228-E42543CE77D1} = {F73B7B19-031E-4032-A0B9-737E88A3F4AC}
+		{472A4C87-CE24-BA55-265A-FCE1DB52807C} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71CAA84E-AC05-46DA-9E14-61693BD3C351}

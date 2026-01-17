@@ -3,7 +3,7 @@ using FluentValidation.Results;
 
 namespace Breadboard.Application.Exceptions.Exceptions;
 
-public class AppValidationException : Exception
+public sealed class AppValidationException : Exception
 {
     public AppValidationException(IEnumerable<ValidationFailure> failures)
     {
@@ -15,5 +15,5 @@ public class AppValidationException : Exception
         Errors = details;
     }
 
-    public IEnumerable<ExceptionDetail> Errors { get; set; }
+    public IEnumerable<ExceptionDetail> Errors { get; private init; }
 }

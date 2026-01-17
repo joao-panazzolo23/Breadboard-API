@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BreadBoard.Infra.JWTBearer.Options;
 
-internal class JwtOptions
+internal record JwtOptions
 {
     [Required]
     public string Issuer { get; set; }

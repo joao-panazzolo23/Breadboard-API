@@ -1,6 +1,5 @@
 using Breadboard.Domain;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Breadboard.Infra.PostgreSQL;

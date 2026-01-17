@@ -2,7 +2,6 @@ using System.Text;
 using Breadboard.Application.Authentication;
 using BreadBoard.Infra.JWTBearer.Options;
 using BreadBoard.Infra.JWTBearer.Services;
-using Breadboard.Shared.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,12 +24,12 @@ public static class JwtExtensions
     {
         var config = configuration.GetSection("JwtSettings");
 
-        services.AddOptions<JwtSettings>()
+        services.AddOptions<JwtOptions>()
             .Bind(config)
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
-        return services.ConfigureJwtToken(config.Get<JwtSettings>()!)
+        return services.ConfigureJwtToken(config.Get<JwtOptions>()!)
             .AddJwtDependencies();
     }
 
@@ -40,7 +39,10 @@ public static class JwtExtensions
     /// <param name="services"></param>
     /// <param name="settings"></param>
     /// <returns></returns>
-    private static IServiceCollection ConfigureJwtToken(this IServiceCollection services, JwtSettings settings)
+    private static IServiceCollection ConfigureJwtToken(
+        this IServiceCollection services,
+        JwtOptions settings
+    )
     {
         services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -54,9 +56,9 @@ public static class JwtExtensions
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = settings.Issuer,
                     ValidAudience = settings.Audience,
+                    ClockSkew = TimeSpan.Zero,
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(settings.Secret)),
-                    ClockSkew = TimeSpan.Zero
                 };
             });
 
@@ -65,7 +67,7 @@ public static class JwtExtensions
 
     private static IServiceCollection AddJwtDependencies(this IServiceCollection services)
     {
-        return services.AddScoped<IJwtAuthService, AuthService>()
+        return services.AddScoped<ITokenService, TokenService>()
             .AddScoped<IPasswordHasher, PasswordHasher>();
     }
 }

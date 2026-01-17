@@ -1,11 +1,12 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Breadboard.Application.Authentication;
 using Breadboard.Domain.Users.Entities;
 using BreadBoard.Infra.JWTBearer.Options;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using JwtRegisteredClaimNames = System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames;
 
 namespace BreadBoard.Infra.JWTBearer.Services;
 
@@ -13,35 +14,36 @@ namespace BreadBoard.Infra.JWTBearer.Services;
 /// Todo: refactor this
 /// </summary>
 /// <param name="jwtSettings"></param>
-internal class AuthService(
+internal class TokenService(
     IOptions<JwtOptions> jwtSettings
-    ) : IJwtAuthService
+) : ITokenService
 {
     private readonly JwtOptions _jwtSettings = jwtSettings.Value;
-    private IJwtAuthService _jwtAuthService;
+    private ITokenService _tokenService;
 
     public string Generate(User user)
     {
-        var claims = new[]
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
+
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+        var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, user.Role)
+            new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new(JwtRegisteredClaimNames.Email, user.Email),
+            new(JwtRegisteredClaimNames.Email, user.Email),
+            new(JwtRegisteredClaimNames.Email, user.Email),
+        };
+
+        var tokenDescriptor = new SecurityTokenDescriptor()
+        {
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddMinutes(_jwtSettings.TokenExpirationMinutes),
+            SigningCredentials = credentials
         };
         
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
-        var signInCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        var token = new JwtSecurityToken(
-            issuer: _jwtSettings.Issuer,
-            audience: _jwtSettings.Audience,
-            claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.TokenExpirationMinutes),
-            signingCredentials: signInCredentials
-        );
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        var handler = new JsonWebTokenHandler();
+        return handler.CreateToken(tokenDescriptor);
     }
 
     //todo: create a refresh token 

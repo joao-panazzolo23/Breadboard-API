@@ -16,7 +16,7 @@ namespace Breadboard_API.Domain.Test.HandlerTests;
 public class Login
 {
     private readonly Mock<IUserRepository> _mockRepo = new();
-    private readonly Mock<IJwtAuthService> _mockAuth = new();
+    private readonly Mock<ITokenService> _mockAuth = new();
     private readonly Mock<IPasswordHasher> _mockPass = new();
     private readonly LoginCommand _command = new LoginCommand("john", "senha123");
 

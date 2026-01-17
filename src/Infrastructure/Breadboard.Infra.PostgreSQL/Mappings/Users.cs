@@ -14,5 +14,6 @@ public class Users : BaseMapper<User>
         builder.Property(x => x.ExhibitionName);
         builder.Property(x => x.Password);
         builder.Property(x => x.Username);
+        builder.Property(x => x.Email);
     }
 }
