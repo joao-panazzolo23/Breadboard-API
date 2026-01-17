@@ -1,5 +1,6 @@
 using System.Text;
 using Breadboard.Application.Authentication;
+using BreadBoard.Infra.JWTBearer.Options;
 using BreadBoard.Infra.JWTBearer.Services;
 using Breadboard.Shared.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

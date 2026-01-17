@@ -1,8 +1,9 @@
 ﻿using System.Security.Claims;
+using Breadboard.Application.Authentication;
 using Breadboard.Domain.Users.Entities;
 
-namespace BreadBoard.Infra.JWTBearer;
-
+namespace BreadBoard.Infra.JWTBearer.Services;
+//
 // public class JwtAuthenticationService : IJwtAuthService
 // {
 //
@@ -11,8 +12,13 @@ namespace BreadBoard.Infra.JWTBearer;
 //         throw new NotImplementedException();
 //     }
 //
-//     public Task<ClaimsPrincipal> Validate(string token)
+//     public string RefreshToken(User user)
 //     {
 //         throw new NotImplementedException();
 //     }
+//
+//     // public Task<ClaimsPrincipal> Validate(string token)
+//     // {
+//     //     throw new NotImplementedException();
+//     // }
 // }

@@ -7,6 +7,6 @@ namespace Breadboard.Application.Authentication;
 /// </summary>
 public interface IJwtAuthService
 {
-    string GenerateToken(User user);
+    string Generate(User user);
     string RefreshToken(User user);
 }

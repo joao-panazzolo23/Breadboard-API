@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Breadboard.Application.Authentication;
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Shared.Options;
+using BreadBoard.Infra.JWTBearer.Options;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,23 +13,23 @@ namespace BreadBoard.Infra.JWTBearer.Services;
 /// Todo: refactor this
 /// </summary>
 /// <param name="jwtSettings"></param>
-public class AuthService(IOptions<JwtSettings> jwtSettings) : IJwtAuthService
+internal class AuthService(
+    IOptions<JwtOptions> jwtSettings
+    ) : IJwtAuthService
 {
-    private readonly JwtSettings _jwtSettings = jwtSettings.Value;
+    private readonly JwtOptions _jwtSettings = jwtSettings.Value;
     private IJwtAuthService _jwtAuthService;
 
-    public string GenerateToken(User user)
+    public string Generate(User user)
     {
-        // remove master from role and add role system
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, "master")
+            new Claim(ClaimTypes.Role, user.Role)
         };
-
-
+        
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
         var signInCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

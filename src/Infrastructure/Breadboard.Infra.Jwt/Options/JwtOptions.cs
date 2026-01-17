@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Breadboard.Shared.Options;
+namespace BreadBoard.Infra.JWTBearer.Options;
 
-public sealed record JwtSettings
+internal class JwtOptions
 {
     [Required]
     public string Issuer { get; set; }
@@ -13,6 +13,6 @@ public sealed record JwtSettings
     public string Secret { get; set; }
     [Range(1, int.MaxValue)]
     public int TokenExpirationMinutes { get; set; }
-    [Range(1, int.MaxValue)]
+    [Range(1, 30)]
     public int RefreshTokenExpirationDays { get; set; }
 }
