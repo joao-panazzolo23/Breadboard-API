@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HbvLQQB7ZV8=",
+  "dgSpecHash": "c/RBitoVRqo=",
   "success": true,
   "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj",
   "expectedPackageFiles": [

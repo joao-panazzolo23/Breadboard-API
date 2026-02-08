@@ -11,7 +11,8 @@ namespace Breadboard.Presentation.Controllers;
 
 [ApiController]
 [AutoRouting] 
-public class UserController(IMediator _mediator) : ControllerBase
+public class UserController(
+    IMediator _mediator) : ControllerBase
 {
     [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]

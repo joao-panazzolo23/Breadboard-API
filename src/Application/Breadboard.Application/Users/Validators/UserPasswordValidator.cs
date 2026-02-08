@@ -21,3 +21,20 @@ public class UserPasswordValidator : AbstractValidator<ChangePasswordCommand>
             .Matches(x => x.NewPassword);
     }
 }
+
+
+// public class CreateOrderHandler(
+//     IOrderRepository _repository,
+//     IUnityOfWork _unity)
+//     : IRequestHandler<CreateOrderCommand, Result<OrderDto>>
+// {
+//
+//     public async ValueTask<Result<Unit>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+//     {
+//         var order = request.Map(); // Mapping to entity
+//         await _repository.Create(order);
+//         
+//         await _unity.Commit();
+//         return ResultFactory<Unit>.Ok(result);
+//     }
+// }

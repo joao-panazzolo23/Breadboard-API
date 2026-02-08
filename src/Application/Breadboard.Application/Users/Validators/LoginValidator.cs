@@ -1,3 +1,4 @@
+using System.Drawing;
 using Breadboard.Application.Helpers;
 using Breadboard.Application.Users.Commands;
 using FluentValidation;
