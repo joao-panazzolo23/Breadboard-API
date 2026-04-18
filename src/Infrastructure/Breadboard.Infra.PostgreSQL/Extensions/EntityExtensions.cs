@@ -6,22 +6,27 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-
 namespace Breadboard.Infra.PostgreSQL.Extensions;
 
 public static class EntityExtensions
 {
-    public static IServiceCollection AddEntityFrameWork(this IServiceCollection services)
+    extension(IServiceCollection services)
     {
-        services.AddDbContext<AppDbContext>((sp, options) =>
+        public IServiceCollection AddEntityFrameWork()
         {
-            var dbSettings = sp
-                .GetRequiredService<IOptions<DatabaseOptions>>()
-                .Value;
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-            options.UseNpgsql(dbSettings.DefaultConnection);
-        });
-        return services.AddRepositories();
+            services.AddDbContext<AppDbContext>((sp, options) =>
+            {
+                var dbSettings = sp
+                    .GetRequiredService<IOptions<DatabaseOptions>>()
+                    .Value;
+
+                options.UseNpgsql(dbSettings.DefaultConnection);
+            });
+
+            return services.AddRepositories();
+        }
     }
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
