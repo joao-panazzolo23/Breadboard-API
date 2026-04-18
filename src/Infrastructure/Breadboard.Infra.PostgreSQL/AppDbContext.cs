@@ -1,4 +1,3 @@
-using Breadboard.Domain;
 using Breadboard.Domain.Users.Entities;
 using Breadboard.Shared.Entities;
 using Mediator;
@@ -19,8 +18,10 @@ public class AppDbContext(
         builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 
-    public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess,
-        CancellationToken cancellationToken)
+    public override async Task<int> SaveChangesAsync(
+        bool acceptAllChangesOnSuccess,
+        CancellationToken cancellationToken = default
+    )
     {
         var entries = ChangeTracker.Entries<Entity>().ToList();
 
