@@ -4,6 +4,7 @@ using Breadboard.Application.ResultPattern.Factory;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Mappers;
 using Breadboard.Application.Users.Repositories;
+using Breadboard.Domain.Users.Entities;
 using Mediator;
 using Unit = Mediator.Unit;
 
@@ -16,12 +17,20 @@ public class RegisterUserHandler(
 )
     : ICommandHandler<RegisterUserCommand, Result<Unit>>
 {
-    public async ValueTask<Result<Unit>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+    public async ValueTask<Result<Unit>> Handle(
+        RegisterUserCommand request,
+        CancellationToken cancellationToken
+    )
     {
         if (await _repository.GetByUsername(request.Username) != null)
             return ResultFactory<Unit>.Conflict(message: "The informed username is already taken.");
 
-        var user = request.Map().HasPassword(_hasher.Hash(request.Password));
+        var user = new User(
+            request.Username,
+            _hasher.Hash(request.Password),
+            request.Email,
+            request.BirthDate,
+            request.ExhibitionName);
 
         await _repository.Create(user);
 

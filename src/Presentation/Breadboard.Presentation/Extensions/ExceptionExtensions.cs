@@ -16,7 +16,7 @@ public static class ExceptionHandlerExtensions
     private static IServiceCollection AddExceptionStrategies(this IServiceCollection services)
     {
         var exceptionType = typeof(IExceptionStrategy);
-        
+
         var types =
             exceptionType.Assembly
                 .GetTypes().Where(x => exceptionType.IsAssignableFrom(x) && !x.IsAbstract && x.IsClass);
@@ -31,13 +31,14 @@ public static class ExceptionHandlerExtensions
 
     private static IServiceCollection AddExceptionHandler(this IServiceCollection services)
     {
-        return services.AddExceptionHandler<GlobalExceptionHandler>().AddProblemDetails(options =>
-        {
-            options.CustomizeProblemDetails = context =>
+        return services.AddExceptionHandler<GlobalExceptionHandler>()
+            .AddProblemDetails(options =>
             {
-                context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
-            };
-        });
+                options.CustomizeProblemDetails = context =>
+                {
+                    context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
+                };
+            });
     }
 
     /// <summary>
@@ -53,7 +54,7 @@ public static class ExceptionHandlerExtensions
             options.InvalidModelStateResponseFactory = context =>
             {
                 var errors = new List<ExceptionDetail>();
-                
+
                 foreach (var entry in context.ModelState)
                 {
                     foreach (var error in entry.Value!.Errors)

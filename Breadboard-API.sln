@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard-API.Domain.UnitT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F73B7B19-031E-4032-A0B9-737E88A3F4AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Application", "src\Application\Breadboard.Application\Breadboard.Application.csproj", "{785B39F7-7211-439E-8228-E42543CE77D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Application.Shared", "src\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj", "{785B39F7-7211-439E-8228-E42543CE77D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation", "src\Presentation\Breadboard.Presentation\Breadboard.Presentation.csproj", "{472A4C87-CE24-BA55-265A-FCE1DB52807C}"
 EndProject

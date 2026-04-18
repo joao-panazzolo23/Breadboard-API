@@ -22,6 +22,10 @@ public static class DIscover
     /// </summary>
     /// <param name="assembly"></param>
     /// <returns></returns>
+    [Obsolete(@"This implementation is an absolute trash in DDD & GOF ways.
+                        A class shouldn't implement an interface just because it is an integrating part of a system. 
+                        It needs a meaning to implement that interface. A reasonable one.
+                        Just use Scrutor if want it easy.")]
     public static IEnumerable<QueryRepositoryInfo> GetQueryRepositories(this Assembly assembly)
     {
         //search for all classes with marker interface

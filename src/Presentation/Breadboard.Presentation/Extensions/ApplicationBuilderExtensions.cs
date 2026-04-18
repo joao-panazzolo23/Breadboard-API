@@ -6,7 +6,8 @@ public static class ApplicationBuilderExtensions
 {
     public static IApplicationBuilder UseSecurity(this IApplicationBuilder app)
     {
-        return app.UseAuthentication()
+        return app
+            .UseAuthentication()
             .UseAuthorization();
     }
 

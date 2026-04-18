@@ -5,7 +5,10 @@ namespace Breadboard.Presentation.Extensions;
 
 public static class DocumentationExtensions
 {
-    public static IServiceCollection AddDocuments(this IServiceCollection services, IHostEnvironment environment)
+    public static IServiceCollection AddDocuments(
+        this IServiceCollection services,
+        IHostEnvironment environment
+    )
     {
         if (environment.IsDevelopment())
         {
@@ -19,11 +22,11 @@ public static class DocumentationExtensions
 
         return services;
     }
-    
+
     public static WebApplication AddScalarInterface(this WebApplication app)
     {
         if (!app.Environment.IsDevelopment()) return app;
-        
+
         app.MapOpenApi();
 
         app.MapScalarApiReference(options =>
@@ -35,6 +38,7 @@ public static class DocumentationExtensions
                 .SortTagsAlphabetically()
                 .SortOperationsByMethod()
                 .PreserveSchemaPropertyOrder()
+                .WithTheme(theme: ScalarTheme.BluePlanet)
                 ;
         });
 

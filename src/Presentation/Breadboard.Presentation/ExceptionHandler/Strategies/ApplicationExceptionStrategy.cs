@@ -19,7 +19,7 @@ public class ApplicationExceptionStrategy : IExceptionStrategy
         if (exception is not AppValidationException validationException) return false;
 
         var response = new ExceptionResult(
-            System.Net.HttpStatusCode.BadRequest,
+            HttpStatusCode.BadRequest,
             validationException.Errors,
             "Application"
         );

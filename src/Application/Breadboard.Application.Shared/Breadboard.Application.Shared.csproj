@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Breadboard.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="12.1.1"/>
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1"/>
+        <PackageReference Include="Mediator.Abstractions" Version="3.0.1"/>
+        <PackageReference Include="Mediator.SourceGenerator" Version="3.0.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Riok.Mapperly" Version="4.3.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Domain\Breadboard.Domain\Breadboard.Domain.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+        <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Metadata">
+        <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Metadata.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.OpenApi">
+        <HintPath>..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.openapi\9.0.11\lib\net9.0\Microsoft.AspNetCore.OpenApi.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.OpenApi">
+        <HintPath>..\..\..\..\..\.nuget\packages\microsoft.openapi\1.6.17\lib\netstandard2.0\Microsoft.OpenApi.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>

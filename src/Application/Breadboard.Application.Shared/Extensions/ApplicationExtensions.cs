@@ -1,4 +1,3 @@
-using Breadboard.Application.Pipelines;
 using Breadboard.Application.Pipelines.Behaviors;
 using FluentValidation;
 using Mediator;
@@ -11,7 +10,8 @@ public static class ApplicationExtensions
     public static IServiceCollection AddApplication(
         this IServiceCollection services)
     {
-        return services.AddValidatorsFromAssembly(typeof(ApplicationExtensions).Assembly)
+        return services
+            .AddValidatorsFromAssembly(typeof(ApplicationExtensions).Assembly)
             .AddPipelineBehaviors()
             .AddMediator(options => { options.ServiceLifetime = ServiceLifetime.Scoped; });
     }
@@ -21,7 +21,4 @@ public static class ApplicationExtensions
     {
         return services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }
-    
-    
-    
 }

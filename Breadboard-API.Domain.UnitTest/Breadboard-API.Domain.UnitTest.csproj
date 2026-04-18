@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <RootNamespace>Breadboard_API.Domain.Test</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -9,11 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="35.6.5" />
+        <PackageReference Include="Bogus" Version="35.6.5"/>
         <PackageReference Include="coverlet.collector" Version="6.0.2"/>
-        <PackageReference Include="FluentAssertions" Version="8.8.0" />
+        <PackageReference Include="FluentAssertions" Version="8.8.0"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
-        <PackageReference Include="Moq" Version="4.20.72" />
+        <PackageReference Include="Moq" Version="4.20.72"/>
         <PackageReference Include="xunit" Version="2.9.2"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"/>
     </ItemGroup>
@@ -23,8 +23,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Application\Breadboard.Application\Breadboard.Application.csproj" />
-      <ProjectReference Include="..\src\Domain\Breadboard.Domain\Breadboard.Domain.csproj" />
+        <ProjectReference Include="..\src\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj"/>
+        <ProjectReference Include="..\src\Domain\Breadboard.Domain\Breadboard.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

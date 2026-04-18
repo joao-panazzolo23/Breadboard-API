@@ -11,8 +11,6 @@ public static class DatabaseExtensions
         return services.ConfigureDbOptions()
                        .AddEntityFrameWork()
                        .AddQueryRepositories();
-
-
     }
 
     private static IServiceCollection ConfigureDbOptions(this IServiceCollection services)

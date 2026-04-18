@@ -10,7 +10,7 @@ public static class CopsExtensions
 {
     public static IServiceCollection AddCops(
         this IServiceCollection services,
-        Assembly assembly, 
+        Assembly assembly,
         IServiceProvider provider)
     {
         foreach (var ht in assembly.DiscoverHandlers())
@@ -24,9 +24,11 @@ public static class CopsExtensions
             {
                 // generates heavily typed delegate
                 var dispatcher =
-                    InvokeCops.CreateInvoker(h.RequestType,
+                    InvokeCops.CreateInvoker(
+                        h.RequestType,
                         h.ResponseType,
-                        sp.GetRequiredService(h.HandlerType));
+                        sp.GetRequiredService(h.HandlerType)
+                    );
 
                 handlers[h.RequestType] = new HandlerRegistration(dispatcher);
             }
