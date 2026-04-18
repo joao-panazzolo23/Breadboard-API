@@ -20,7 +20,7 @@
       <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.Jwt\Breadboard.Infra.Jwt.csproj" />
       <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQLDapper\Breadboard.Infra.PostgreSQLDapper.csproj" />
       <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQL\Breadboard.Infra.PostgreSQL.csproj" />
-      <ProjectReference Include="..\Breadboard.Presentation.Expenses\Breadboard.Presentation.Expenses.csproj" />
+      <ProjectReference Include="..\Breadboard.Presentation.Finances\Breadboard.Presentation.Finances.csproj" />
       <ProjectReference Include="..\Breadboard.Presentation.Order\Breadboard.Presentation.Order.csproj" />
       <ProjectReference Include="..\Breadboard.Presentation.Products\Breadboard.Presentation.Products.csproj" />
       <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj" />

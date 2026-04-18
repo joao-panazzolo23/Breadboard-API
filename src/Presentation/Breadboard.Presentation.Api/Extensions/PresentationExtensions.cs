@@ -11,6 +11,15 @@ namespace Breadboard.Presentation.Extensions;
 
 public static class PresentationExtensions
 {
+    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
+    {
+        var mvcBuilder = services.AddControllers();
+
+        mvcBuilder.AddApplicationParts();
+
+        return services;
+    }
+
     // private static List<Assembly> GetAllReferenciedAssemblies()
     // {
     //     //TODO: Getting assemblies by name might not me the best practice.
@@ -20,29 +29,18 @@ public static class PresentationExtensions
     //         .ToList();
     // }
     //
-    private static List<Assembly> GetAllReferenciedAssemblies()
+    private static List<Assembly> GetAllReferencedAssemblies()
     {
         var types = new List<Type>()
         {
-            typeof(ExpenseController), 
-            typeof(ProductController), 
-            typeof(UserController), 
-            typeof(OrderController), 
-        };   
-        
-        return types.Select(x=>x.GetTypeInfo().Assembly).ToList();
-    }
-    
+            typeof(ExpenseController),
+            typeof(ProductController),
+            typeof(UserController),
+            typeof(OrderController),
+        };
 
-    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
-    {
-        var mvcBuilder = services.AddControllers();
-        
-        mvcBuilder.AddApplicationParts();
-        
-        return services;
+        return types.Select(x => x.GetTypeInfo().Assembly).ToList();
     }
-
 
     private static IMvcBuilder AddControllers(this IServiceCollection services)
     {
@@ -54,9 +52,10 @@ public static class PresentationExtensions
             options.Conventions.Add(convention);
         });
     }
+
     private static IMvcBuilder AddApplicationParts(this IMvcBuilder mvcBuilder)
     {
-        var assemblies = GetAllReferenciedAssemblies();
+        var assemblies = GetAllReferencedAssemblies();
 
         mvcBuilder.ConfigureJsonConvention();
 
@@ -70,7 +69,8 @@ public static class PresentationExtensions
 
     public static IServiceCollection AddCaching(this IServiceCollection services)
     {
-        return services.AddMemoryCache()
+        return services
+            .AddMemoryCache()
             .AddDistributedMemoryCache();
     }
 
