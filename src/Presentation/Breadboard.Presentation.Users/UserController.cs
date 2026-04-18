@@ -3,7 +3,7 @@ using Breadboard.Application.ResultPattern;
 using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.DTOs;
-using Breadboard.Presentation.Attributes;
+using Breadboard.Presentation.Shared.Attributes;
 using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

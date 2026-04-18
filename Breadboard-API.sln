@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Application.Shared", "src\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj", "{785B39F7-7211-439E-8228-E42543CE77D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation.Shared", "src\Presentation\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj", "{472A4C87-CE24-BA55-265A-FCE1DB52807C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation.Api", "src\Presentation\Breadboard.Presentation.Api\Breadboard.Presentation.Api.csproj", "{472A4C87-CE24-BA55-265A-FCE1DB52807C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Domain.Expenses", "src\Domain\Breadboard.Domain.Expenses\Breadboard.Domain.Expenses.csproj", "{43C39EB2-CFE2-43B8-96DF-D115BFF728A0}"
 EndProject
@@ -51,6 +51,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation.Expenses", "src\Presentation\Breadboard.Presentation.Expenses\Breadboard.Presentation.Expenses.csproj", "{FD6663AC-AA5F-4926-B28C-2553B606D2BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation.Order", "src\Presentation\Breadboard.Presentation.Order\Breadboard.Presentation.Order.csproj", "{7DA29786-F05D-489A-861E-424D81C20E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breadboard.Presentation.Shared", "src\Presentation\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj", "{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -266,6 +268,18 @@ Global
 		{7DA29786-F05D-489A-861E-424D81C20E6C}.Release|x64.Build.0 = Release|Any CPU
 		{7DA29786-F05D-489A-861E-424D81C20E6C}.Release|x86.ActiveCfg = Release|Any CPU
 		{7DA29786-F05D-489A-861E-424D81C20E6C}.Release|x86.Build.0 = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|x64.Build.0 = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Debug|x86.Build.0 = Debug|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|x64.ActiveCfg = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|x64.Build.0 = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|x86.ActiveCfg = Release|Any CPU
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -292,6 +306,7 @@ Global
 		{152C8ACF-7B0E-4F56-A2D3-EA31AF4D51B2} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 		{FD6663AC-AA5F-4926-B28C-2553B606D2BB} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 		{7DA29786-F05D-489A-861E-424D81C20E6C} = {22BAF98C-8415-17C4-B26A-D537657BC863}
+		{5DBFEA01-19B5-46F4-9870-7AD2047A4A65} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71CAA84E-AC05-46DA-9E14-61693BD3C351}

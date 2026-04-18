@@ -1,7 +1,7 @@
 using Breadboard.Application.Products.Queries;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Products.Viewmodels;
-using Breadboard.Presentation.Attributes;
+using Breadboard.Presentation.Shared.Attributes;
 using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

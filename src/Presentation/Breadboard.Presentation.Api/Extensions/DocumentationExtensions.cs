@@ -15,6 +15,7 @@ public static class DocumentationExtensions
             services.AddOpenApi(options =>
             {
                 options.AddDocumentTransformer<JwtSecuritySchemeTransformer>();
+                options.AddOperationTransformer<ConventionOperationTransformer>();
                 //todo: finish this when authentication/authorization is done
                 // options.AddDocumentTransformer<JwtInjectTestTransformer>();
             });

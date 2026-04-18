@@ -1,28 +1,80 @@
+using System.Reflection;
+using Breadboard.Presentation.Order;
+using Breadboard.Presentation.Products;
 using Breadboard.Presentation.TransformCase;
+using Breadboard.Presentation.Users;
+using Expenses;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 namespace Breadboard.Presentation.Extensions;
 
 public static class PresentationExtensions
 {
-    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
+    // private static List<Assembly> GetAllReferenciedAssemblies()
+    // {
+    //     //TODO: Getting assemblies by name might not me the best practice.
+    //     return AppDomain.CurrentDomain
+    //         .GetAssemblies()
+    //         .Where(a => a.FullName.Contains("Presentation"))
+    //         .ToList();
+    // }
+    //
+    private static List<Assembly> GetAllReferenciedAssemblies()
     {
-        services.AddControllers(options =>
-            {
-                options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseUrlTransformer()));
-            })
-            .ConfigureJsonConvention();
-
-        return services;
+        var types = new List<Type>()
+        {
+            typeof(ExpenseController), 
+            typeof(ProductController), 
+            typeof(UserController), 
+            typeof(OrderController), 
+        };   
+        
+        return types.Select(x=>x.GetTypeInfo().Assembly).ToList();
     }
     
+
+    public static IServiceCollection AddControllersScheme(this IServiceCollection services)
+    {
+        var mvcBuilder = services.AddControllers();
+        
+        mvcBuilder.AddApplicationParts();
+        
+        return services;
+    }
+
+
+    private static IMvcBuilder AddControllers(this IServiceCollection services)
+    {
+        return services.AddControllers(options =>
+        {
+            var transformer = new KebabCaseUrlTransformer();
+            var convention = new RouteTokenTransformerConvention(transformer);
+
+            options.Conventions.Add(convention);
+        });
+    }
+    private static IMvcBuilder AddApplicationParts(this IMvcBuilder mvcBuilder)
+    {
+        var assemblies = GetAllReferenciedAssemblies();
+
+        mvcBuilder.ConfigureJsonConvention();
+
+        foreach (var assembly in assemblies.Select(x => new AssemblyPart(x)))
+        {
+            mvcBuilder.PartManager.ApplicationParts.Add(assembly);
+        }
+
+        return mvcBuilder;
+    }
+
     public static IServiceCollection AddCaching(this IServiceCollection services)
     {
         return services.AddMemoryCache()
             .AddDistributedMemoryCache();
     }
-    
-        /// <summary>
+
+    /// <summary>
     /// https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-10.0
     /// 
     /// With .NET 9 release, Static files received a new directive called by IApplicationBuilder.MapStaticFiles

@@ -7,4 +7,8 @@
         <RootNamespace>Expenses</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj" />
+    </ItemGroup>
+
 </Project>
