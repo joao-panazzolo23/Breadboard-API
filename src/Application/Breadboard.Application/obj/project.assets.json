@@ -464,39 +464,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Barba\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/john/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
+      "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application/Breadboard.Application.csproj",
       "projectName": "Breadboard.Application",
-      "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
-      "packagesPath": "C:\\Users\\Barba\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\obj\\",
+      "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application/Breadboard.Application.csproj",
+      "packagesPath": "/home/john/.nuget/packages/",
+      "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Barba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/john/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj": {
-              "projectPath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj"
+            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj": {
+              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj"
             }
           }
         }
@@ -556,7 +549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Expenses\Services\" />
-    <Folder Include="Roles\" />
-    <Folder Include="UserRoles\" />
   </ItemGroup>
 
   <ItemGroup>

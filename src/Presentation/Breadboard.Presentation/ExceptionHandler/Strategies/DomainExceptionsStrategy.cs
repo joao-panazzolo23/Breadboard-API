@@ -2,6 +2,7 @@ using System.Net;
 using Breadboard.Application.Exceptions;
 using Breadboard.Application.Exceptions.Models;
 using Breadboard.Domain.Exceptions;
+using Breadboard.Presentation.ExceptionHandler.Strategies.Abstract;
 
 namespace Breadboard.Presentation.ExceptionHandler.Strategies;
 

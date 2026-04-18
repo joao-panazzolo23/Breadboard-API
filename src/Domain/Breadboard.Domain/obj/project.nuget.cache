@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5+QGA1/45ho=",
+  "dgSpecHash": "80/GoC+3a6I=",
   "success": true,
-  "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Domain\\Breadboard.Domain\\Breadboard.Domain.csproj",
+  "projectFilePath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

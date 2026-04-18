@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Qj3NdSxuld0=",
+  "dgSpecHash": "nMkx5QrekB0=",
   "success": true,
-  "projectFilePath": "D:\\Coding\\dotnet\\Breadboard-API\\src\\Application\\Breadboard.Application\\Breadboard.Application.csproj",
+  "projectFilePath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application/Breadboard.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Barba\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\mediator.abstractions\\3.0.1\\mediator.abstractions.3.0.1.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\mediator.sourcegenerator\\3.0.1\\mediator.sourcegenerator.3.0.1.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\riok.mapperly\\4.3.1\\riok.mapperly.4.3.1.nupkg.sha512",
-    "C:\\Users\\Barba\\.nuget\\packages\\scriban\\6.2.0\\scriban.6.2.0.nupkg.sha512"
+    "/home/john/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
+    "/home/john/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+    "/home/john/.nuget/packages/mediator.abstractions/3.0.1/mediator.abstractions.3.0.1.nupkg.sha512",
+    "/home/john/.nuget/packages/mediator.sourcegenerator/3.0.1/mediator.sourcegenerator.3.0.1.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/john/.nuget/packages/riok.mapperly/4.3.1/riok.mapperly.4.3.1.nupkg.sha512",
+    "/home/john/.nuget/packages/scriban/6.2.0/scriban.6.2.0.nupkg.sha512"
   ],
   "logs": []
 }

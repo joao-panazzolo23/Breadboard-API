@@ -1,4 +1,4 @@
-namespace Breadboard.Presentation.ExceptionHandler.Strategies;
+namespace Breadboard.Presentation.ExceptionHandler.Strategies.Abstract;
 
 public interface IExceptionStrategy
 {

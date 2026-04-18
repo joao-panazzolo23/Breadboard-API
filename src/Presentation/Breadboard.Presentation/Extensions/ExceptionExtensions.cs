@@ -1,7 +1,7 @@
-using Breadboard.Application.Exceptions.Exceptions;
 using Breadboard.Application.Exceptions.Models;
 using Breadboard.Presentation.ExceptionHandler;
-using Breadboard.Presentation.ExceptionHandler.Strategies;
+using Breadboard.Presentation.ExceptionHandler.Exceptions;
+using Breadboard.Presentation.ExceptionHandler.Strategies.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Breadboard.Presentation.Extensions;
@@ -10,32 +10,32 @@ public static class ExceptionHandlerExtensions
 {
     public static IServiceCollection AddExceptions(this IServiceCollection services)
     {
-        return services
-            .AddExceptionHandling()
-            .AddExceptionFactory()
-            .AddExceptionStrategies();
+        return services.AddExceptionHandler().AddExceptionFactory().AddExceptionStrategies();
     }
+
     private static IServiceCollection AddExceptionStrategies(this IServiceCollection services)
     {
+        var exceptionType = typeof(IExceptionStrategy);
+        
         var types =
-           typeof(ExceptionHandlerExtensions).Assembly
-           .GetTypes().Where(x => typeof(IExceptionStrategy).IsAssignableFrom(x) && !x.IsAbstract && x.IsClass);
+            exceptionType.Assembly
+                .GetTypes().Where(x => exceptionType.IsAssignableFrom(x) && !x.IsAbstract && x.IsClass);
 
         foreach (var type in types)
         {
-            services.AddTransient(typeof(IExceptionStrategy), type);
+            services.AddTransient(exceptionType, type);
         }
-        return services;
 
+        return services;
     }
-    private static IServiceCollection AddExceptionHandling(this IServiceCollection services)
+
+    private static IServiceCollection AddExceptionHandler(this IServiceCollection services)
     {
         return services.AddExceptionHandler<GlobalExceptionHandler>().AddProblemDetails(options =>
         {
             options.CustomizeProblemDetails = context =>
             {
                 context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
-                context.ProblemDetails.Extensions.Remove("exception");
             };
         });
     }
@@ -53,15 +53,17 @@ public static class ExceptionHandlerExtensions
             options.InvalidModelStateResponseFactory = context =>
             {
                 var errors = new List<ExceptionDetail>();
-
+                
                 foreach (var entry in context.ModelState)
                 {
                     foreach (var error in entry.Value!.Errors)
                     {
-                        errors.Add(new ExceptionDetail(entry.Key, error.ErrorMessage));
+                        var apiError = new ExceptionDetail(entry.Key, error.ErrorMessage);
+                        errors.Add(apiError);
                     }
                 }
-                throw new AppValidationException(errors);
+
+                throw new ValidationException(errors);
             };
         });
     }

@@ -1,11 +1,11 @@
-using Breadboard.Presentation.ExceptionHandler.Strategies;
+using Breadboard.Presentation.ExceptionHandler.Strategies.Abstract;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace Breadboard.Presentation.ExceptionHandler;
 
-public class GlobalExceptionHandler(
-    ILogger<GlobalExceptionHandler> _logger,
-    IEnumerable<IExceptionStrategy> _strategies
+public sealed class GlobalExceptionHandler(
+    ILogger<GlobalExceptionHandler> logger,
+    IEnumerable<IExceptionStrategy> handlers
 ) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(
@@ -14,12 +14,12 @@ public class GlobalExceptionHandler(
         CancellationToken cancellationToken
     )
     {
-        _logger.LogError($"Exception registered : {exception.Message}");
+        logger.LogError($"Exception registered: {exception.Message}", exception);
 
-        var handler = _strategies.FirstOrDefault(x => x.CanHandle(exception));
+        var handler = handlers.FirstOrDefault(x => x.CanHandle(exception));
 
         if (handler is null) return false;
 
-        return await handler.Handle(httpContext, exception, cancellationToken);
+        return await handler!.Handle(httpContext, exception, cancellationToken);
     }
 }

@@ -1,5 +1,4 @@
 using Breadboard.Application.Extensions;
-using Breadboard.Presentation.ExceptionHandler;
 using Breadboard.Presentation.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,17 +9,18 @@ builder.Services.AddSecurity(builder.Configuration)
     .AddControllersScheme()
     .AddCaching()
     .AddApplication()
-    .AddExceptions().AddModelBindingExceptions();
+    .AddExceptions();
 
 var app = builder.Build();
 
-app.UseExceptionHandler()
-    .UseStaticFiles()
+app.UseStaticFiles()
     .UseSecurity()
     .UseHttpsRedirection()
     .UseRouting()
     .UseDocumentation()
     .UseDatabase()
-    .UseControllers();
+    .UseControllers()
+    .UseExceptionHandler();
+    ;
 
 app.Run();

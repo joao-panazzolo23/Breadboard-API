@@ -1,24 +1,15 @@
-using Breadboard.Application.Exceptions;
 using Breadboard.Application.Exceptions.Exceptions;
-using Breadboard.Application.ResultPattern;
+using Breadboard.Application.Exceptions.Models;
 using FluentValidation;
 using Mediator;
 
-namespace Breadboard.Application.Pipelines;
+namespace Breadboard.Application.Pipelines.Behaviors;
 
 public sealed class ValidationBehavior<TMessage, TResponse>(
     IEnumerable<IValidator<TMessage>> validators
 ) : IPipelineBehavior<TMessage, TResponse>
     where TMessage : IMessage
-    where TResponse : IResult
 {
-    /// <summary>
-    /// Todo: find 
-    /// </summary>
-    /// <param name="message"></param>
-    /// <param name="next"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
     public async ValueTask<TResponse> Handle(
         TMessage message,
         MessageHandlerDelegate<TMessage, TResponse> next,
@@ -39,6 +30,7 @@ public sealed class ValidationBehavior<TMessage, TResponse>(
 
         if (errors.Count == 0) return await next(message, cancellationToken);
 
-        throw new AppValidationException(errors);
+        throw new AppValidationException(errors.Select(x => new ExceptionDetail(x.PropertyName, x.ErrorMessage))
+            .ToList());
     }
 }

@@ -1,4 +1,5 @@
 using Breadboard.Application.Pipelines;
+using Breadboard.Application.Pipelines.Behaviors;
 using FluentValidation;
 using Mediator;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,4 +21,7 @@ public static class ApplicationExtensions
     {
         return services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     }
+    
+    
+    
 }
