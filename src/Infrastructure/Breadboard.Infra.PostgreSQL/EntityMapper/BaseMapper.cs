@@ -13,6 +13,7 @@ public abstract class BaseMapper<T> : IEntityTypeConfiguration<T> where T : Enti
         builder.HasKey(x => x.Id);
         builder.Property(x => x.CreatedAt);
         builder.Property(x => x.UpdatedAt);
+        builder.Ignore(x => x.DomainEvents);
         ConfigureMap(builder);
     }
 }

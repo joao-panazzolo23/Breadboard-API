@@ -31,7 +31,7 @@ public class AppDbContext(
         return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
     }
 
-    private void SetCustomDates(List<EntityEntry<Entity>> entries)
+    private static void SetCustomDates(List<EntityEntry<Entity>> entries)
     {
         foreach (var entry in entries)
         {
