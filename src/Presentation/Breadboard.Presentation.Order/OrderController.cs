@@ -1,7 +1,7 @@
 using Mediator;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Breadboard.Presentation.Controllers;
+namespace Breadboard.Presentation.Order;
 
 public class OrderController(IMediator _mediator) : ControllerBase
 {

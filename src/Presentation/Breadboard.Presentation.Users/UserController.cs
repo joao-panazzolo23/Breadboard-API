@@ -5,9 +5,10 @@ using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.DTOs;
 using Breadboard.Presentation.Attributes;
 using Mediator;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Breadboard.Presentation.Controllers;
+namespace Breadboard.Presentation.Users;
 
 [ApiController]
 [AutoRouting] 

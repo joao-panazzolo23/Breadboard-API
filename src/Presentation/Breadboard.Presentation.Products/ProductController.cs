@@ -1,12 +1,12 @@
-
 using Breadboard.Application.Products.Queries;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Products.Viewmodels;
 using Breadboard.Presentation.Attributes;
 using Mediator;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Breadboard.Presentation.Controllers;
+namespace Breadboard.Presentation.Products;
 
 [ApiController]
 [AutoRouting]
