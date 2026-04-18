@@ -4,14 +4,73 @@
     "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj": {}
   },
   "projects": {
-    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj": {
+    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj",
-        "projectName": "Breadboard.Domain",
-        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj",
+        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
+        "projectName": "Breadboard.Domain.Shared",
+        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
         "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/obj/",
+        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/john/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
+        "projectName": "Breadboard.Domain.Users",
+        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
+        "packagesPath": "/home/john/.nuget/packages/",
+        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/john/.nuget/NuGet/NuGet.Config"
@@ -26,8 +85,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj"
+              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
+                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
               }
             }
           }
@@ -341,65 +400,6 @@
         }
       }
     },
-    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj",
-        "projectName": "Breadboard.Shared",
-        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj",
-        "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/john/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.200"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -422,11 +422,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj"
+              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
+                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
               },
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj"
+              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
+                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
               }
             }
           }

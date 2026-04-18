@@ -872,7 +872,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Breadboard.Domain": "1.0.0",
+          "Breadboard.Domain.Products": "1.0.0",
+          "Breadboard.Domain.Users": "1.0.0",
           "FluentValidation": "12.1.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Mediator.Abstractions": "3.0.1",
@@ -885,27 +886,50 @@
           "bin/placeholder/Breadboard.Application.Shared.dll": {}
         }
       },
-      "Breadboard.Domain/1.0.0": {
+      "Breadboard.Application.Users/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Breadboard.Shared": "1.0.0"
+          "Breadboard.Application.Shared": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Breadboard.Domain.dll": {}
+          "bin/placeholder/Breadboard.Application.Users.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Breadboard.Domain.dll": {}
+          "bin/placeholder/Breadboard.Application.Users.dll": {}
         }
       },
-      "Breadboard.Shared/1.0.0": {
+      "Breadboard.Domain.Products/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Breadboard.Domain.Products.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Domain.Products.dll": {}
+        }
+      },
+      "Breadboard.Domain.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Breadboard.Shared.dll": {}
+          "bin/placeholder/Breadboard.Domain.Shared.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Breadboard.Shared.dll": {}
+          "bin/placeholder/Breadboard.Domain.Shared.dll": {}
+        }
+      },
+      "Breadboard.Domain.Users/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Breadboard.Domain.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Breadboard.Domain.Users.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Domain.Users.dll": {}
         }
       }
     }
@@ -2644,22 +2668,33 @@
       "path": "../../Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj",
       "msbuildProject": "../../Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj"
     },
-    "Breadboard.Domain/1.0.0": {
+    "Breadboard.Application.Users/1.0.0": {
       "type": "project",
-      "path": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj",
-      "msbuildProject": "../../Domain/Breadboard.Domain/Breadboard.Domain.csproj"
+      "path": "../../Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj",
+      "msbuildProject": "../../Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj"
     },
-    "Breadboard.Shared/1.0.0": {
+    "Breadboard.Domain.Products/1.0.0": {
       "type": "project",
-      "path": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj",
-      "msbuildProject": "../../Domain/Breadboard.Shared/Breadboard.Shared.csproj"
+      "path": "../../Domain/Breadboard.Domain.Products/Breadboard.Domain.Products.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain.Products/Breadboard.Domain.Products.csproj"
+    },
+    "Breadboard.Domain.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
+    },
+    "Breadboard.Domain.Users/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Breadboard.Application.Shared >= 1.0.0",
-      "Breadboard.Domain >= 1.0.0",
-      "Breadboard.Shared >= 1.0.0",
+      "Breadboard.Application.Users >= 1.0.0",
+      "Breadboard.Domain.Shared >= 1.0.0",
+      "Breadboard.Domain.Users >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Relational >= 9.0.10",
@@ -2695,11 +2730,14 @@
             "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj": {
               "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj"
             },
-            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain/Breadboard.Domain.csproj"
+            "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj": {
+              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj"
             },
-            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Shared/Breadboard.Shared.csproj"
+            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
+              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
+            },
+            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
+              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
             }
           }
         }

@@ -1,8 +1,4 @@
-﻿using System.Security.Claims;
-using Breadboard.Application.Authentication;
-using Breadboard.Domain.Users.Entities;
-
-namespace BreadBoard.Infra.JWTBearer.Services;
+﻿namespace BreadBoard.Infra.JWTBearer.Services;
 //
 // public class JwtAuthenticationService : IJwtAuthService
 // {

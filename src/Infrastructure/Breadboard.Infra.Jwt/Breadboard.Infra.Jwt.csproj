@@ -17,8 +17,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj"/>
-        <ProjectReference Include="..\..\Domain\Breadboard.Domain\Breadboard.Domain.csproj"/>
-        <ProjectReference Include="..\..\Domain\Breadboard.Shared\Breadboard.Shared.csproj"/>
+        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Users\Breadboard.Domain.Users.csproj" />
+        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Shared\Breadboard.Domain.Shared.csproj" />
     </ItemGroup>
 
 </Project>
