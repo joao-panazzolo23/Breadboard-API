@@ -12,12 +12,11 @@ public static class ResultFactory<T>
     public static Result<T?> Unauthorized(T? data = default, string? message = null) =>
         new(statusCode: HttpStatusCode.Unauthorized, data, message);
 
-    public static Result<T?> BadRequest(string? message = null, List<ValidationFailure>? errors = null) =>
+    public static Result<T?> BadRequest(string? message = null) =>
         new(
-            statusCode: HttpStatusCode.BadRequest, 
-            data: default(T), 
-            message: message,
-            errors: errors 
+            statusCode: HttpStatusCode.BadRequest,
+            data: default(T),
+            message: message
         );
 
     public static Result<T?> NotFound(string? message = null) =>
@@ -26,9 +25,9 @@ public static class ResultFactory<T>
     public static Result<T?> Conflict(string? message = null) =>
         new(HttpStatusCode.Conflict, default(T), message);
 
-    //special method for validations only
-    public static Result<T?> InvalidRequest(List<ValidationFailure> errors)
-    {
-        return BadRequest(errors: errors);
-    }
+    // //special method for validations only
+    // public static Result<T?> InvalidRequest()
+    // {
+    //     return BadRequest();
+    // }
 }
