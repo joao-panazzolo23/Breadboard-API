@@ -28,7 +28,7 @@ public class AuthConvention : IOpenApiConvention
             .Any();
 
         if (!hasAuthorize || allowsAnonymous) return;
-
+        
         operation.Responses.TryAdd(StatusCodes.Status401Unauthorized.ToString(), new OpenApiResponse { Description = "Unauthorized" });
         operation.Responses.TryAdd(StatusCodes.Status403Forbidden.ToString(), new OpenApiResponse { Description = "Forbidden" });
     }

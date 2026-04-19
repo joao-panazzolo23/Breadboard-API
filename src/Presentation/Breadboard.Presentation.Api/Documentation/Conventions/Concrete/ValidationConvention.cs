@@ -14,10 +14,10 @@ public class ValidationConvention : IOpenApiConvention
         CancellationToken ct
     )
     {
-        var hasBody = context.Description.ParameterDescriptions
-            .Any(p => p.Source == BindingSource.Body);
+        // var hasBody = context.Description.ParameterDescriptions
+        //     .Any(p => p.Source == BindingSource.Body);
 
-        if (!hasBody) return Task.CompletedTask;
+        // if (!hasBody) return Task.CompletedTask;
 
         var mediatype = new OpenApiMediaType()
         {

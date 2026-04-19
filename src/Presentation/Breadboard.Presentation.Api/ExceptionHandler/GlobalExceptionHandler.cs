@@ -16,10 +16,12 @@ public sealed class GlobalExceptionHandler(
     {
         logger.LogError($"Exception registered: {exception.Message}", exception);
 
-        var handler = handlers.FirstOrDefault(x => x.CanHandle(exception));
+        foreach (var handler in handlers)
+        {
+            if (await handler.Handle(httpContext, exception, cancellationToken))
+                return true;
+        }
 
-        if (handler is null) return false;
-
-        return await handler!.Handle(httpContext, exception, cancellationToken);
+        return false;
     }
 }

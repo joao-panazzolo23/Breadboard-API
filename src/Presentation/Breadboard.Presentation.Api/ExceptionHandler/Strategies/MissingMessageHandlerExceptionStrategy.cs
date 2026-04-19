@@ -1,22 +1,28 @@
 using System.Net;
-using Breadboard.Application.Exceptions.Exceptions;
 using Breadboard.Application.Exceptions.Models;
 using Breadboard.Presentation.ExceptionHandler.Strategies.Abstract;
+using Mediator;
 
 namespace Breadboard.Presentation.ExceptionHandler.Strategies;
 
-public class SystemExceptionStrategy : IExceptionStrategy
+public class MissingMessageHandlerExceptionStrategy : IExceptionStrategy
 {
-    public bool CanHandle(Exception exception) => exception is SystemException;
 
-    public async Task<bool> Handle(HttpContext context, Exception exception, CancellationToken cancellationToken)
+    public async Task<bool> Handle(
+        HttpContext context,
+        Exception exception,
+        CancellationToken cancellationToken
+    )
     {
+        if (exception is not MissingMessageHandlerException) return false;
+
+
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
         var result = new ExceptionResult(
             HttpStatusCode.InternalServerError,
-            ((AppValidationException)exception).Errors,
-            typeof(IExceptionStrategy).Assembly.GetName().Name);
+            [],
+            typeof(MissingMessageHandlerException).Assembly.GetName().Name);
 
         await context.Response.WriteAsJsonAsync(result, cancellationToken);
 

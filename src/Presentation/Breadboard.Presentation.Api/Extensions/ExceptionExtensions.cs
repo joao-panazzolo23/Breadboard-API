@@ -57,11 +57,9 @@ public static class ExceptionHandlerExtensions
 
                 foreach (var entry in context.ModelState)
                 {
-                    foreach (var error in entry.Value!.Errors)
-                    {
-                        var apiError = new ExceptionDetail(entry.Key, error.ErrorMessage);
-                        errors.Add(apiError);
-                    }
+                    errors.AddRange(entry.Value!.Errors.Select(error => 
+                        new ExceptionDetail(entry.Key, error.ErrorMessage
+                        )));
                 }
 
                 throw new ValidationException(errors);

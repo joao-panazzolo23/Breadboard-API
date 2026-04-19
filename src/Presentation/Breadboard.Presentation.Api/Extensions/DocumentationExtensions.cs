@@ -39,7 +39,7 @@ public static class DocumentationExtensions
                 .SortTagsAlphabetically()
                 .SortOperationsByMethod()
                 .PreserveSchemaPropertyOrder()
-                .WithTheme(theme: ScalarTheme.BluePlanet)
+                .WithTheme(theme: ScalarTheme.DeepSpace)
                 ;
         });
 
