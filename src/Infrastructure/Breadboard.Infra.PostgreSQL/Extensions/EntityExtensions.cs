@@ -31,9 +31,8 @@ public static class EntityExtensions
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped<IUnityOfWork, UnityOfWork>()
+        return services.AddScoped<IUnityOfWork, UnityOfWork>()
             .AddScoped<IUserRepository, UserRepository>();
-        return services;
     }
 
     /// <summary>

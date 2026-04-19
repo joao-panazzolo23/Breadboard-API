@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj" />
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Breadboard.Application.Users.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj"/>
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Breadboard.Application.Users.csproj"/>
         <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj"/>
     </ItemGroup>
 
