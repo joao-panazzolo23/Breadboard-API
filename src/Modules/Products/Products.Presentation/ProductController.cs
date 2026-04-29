@@ -1,10 +1,10 @@
-using Breadboard.Application.Products.Queries;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Domain.Products.Viewmodels;
-using Breadboard.Presentation.Shared.Attributes;
 using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Products.Application.Products.Queries;
+using Products.Domain.Products.Viewmodels;
+using SharedKernel.Presentation.Attributes;
 
 namespace Products.Presentation;
 

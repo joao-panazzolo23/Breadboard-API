@@ -1,10 +1,9 @@
 using Breadboard.Application.Data;
+using Breadboard.Domain.Repositories;
 using Breadboard.Shared.Options;
-using BuildingBlocks.PostgreSQL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Users.Application.Users.Repositories;
 
 namespace BuildingBlocks.PostgreSQL.Extensions;
 
@@ -32,7 +31,8 @@ public static class EntityExtensions
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         return services.AddScoped<IUnityOfWork, UnityOfWork>()
-            .AddScoped<IUserRepository, UserRepository>();
+            //.AddScoped<IUserRepository, UserRepository>()
+            ;
     }
 
     /// <summary>

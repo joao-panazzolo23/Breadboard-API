@@ -6,7 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
+      <ProjectReference Include="..\..\..\SharedKernel\SharedKernel.Applicattion\SharedKernel.Application.csproj" />
+      <ProjectReference Include="..\..\..\SharedKernel\SharedKernel.Domain\SharedKernel.Domain.csproj" />
+      <ProjectReference Include="..\Products.Domain\Products.Domain.csproj" />
     </ItemGroup>
+
 
 </Project>

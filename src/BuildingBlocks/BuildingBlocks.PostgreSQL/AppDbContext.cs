@@ -1,4 +1,3 @@
-using Breadboard.Domain.Users.Entities;
 using Breadboard.Shared.Entities;
 using Mediator;
 using Microsoft.EntityFrameworkCore;
@@ -6,15 +5,16 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BuildingBlocks.PostgreSQL;
 
-public abstract class AppDbContext(
-    DbContextOptions<AppDbContext> options,
+public class AppDbContext(
+    DbContextOptions options,
     IPublisher publisher
 ) : DbContext(options)
 {
-    //public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        ///todo: migrations will be segregated by modules, it wouldnt work right here.
+        ///
         builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
     }
 
@@ -27,7 +27,7 @@ public abstract class AppDbContext(
 
         SetCustomDates(entries);
 
-        await PublishEvents(entries);
+        await PublishEvents(entries, cancellationToken);
 
         return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
     }
@@ -48,14 +48,20 @@ public abstract class AppDbContext(
         }
     }
 
-    private Task PublishEvents(IEnumerable<EntityEntry<Entity>> entries)
+    /// <summary>
+    /// TODO: OUTBOX PATTERN
+    /// </summary>
+    /// <param name="entries"></param>
+    /// <param name="token"></param>
+    /// <returns></returns>
+    private Task PublishEvents(IEnumerable<EntityEntry<Entity>> entries, CancellationToken token)
     {
         var events = entries.SelectMany(x => x.Entity.DomainEvents.List)
             .ToList();
 
         foreach (var @event in events)
         {
-            publisher.Publish(@event);
+            publisher.Publish(@event, token);
         }
 
         return Task.CompletedTask;

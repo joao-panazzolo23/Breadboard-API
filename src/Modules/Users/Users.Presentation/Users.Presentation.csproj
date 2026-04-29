@@ -6,9 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Users.Application.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
+        <ProjectReference Include="..\..\..\SharedKernel\SharedKernel.Presentation\SharedKernel.Presentation.csproj" />
+        <!--<ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Users.Application.csproj" />-->
+        <!--<ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />-->
+        <ProjectReference Include="..\Users.Application\Users.Application.csproj" />
     </ItemGroup>
 
 </Project>

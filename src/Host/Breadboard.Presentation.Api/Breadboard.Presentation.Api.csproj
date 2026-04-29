@@ -16,14 +16,20 @@
         <PackageReference Include="Scalar.AspNetCore" Version="2.14.6" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.Jwt\Breadboard.Presentation.Jwt.csproj" />
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQLDapper\BuildingBlocks.PostgreSQLDapper.csproj" />
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQL\BuildingBlocks.PostgreSQL.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Finances\Finances.Presentation.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Order\Orders.Presentation.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Products\Products.Presentation.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Users\Users.Presentation.csproj" />
+      <ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQLDapper\BuildingBlocks.PostgreSQLDapper.csproj" />
+      <ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQL\BuildingBlocks.PostgreSQL.csproj" />
+      <ProjectReference Include="..\..\Modules\Finances\Finances.Presentation\Finances.Presentation.csproj" />
+      <ProjectReference Include="..\..\Modules\Orders\Orders.Presentation\Orders.Presentation.csproj" />
+      <ProjectReference Include="..\..\Modules\Products\Products.Presentation\Products.Presentation.csproj" />
+      <ProjectReference Include="..\..\Modules\Users\Users.Infrastructure\Users.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\Modules\Users\Users.Presentation\Users.Presentation.csproj" />
+      <!--<ProjectReference Include="..\..\SharedKernel\SharedKernel.Presentation\SharedKernel.Presentation.csproj" />-->
+      <ProjectReference Include="..\Breadboard.Infra.Jwt\Breadboard.Presentation.Jwt.csproj" />
     </ItemGroup>
 
 </Project>
+
+
+<!--C:\Users\equip\OneDrive\Desktop\apresentacao DDD\Breadboard-API\src\Modules\Users\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj--> 
+
+

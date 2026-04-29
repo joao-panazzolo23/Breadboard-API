@@ -1,4 +1,4 @@
-using Breadboard.Domain.Users.Entities;
+using Breadboard.Domain.Entities;
 
 namespace Breadboard.Application.Authentication;
 

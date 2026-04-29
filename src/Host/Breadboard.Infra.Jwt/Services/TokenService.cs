@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using System.Text;
 using Breadboard.Application.Authentication;
-using Breadboard.Domain.Users.Entities;
+using Breadboard.Domain.Entities;
 using BreadBoard.Infra.JWTBearer.Options;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.JsonWebTokens;

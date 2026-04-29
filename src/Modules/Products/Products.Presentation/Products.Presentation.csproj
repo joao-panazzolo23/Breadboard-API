@@ -6,18 +6,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\SharedKernel\SharedKernel.Presentation\SharedKernel.Presentation.csproj" />
+      <ProjectReference Include="..\Products.Application\Products.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
         <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
             <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
         </Reference>
         <Reference Include="Microsoft.AspNetCore.Mvc.Core">
             <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
         </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Products\Breadboard.Application.Products.csproj" />
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
-        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
     </ItemGroup>
 
 </Project>

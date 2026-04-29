@@ -1,16 +1,15 @@
-using System.Linq.Expressions;
-using System.Reflection;
-using Breadboard.Domain.Users.DTOs;
-using Breadboard.Domain.Users.Entities;
-using Breadboard.Domain.Users.QueryRepositories;
-using BuildingBlocks.PostgreSQLDapper.Abstractions;
+using Breadboard.Domain.DTOs;
+using Breadboard.Domain.Entities;
+using Breadboard.Domain.QueryRepositories;
 using BuildingBlocks.PostgreSQLDapper.Context;
 using BuildingBlocks.PostgreSQLDapper.QueryBuilder;
 using Dapper;
 
 namespace BuildingBlocks.PostgreSQLDapper.QueryRepositories.Users;
 
-public class UserQueryRepository(PostgreSqlContext context) : IQueryRepository, IUserQueryRepository
+public class UserQueryRepository(
+    PostgreSqlContext context
+    ) : IUserQueryRepository
 {
     public Task<UserDto?> GetById(Guid id)
     {

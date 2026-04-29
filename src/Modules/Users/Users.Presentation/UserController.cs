@@ -1,12 +1,12 @@
 using Breadboard.Application.Cops.Models;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Domain.Users.DTOs;
-using Breadboard.Presentation.Shared.Attributes;
+using Breadboard.Domain.DTOs;
 using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Users.Application.Users.Commands;
-using Users.Application.Users.Queries;
+using SharedKernel.Presentation.Attributes;
+using Users.Application.Commands;
+using Users.Application.Queries;
 
 namespace Users.Presentation;
 

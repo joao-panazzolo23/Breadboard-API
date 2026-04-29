@@ -1,6 +1,6 @@
 using Breadboard.Application.Data;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Domain.Products.Viewmodels;
+using Products.Domain.Products.Viewmodels;
 
 
 namespace Products.Application.Products.Queries;

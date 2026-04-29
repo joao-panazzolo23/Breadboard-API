@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks.PostgreSQL\BuildingBlocks.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Users.Domain\Users.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

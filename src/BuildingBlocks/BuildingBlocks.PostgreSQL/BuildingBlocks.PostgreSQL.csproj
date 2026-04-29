@@ -20,10 +20,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Users.Application.csproj" />
-        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Users\Users.Domain.csproj" />
-        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Shared\SharedKernel.Domain.csproj" />
+      <ProjectReference Include="..\..\SharedKernel\SharedKernel.Applicattion\SharedKernel.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Repositories\" />
     </ItemGroup>
 
 </Project>
