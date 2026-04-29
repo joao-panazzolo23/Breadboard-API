@@ -1,6 +1,6 @@
 using Breadboard.Shared.Entities;
 
-namespace Breadboard.Domain.Orders.Entities;
+namespace Orders.Domain.Entities;
 
 public class Order : Entity
 {

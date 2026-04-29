@@ -1,7 +1,7 @@
-using Breadboard.Application.Users.Commands;
 using FluentValidation;
+using Users.Application.Users.Commands;
 
-namespace Breadboard.Application.Users.Validators;
+namespace Users.Application.Users.Validators;
 
 public sealed class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {

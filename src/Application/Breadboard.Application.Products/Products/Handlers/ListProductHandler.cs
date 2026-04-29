@@ -4,7 +4,7 @@ using Breadboard.Domain.Products.QueryRepositories;
 using Breadboard.Domain.Products.Viewmodels;
 using Mediator;
 
-namespace Breadboard.Application.Products.Handlers;
+namespace Products.Application.Products.Handlers;
 
 // public class ListProductHandler(
 //     IProductQueryRepository _repository

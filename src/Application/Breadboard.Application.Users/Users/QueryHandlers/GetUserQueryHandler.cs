@@ -1,11 +1,11 @@
 using Breadboard.Application.Cops.Abstractions;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.ResultPattern.Factory;
-using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.DTOs;
 using Breadboard.Domain.Users.QueryRepositories;
+using Users.Application.Users.Queries;
 
-namespace Breadboard.Application.Users.QueryHandlers;
+namespace Users.Application.Users.QueryHandlers;
 
 public class GetUserQueryHandler(IUserQueryRepository _repo) : IRequestHandler<GetUserQueryCommand, UserDto?>
 {

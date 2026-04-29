@@ -1,6 +1,6 @@
-using Breadboard.Application;
+using Breadboard.Application.Data;
 
-namespace Breadboard.Infra.PostgreSQL;
+namespace BuildingBlocks.PostgreSQL;
 
 public class UnityOfWork(AppDbContext context) : IUnityOfWork
 {

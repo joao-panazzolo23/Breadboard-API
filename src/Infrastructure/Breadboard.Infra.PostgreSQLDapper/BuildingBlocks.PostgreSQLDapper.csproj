@@ -13,7 +13,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\Domain\Breadboard.Domain.Users\Breadboard.Domain.Users.csproj" />
-        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Shared\Breadboard.Domain.Shared.csproj" />
     </ItemGroup>
 
 </Project>

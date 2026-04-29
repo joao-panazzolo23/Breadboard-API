@@ -1,6 +1,6 @@
-﻿using Breadboard.Infra.PostgreSQL.Extensions;
-using Breadboard.Infra.PostgreSQLDapper.Extensions;
-using Breadboard.Shared.Options;
+﻿using Breadboard.Shared.Options;
+using BuildingBlocks.PostgreSQL.Extensions;
+using BuildingBlocks.PostgreSQLDapper.Extensions;
 
 namespace Breadboard.Presentation.Extensions;
 

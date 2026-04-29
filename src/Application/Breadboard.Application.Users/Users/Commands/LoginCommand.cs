@@ -2,7 +2,7 @@ using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Users.DTOs;
 using Mediator;
 
-namespace Breadboard.Application.Users.Commands;
+namespace Users.Application.Users.Commands;
 
 public record LoginCommand(
     string Username,

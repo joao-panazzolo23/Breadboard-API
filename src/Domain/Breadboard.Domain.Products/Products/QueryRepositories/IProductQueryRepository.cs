@@ -1,6 +1,6 @@
-using Breadboard.Domain.Products.Viewmodels;
+using Products.Domain.Products.Viewmodels;
 
-namespace Breadboard.Domain.Products.QueryRepositories;
+namespace Products.Domain.Products.QueryRepositories;
 
 public interface IProductQueryRepository
 {

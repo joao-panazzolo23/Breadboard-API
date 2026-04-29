@@ -1,8 +1,9 @@
 using System.Reflection;
-using Breadboard.Infra.PostgreSQLDapper.Abstractions;
 using Breadboard.Shared.Entities;
+using BuildingBlocks.PostgreSQLDapper;
+using BuildingBlocks.PostgreSQLDapper.Abstractions;
 
-namespace Breadboard.Infra.PostgreSQLDapper.Extensions;
+namespace BuildingBlocks.PostgreSQLDapper.Extensions;
 
 public static class DIscover
 {

@@ -1,4 +1,4 @@
-namespace Breadboard.Application.Users.Commands;
+namespace Users.Application.Users.Commands;
 
 public record ChangePasswordCommand(
     Guid Id,

@@ -1,11 +1,11 @@
 using Breadboard.Application.Cops;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.ResultPattern.Factory;
-using Breadboard.Application.Users.Commands;
-using Breadboard.Application.Users.Repositories;
 using Mediator;
+using Users.Application.Users.Commands;
+using Users.Application.Users.Repositories;
 
-namespace Breadboard.Application.Users.Handlers;
+namespace Users.Application.Users.Handlers;
 
 public class DeleteUserHandler(
     IUserRepository _repository,

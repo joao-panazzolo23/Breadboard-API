@@ -1,6 +1,6 @@
 using Riok.Mapperly.Abstractions;
 
-namespace Breadboard.Application.Users.Mappers;
+namespace Users.Application.Users.Mappers;
 
 [Mapper]
 public static partial class UserMapper

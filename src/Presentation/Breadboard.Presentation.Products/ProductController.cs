@@ -6,7 +6,7 @@ using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Breadboard.Presentation.Products;
+namespace Products.Presentation;
 
 [ApiController]
 [AutoRouting]

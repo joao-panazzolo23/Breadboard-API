@@ -1,4 +1,4 @@
-namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
+namespace BuildingBlocks.PostgreSQLDapper.QueryBuilder;
 
 internal static class Query
 {

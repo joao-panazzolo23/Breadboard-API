@@ -1,4 +1,4 @@
-namespace Breadboard.Shared.Entities;
+namespace Breadboard.Shared.ValueObjects;
 
 //Todo: make a struct for using money base on NodaMoney
 public readonly struct MoneyBase

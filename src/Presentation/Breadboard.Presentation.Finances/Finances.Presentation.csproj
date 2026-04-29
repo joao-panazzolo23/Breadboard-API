@@ -3,11 +3,11 @@
     <PropertyGroup>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Breadboard.Domain.Expenses</RootNamespace>
+        <RootNamespace>Expenses</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Breadboard.Domain.Shared\Breadboard.Domain.Shared.csproj"/>
+        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
     </ItemGroup>
 
 </Project>

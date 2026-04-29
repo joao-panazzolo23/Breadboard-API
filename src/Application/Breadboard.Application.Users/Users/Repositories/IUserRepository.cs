@@ -1,6 +1,6 @@
 using Breadboard.Domain.Users.Entities;
 
-namespace Breadboard.Application.Users.Repositories;
+namespace Users.Application.Users.Repositories;
 
 public interface IUserRepository
 {

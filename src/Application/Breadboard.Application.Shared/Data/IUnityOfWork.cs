@@ -1,4 +1,4 @@
-namespace Breadboard.Application;
+namespace Breadboard.Application.Data;
 
 public interface IUnityOfWork
 {

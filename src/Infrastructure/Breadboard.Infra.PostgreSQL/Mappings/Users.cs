@@ -1,9 +1,9 @@
 using Breadboard.Domain.Users.Entities;
-using Breadboard.Infra.PostgreSQL.EntityMapper;
+using BuildingBlocks.PostgreSQL.EntityMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Breadboard.Infra.PostgreSQL.Mappings;
+namespace BuildingBlocks.PostgreSQL.Mappings;
 
 public class Users : BaseMapper<User>
 {

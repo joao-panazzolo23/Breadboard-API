@@ -2,7 +2,7 @@ using Breadboard.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Breadboard.Infra.PostgreSQL.EntityMapper;
+namespace BuildingBlocks.PostgreSQL.EntityMapper;
 
 public abstract class BaseMapper<T> : IEntityTypeConfiguration<T> where T : Entity
 {

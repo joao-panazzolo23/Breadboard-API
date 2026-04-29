@@ -3,7 +3,7 @@ using Breadboard.Application.ResultPattern;
 using Breadboard.Domain.Products.Viewmodels;
 
 
-namespace Breadboard.Application.Products.Queries;
+namespace Products.Application.Products.Queries;
 
 public record ListProductsQuery : ListQuery<Result<IEnumerable<ListProductDto>>>
 {

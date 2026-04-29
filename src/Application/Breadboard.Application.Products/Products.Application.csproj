@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Breadboard.Domain.Shared\Breadboard.Domain.Shared.csproj"/>
+        <ProjectReference Include="..\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
     </ItemGroup>
 
 </Project>

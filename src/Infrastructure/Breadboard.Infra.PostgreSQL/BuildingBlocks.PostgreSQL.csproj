@@ -20,10 +20,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="../../Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj" />
-        <ProjectReference Include="../../Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj" />
-        <ProjectReference Include="../../Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj" />
-        <ProjectReference Include="../../Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Users.Application.csproj" />
+        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Users\Users.Domain.csproj" />
+        <ProjectReference Include="..\..\Domain\Breadboard.Domain.Shared\SharedKernel.Domain.csproj" />
     </ItemGroup>
 
 </Project>

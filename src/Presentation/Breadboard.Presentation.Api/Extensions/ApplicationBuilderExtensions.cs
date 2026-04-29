@@ -1,4 +1,4 @@
-﻿using Breadboard.Infra.PostgreSQL.Extensions;
+﻿using BuildingBlocks.PostgreSQL.Extensions;
 
 namespace Breadboard.Presentation.Extensions;
 

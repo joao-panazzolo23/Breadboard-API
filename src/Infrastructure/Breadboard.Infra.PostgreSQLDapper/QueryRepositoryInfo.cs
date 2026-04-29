@@ -1,3 +1,3 @@
-namespace Breadboard.Infra.PostgreSQLDapper;
+namespace BuildingBlocks.PostgreSQLDapper;
 
 public record QueryRepositoryInfo(Type intefaceType, Type classType);

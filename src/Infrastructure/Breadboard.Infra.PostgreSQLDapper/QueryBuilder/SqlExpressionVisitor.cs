@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
+namespace BuildingBlocks.PostgreSQLDapper.QueryBuilder;
 
 internal class SqlExpressionVisitor : ExpressionVisitor
 {

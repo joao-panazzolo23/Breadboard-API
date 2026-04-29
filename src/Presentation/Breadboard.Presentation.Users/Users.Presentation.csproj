@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Users\Users.Application.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
+    </ItemGroup>
+
+</Project>

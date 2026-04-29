@@ -1,14 +1,14 @@
 using Breadboard.Application.Cops.Models;
 using Breadboard.Application.ResultPattern;
-using Breadboard.Application.Users.Commands;
-using Breadboard.Application.Users.Queries;
 using Breadboard.Domain.Users.DTOs;
 using Breadboard.Presentation.Shared.Attributes;
 using Mediator;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Users.Application.Users.Commands;
+using Users.Application.Users.Queries;
 
-namespace Breadboard.Presentation.Users;
+namespace Users.Presentation;
 
 [ApiController]
 [AutoRouting] 

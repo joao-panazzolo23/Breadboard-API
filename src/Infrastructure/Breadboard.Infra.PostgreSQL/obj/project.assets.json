@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "FluentValidation/12.1.1": {
@@ -1104,11 +1104,23 @@
           "buildTransitive/net10.0/System.Text.Json.targets": {}
         }
       },
-      "Breadboard.Application.Shared/1.0.0": {
+      "Breadboard.Domain.Users/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Breadboard.Domain.Products": "1.0.0",
+          "SharedKernel.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Breadboard.Domain.Users.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Breadboard.Domain.Users.dll": {}
+        }
+      },
+      "SharedKernel.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
           "Breadboard.Domain.Users": "1.0.0",
           "FluentValidation": "12.1.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
@@ -1116,56 +1128,46 @@
           "Riok.Mapperly": "4.3.1"
         },
         "compile": {
-          "bin/placeholder/Breadboard.Application.Shared.dll": {}
+          "bin/placeholder/SharedKernel.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Breadboard.Application.Shared.dll": {}
+          "bin/placeholder/SharedKernel.Application.dll": {}
         }
       },
-      "Breadboard.Application.Users/1.0.0": {
+      "SharedKernel.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/SharedKernel.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SharedKernel.Domain.dll": {}
+        }
+      },
+      "Users.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Breadboard.Application.Shared": "1.0.0"
+          "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Shared\\Breadboard.Application.Shared.csproj": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Breadboard.Application.Users.dll": {}
+          "bin/placeholder/Users.Application.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Breadboard.Application.Users.dll": {}
+          "bin/placeholder/Users.Application.dll": {}
         }
       },
-      "Breadboard.Domain.Products/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/Breadboard.Domain.Products.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Breadboard.Domain.Products.dll": {}
-        }
-      },
-      "Breadboard.Domain.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/Breadboard.Domain.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Breadboard.Domain.Shared.dll": {}
-        }
-      },
-      "Breadboard.Domain.Users/1.0.0": {
+      "Users.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Breadboard.Domain.Shared": "1.0.0"
+          "SharedKernel.Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Breadboard.Domain.Users.dll": {}
+          "bin/placeholder/Users.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Breadboard.Domain.Users.dll": {}
+          "bin/placeholder/Users.Domain.dll": {}
         }
       }
     }
@@ -3423,38 +3425,34 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Breadboard.Application.Shared/1.0.0": {
-      "type": "project",
-      "path": "../../Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj",
-      "msbuildProject": "../../Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj"
-    },
-    "Breadboard.Application.Users/1.0.0": {
-      "type": "project",
-      "path": "../../Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj",
-      "msbuildProject": "../../Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj"
-    },
-    "Breadboard.Domain.Products/1.0.0": {
-      "type": "project",
-      "path": "../../Domain/Breadboard.Domain.Products/Breadboard.Domain.Products.csproj",
-      "msbuildProject": "../../Domain/Breadboard.Domain.Products/Breadboard.Domain.Products.csproj"
-    },
-    "Breadboard.Domain.Shared/1.0.0": {
-      "type": "project",
-      "path": "../../Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
-      "msbuildProject": "../../Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
-    },
     "Breadboard.Domain.Users/1.0.0": {
       "type": "project",
       "path": "../../Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
       "msbuildProject": "../../Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
+    },
+    "SharedKernel.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Application/Breadboard.Application.Shared/SharedKernel.Application.csproj",
+      "msbuildProject": "../../Application/Breadboard.Application.Shared/SharedKernel.Application.csproj"
+    },
+    "SharedKernel.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Domain.Shared/SharedKernel.Domain.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain.Shared/SharedKernel.Domain.csproj"
+    },
+    "Users.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Application/Breadboard.Application.Users/Users.Application.csproj",
+      "msbuildProject": "../../Application/Breadboard.Application.Users/Users.Application.csproj"
+    },
+    "Users.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Domain/Breadboard.Domain.Users/Users.Domain.csproj",
+      "msbuildProject": "../../Domain/Breadboard.Domain.Users/Users.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Breadboard.Application.Shared >= 1.0.0",
-      "Breadboard.Application.Users >= 1.0.0",
-      "Breadboard.Domain.Shared >= 1.0.0",
-      "Breadboard.Domain.Users >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 10.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.7",
       "Microsoft.EntityFrameworkCore.Relational >= 10.0.7",
@@ -3462,45 +3460,57 @@
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 10.0.7",
       "Microsoft.Extensions.Configuration.Json >= 11.0.0-preview.3.26207.106",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 10.0.7",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.1"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.1",
+      "SharedKernel.Application >= 1.0.0",
+      "SharedKernel.Domain >= 1.0.0",
+      "Users.Application >= 1.0.0",
+      "Users.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "/home/john/.nuget/packages/": {}
+    "C:\\Users\\equip\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQL/Breadboard.Infra.PostgreSQL.csproj",
-      "projectName": "Breadboard.Infra.PostgreSQL",
-      "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQL/Breadboard.Infra.PostgreSQL.csproj",
-      "packagesPath": "/home/john/.nuget/packages/",
-      "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQL/obj/",
+      "projectUniqueName": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\BuildingBlocks.PostgreSQL.csproj",
+      "projectName": "BuildingBlocks.PostgreSQL",
+      "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\BuildingBlocks.PostgreSQL.csproj",
+      "packagesPath": "C:\\Users\\equip\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/john/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\equip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Shared/Breadboard.Application.Shared.csproj"
+            "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Shared\\SharedKernel.Application.csproj": {
+              "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Shared\\SharedKernel.Application.csproj"
             },
-            "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Application/Breadboard.Application.Users/Breadboard.Application.Users.csproj"
+            "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Users\\Users.Application.csproj": {
+              "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Users\\Users.Application.csproj"
             },
-            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
+            "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj": {
+              "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj"
             },
-            "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
-              "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
+            "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Users.Domain.csproj": {
+              "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Users.Domain.csproj"
             }
           }
         }
@@ -3515,10 +3525,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
@@ -3572,7 +3583,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -3849,5 +3860,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Shared\\Breadboard.Application.Shared.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Application\\Breadboard.Application.Shared\\Breadboard.Application.Shared.csproj",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

@@ -1,8 +1,9 @@
 using System.Linq.Expressions;
 using System.Text;
+using Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
 using Breadboard.Shared.Extensions;
 
-namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
+namespace BuildingBlocks.PostgreSQLDapper.QueryBuilder;
 
 internal class Builder<T>
 {

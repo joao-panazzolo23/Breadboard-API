@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Dapper;
 
-namespace Breadboard.Infra.PostgreSQLDapper.QueryBuilder;
+namespace BuildingBlocks.PostgreSQLDapper.QueryBuilder;
 
 /// <summary>
 /// Todo:This is easy to implement but also not really good.

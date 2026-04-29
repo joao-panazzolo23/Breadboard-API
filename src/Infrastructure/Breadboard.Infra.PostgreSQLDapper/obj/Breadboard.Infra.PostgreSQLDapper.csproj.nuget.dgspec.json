@@ -1,29 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj": {}
+    "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {}
   },
   "projects": {
-    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
+    "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
-        "projectName": "Breadboard.Domain.Shared",
-        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj",
-        "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/obj/",
+        "projectUniqueName": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj",
+        "projectName": "SharedKernel.Domain",
+        "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj",
+        "packagesPath": "C:\\Users\\equip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/john/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\equip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -38,10 +45,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -59,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -337,30 +345,37 @@
         }
       }
     },
-    "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
+    "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Breadboard.Domain.Users.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
+        "projectUniqueName": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Breadboard.Domain.Users.csproj",
         "projectName": "Breadboard.Domain.Users",
-        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj",
-        "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/obj/",
+        "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Breadboard.Domain.Users.csproj",
+        "packagesPath": "C:\\Users\\equip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/john/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\equip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
+              "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj": {
+                "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Shared\\SharedKernel.Domain.csproj"
               }
             }
           }
@@ -375,10 +390,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -396,7 +412,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -674,33 +690,37 @@
         }
       }
     },
-    "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj": {
+    "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj",
+        "projectUniqueName": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj",
         "projectName": "Breadboard.Infra.PostgreSQLDapper",
-        "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj",
-        "packagesPath": "/home/john/.nuget/packages/",
-        "outputPath": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/obj/",
+        "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\Breadboard.Infra.PostgreSQLDapper.csproj",
+        "packagesPath": "C:\\Users\\equip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Infrastructure\\Breadboard.Infra.PostgreSQLDapper\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/john/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\equip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Shared/Breadboard.Domain.Shared.csproj"
-              },
-              "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj": {
-                "projectPath": "/home/john/RiderProjects/Breadboard-API/src/Domain/Breadboard.Domain.Users/Breadboard.Domain.Users.csproj"
+              "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Breadboard.Domain.Users.csproj": {
+                "projectPath": "C:\\Users\\equip\\OneDrive\\Desktop\\apresentacao DDD\\Breadboard-API\\src\\Domain\\Breadboard.Domain.Users\\Breadboard.Domain.Users.csproj"
               }
             }
           }
@@ -715,10 +735,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Dapper": {
@@ -750,7 +771,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/john/.dotnet/sdk/10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

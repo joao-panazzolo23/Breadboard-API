@@ -1,7 +1,7 @@
-using Breadboard.Infra.PostgreSQLDapper.Context;
+using BuildingBlocks.PostgreSQLDapper.Context;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Breadboard.Infra.PostgreSQLDapper.Extensions;
+namespace BuildingBlocks.PostgreSQLDapper.Extensions;
 
 public static class DapperExtensions
 {

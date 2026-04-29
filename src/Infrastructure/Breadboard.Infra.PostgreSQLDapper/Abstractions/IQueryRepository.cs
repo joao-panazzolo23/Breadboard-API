@@ -1,4 +1,4 @@
-namespace Breadboard.Infra.PostgreSQLDapper.Abstractions;
+namespace BuildingBlocks.PostgreSQLDapper.Abstractions;
 
 /// <summary>
 /// Marker interface for injecting dependencies automatically.

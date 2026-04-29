@@ -15,9 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Products\Breadboard.Application.Products.csproj"/>
-        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\Breadboard.Application.Shared.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj"/>
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Products\Breadboard.Application.Products.csproj" />
+        <ProjectReference Include="..\..\Application\Breadboard.Application.Shared\SharedKernel.Application.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Shared\SharedKernel.Presentation.csproj" />
     </ItemGroup>
 
 </Project>

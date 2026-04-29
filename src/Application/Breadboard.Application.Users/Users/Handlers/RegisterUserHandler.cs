@@ -1,14 +1,14 @@
 using Breadboard.Application.Authentication;
 using Breadboard.Application.ResultPattern;
 using Breadboard.Application.ResultPattern.Factory;
-using Breadboard.Application.Users.Commands;
 using Breadboard.Application.Users.Mappers;
-using Breadboard.Application.Users.Repositories;
 using Breadboard.Domain.Users.Entities;
 using Mediator;
+using Users.Application.Users.Commands;
+using Users.Application.Users.Repositories;
 using Unit = Mediator.Unit;
 
-namespace Breadboard.Application.Users.Handlers;
+namespace Users.Application.Users.Handlers;
 
 public class RegisterUserHandler(
     IUserRepository _repository,

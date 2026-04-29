@@ -1,9 +1,9 @@
 using System.Drawing;
 using Breadboard.Application.Helpers;
-using Breadboard.Application.Users.Commands;
 using FluentValidation;
+using Users.Application.Users.Commands;
 
-namespace Breadboard.Application.Users.Validators;
+namespace Users.Application.Users.Validators;
 
 public class LoginValidator : AbstractValidator<LoginCommand>
 {

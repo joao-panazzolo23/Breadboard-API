@@ -1,12 +1,12 @@
-using Breadboard.Application;
-using Breadboard.Application.Users.Repositories;
-using Breadboard.Infra.PostgreSQL.Repositories;
+using Breadboard.Application.Data;
 using Breadboard.Shared.Options;
+using BuildingBlocks.PostgreSQL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Users.Application.Users.Repositories;
 
-namespace Breadboard.Infra.PostgreSQL.Extensions;
+namespace BuildingBlocks.PostgreSQL.Extensions;
 
 public static class EntityExtensions
 {

@@ -2,7 +2,7 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 
-namespace Breadboard.Infra.PostgreSQLDapper.Context;
+namespace BuildingBlocks.PostgreSQLDapper.Context;
 
 public class PostgreSqlContext : IDisposable
 {

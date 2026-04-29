@@ -1,11 +1,11 @@
 using System.Reflection;
-using Breadboard.Presentation.Order;
-using Breadboard.Presentation.Products;
 using Breadboard.Presentation.TransformCase;
-using Breadboard.Presentation.Users;
 using Expenses;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Orders.Presentation;
+using Products.Presentation;
+using Users.Presentation;
 
 namespace Breadboard.Presentation.Extensions;
 

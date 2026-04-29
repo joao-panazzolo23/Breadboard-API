@@ -4,14 +4,14 @@ using Mediator;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Breadboard.Infra.PostgreSQL;
+namespace BuildingBlocks.PostgreSQL;
 
-public class AppDbContext(
+public abstract class AppDbContext(
     DbContextOptions<AppDbContext> options,
     IPublisher publisher
 ) : DbContext(options)
 {
-    public DbSet<User> Users { get; set; }
+    //public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

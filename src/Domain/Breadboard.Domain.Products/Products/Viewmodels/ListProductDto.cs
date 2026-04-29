@@ -1,4 +1,4 @@
-namespace Breadboard.Domain.Products.Viewmodels;
+namespace Products.Domain.Products.Viewmodels;
 
 public class ListProductDto
 {
