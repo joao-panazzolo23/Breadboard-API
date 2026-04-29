@@ -20,19 +20,4 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Modules\Users\Users.Domain\Users.Domain.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
-            <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.AspNetCore.Metadata">
-            <HintPath>..\..\..\..\..\.dotnet\shared\Microsoft.AspNetCore.App\10.0.5\Microsoft.AspNetCore.Metadata.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.AspNetCore.OpenApi">
-            <HintPath>..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.openapi\9.0.11\lib\net9.0\Microsoft.AspNetCore.OpenApi.dll</HintPath>
-        </Reference>
-        <Reference Include="Microsoft.OpenApi">
-            <HintPath>..\..\..\..\..\.nuget\packages\microsoft.openapi\1.6.17\lib\netstandard2.0\Microsoft.OpenApi.dll</HintPath>
-        </Reference>
-    </ItemGroup>
 </Project>

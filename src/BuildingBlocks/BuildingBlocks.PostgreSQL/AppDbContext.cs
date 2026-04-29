@@ -10,7 +10,6 @@ public class AppDbContext(
     IPublisher publisher
 ) : DbContext(options)
 {
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         ///todo: migrations will be segregated by modules, it wouldnt work right here.
@@ -27,9 +26,11 @@ public class AppDbContext(
 
         SetCustomDates(entries);
 
+        var result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+
         await PublishEvents(entries, cancellationToken);
 
-        return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        return result;
     }
 
     private static void SetCustomDates(List<EntityEntry<Entity>> entries)
