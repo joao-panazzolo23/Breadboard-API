@@ -6,24 +6,24 @@
         <RootNamespace>Breadboard.Presentation</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="12.1.1"/>
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.6"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.6">
+        <PackageReference Include="FluentValidation" Version="12.1.1" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Scalar.AspNetCore" Version="2.14.1"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.14.6" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.Jwt\Breadboard.Infra.Jwt.csproj"/>
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQLDapper\Breadboard.Infra.PostgreSQLDapper.csproj"/>
-        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQL\Breadboard.Infra.PostgreSQL.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Finances\Breadboard.Presentation.Finances.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Order\Breadboard.Presentation.Order.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Products\Breadboard.Presentation.Products.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj"/>
-        <ProjectReference Include="..\Breadboard.Presentation.Users\Breadboard.Presentation.Users.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.Jwt\Breadboard.Infra.Jwt.csproj" />
+        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQLDapper\Breadboard.Infra.PostgreSQLDapper.csproj" />
+        <ProjectReference Include="..\..\Infrastructure\Breadboard.Infra.PostgreSQL\Breadboard.Infra.PostgreSQL.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Finances\Breadboard.Presentation.Finances.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Order\Breadboard.Presentation.Order.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Products\Breadboard.Presentation.Products.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Shared\Breadboard.Presentation.Shared.csproj" />
+        <ProjectReference Include="..\Breadboard.Presentation.Users\Breadboard.Presentation.Users.csproj" />
     </ItemGroup>
 
 </Project>

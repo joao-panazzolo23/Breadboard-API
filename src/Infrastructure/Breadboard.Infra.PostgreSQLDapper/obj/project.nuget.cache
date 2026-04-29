@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "xotrdfID8Cw=",
+  "dgSpecHash": "hY81WawsKaA=",
   "success": true,
   "projectFilePath": "/home/john/RiderProjects/Breadboard-API/src/Infrastructure/Breadboard.Infra.PostgreSQLDapper/Breadboard.Infra.PostgreSQLDapper.csproj",
   "expectedPackageFiles": [
     "/home/john/.nuget/packages/dapper/2.1.72/dapper.2.1.72.nupkg.sha512",
-    "/home/john/.nuget/packages/microsoft.extensions.configuration/10.0.6/microsoft.extensions.configuration.10.0.6.nupkg.sha512",
-    "/home/john/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.6/microsoft.extensions.configuration.abstractions.10.0.6.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.extensions.configuration/10.0.7/microsoft.extensions.configuration.10.0.7.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.7/microsoft.extensions.configuration.abstractions.10.0.7.nupkg.sha512",
     "/home/john/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
     "/home/john/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.0/microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
-    "/home/john/.nuget/packages/microsoft.extensions.primitives/10.0.6/microsoft.extensions.primitives.10.0.6.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.extensions.primitives/10.0.7/microsoft.extensions.primitives.10.0.7.nupkg.sha512",
     "/home/john/.nuget/packages/npgsql/10.0.2/npgsql.10.0.2.nupkg.sha512"
   ],
   "logs": []
