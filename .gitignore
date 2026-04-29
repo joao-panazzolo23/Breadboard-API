@@ -24,3 +24,4 @@ obj/
 *.db-shm
 /.vs/Breadboard-API/CopilotIndices/17.14.786.1071/SemanticSymbols.db
 /.vs/Breadboard-API/CopilotIndices/17.14.786.1071/CodeChunks.db
+.vs/
