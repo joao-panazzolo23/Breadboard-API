@@ -1,5 +1,4 @@
 using Breadboard.Application.Data;
-using Breadboard.Domain.Repositories;
 using Breadboard.Shared.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,14 +25,16 @@ public static class EntityExtensions
 
             return services.AddRepositories();
         }
+        
+        
+        private IServiceCollection AddRepositories()
+        {
+            return services.AddScoped<IUnityOfWork, UnityOfWork>()
+                //.AddScoped<IUserRepository, UserRepository>()
+                ;
+        }
     }
 
-    private static IServiceCollection AddRepositories(this IServiceCollection services)
-    {
-        return services.AddScoped<IUnityOfWork, UnityOfWork>()
-            //.AddScoped<IUserRepository, UserRepository>()
-            ;
-    }
 
     /// <summary>
     /// todo: we're doing two things inside this function: getting Database Context & updating db
