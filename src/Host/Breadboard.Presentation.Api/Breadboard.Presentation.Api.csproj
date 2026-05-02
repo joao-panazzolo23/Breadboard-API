@@ -24,7 +24,6 @@
       <ProjectReference Include="..\..\Modules\Products\Products.Presentation\Products.Presentation.csproj" />
       <ProjectReference Include="..\..\Modules\Users\Users.Infrastructure\Users.Infrastructure.csproj" />
       <ProjectReference Include="..\..\Modules\Users\Users.Presentation\Users.Presentation.csproj" />
-      <ProjectReference Include="..\Breadboard.Infra.Jwt\BuildingBlocks.Jwt.csproj" />
     </ItemGroup>
 
 </Project>
