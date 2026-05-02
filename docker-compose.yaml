@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/Host/Breadboard.Presentation.Api/Dockerfile
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:17
+
+    environment:
+      POSTGRES_DB: breadboard
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

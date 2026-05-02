@@ -1,6 +1,5 @@
 using Breadboard.Application.Exceptions.Models;
 using Breadboard.Presentation.Documentation.Conventions.Abstract;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 
