@@ -1,5 +1,7 @@
 services:
   api:
+    restart: unless-stopped
+    
     build:
       context: .
       dockerfile: src/Host/Breadboard.Presentation.Api/Dockerfile
@@ -9,7 +11,7 @@ services:
 
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=breadboard;Username=postgres;Password=postgres
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
 
     depends_on:
       postgres:
@@ -19,12 +21,12 @@ services:
     image: postgres:17
 
     environment:
-      POSTGRES_DB: breadboard
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER}" ]
       interval: 5s
       timeout: 5s
       retries: 5
