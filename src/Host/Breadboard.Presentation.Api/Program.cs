@@ -3,7 +3,8 @@ using Breadboard.Presentation.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSecurity(builder.Configuration)
+builder.Services
+    .AddSecurity(builder.Configuration)
     .AddDatabase(builder.Configuration)
     .AddDocuments(builder.Environment)
     .AddControllersScheme()
