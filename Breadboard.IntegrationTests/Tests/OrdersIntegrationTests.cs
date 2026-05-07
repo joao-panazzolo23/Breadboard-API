@@ -9,6 +9,4 @@ public class OrdersIntegrationTests(
 ) : IntegrationTestBase(pg)
 {
     protected override string[] Schemas => ["orders"];
-    
-    
 }

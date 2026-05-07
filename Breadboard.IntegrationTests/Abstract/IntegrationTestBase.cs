@@ -1,4 +1,8 @@
 using Breadboard.IntegrationTests.Configurations;
+using BuildingBlocks.PostgreSQL;
+using Dapper;
+using FluentAssertions.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Respawn;
 
@@ -10,10 +14,11 @@ public class IntegrationTestBase : IAsyncLifetime
     protected readonly HttpClient Client;
     protected readonly NpgsqlConnection Db;
     private Respawner _respawner = default!;
+    private readonly AppDbContext context = default!;
 
     protected IntegrationTestBase(PostgresContainerFixture pg)
     {
-        Client = new ApiFactory(pg).CreateClient();
+        Client = pg.Factory.CreateClient();
         Db = new NpgsqlConnection(pg.ConnectionString);
     }
 
@@ -22,12 +27,24 @@ public class IntegrationTestBase : IAsyncLifetime
     public async Task InitializeAsync()
     {
         await Db.OpenAsync();
+
         _respawner = await Respawner.CreateAsync(Db, new RespawnerOptions
         {
             DbAdapter = DbAdapter.Postgres,
-            SchemasToInclude = Schemas
+            SchemasToInclude = Schemas,
+            TablesToIgnore =
+            [
+              "__EFMigrationsHistory"
+            ]
         });
+
+        await context.Database.MigrateAsync();
     }
 
-    public async Task DisposeAsync() => await _respawner.ResetAsync(Db);
+    public async Task DisposeAsync()
+    {
+        await _respawner.ResetAsync(Db);
+        await Db.DisposeAsync();
+        Client.Dispose();
+    }
 }

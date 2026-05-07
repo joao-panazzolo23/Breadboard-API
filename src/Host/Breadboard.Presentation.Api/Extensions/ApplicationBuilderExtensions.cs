@@ -11,9 +11,9 @@ public static class ApplicationBuilderExtensions
             .UseAuthorization();
     }
 
-    public static IApplicationBuilder UseDatabase(this IApplicationBuilder app)
+    public static async Task<IApplicationBuilder> MigrateDatabase(this IApplicationBuilder app)
     {
-        ((WebApplication)app).Services.MigrateDataBase();
+        await ((WebApplication)app).Services.MigrateDataBaseAsync();
         return app;
     }
 

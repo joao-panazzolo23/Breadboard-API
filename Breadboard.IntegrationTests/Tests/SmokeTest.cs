@@ -5,10 +5,12 @@ using FluentAssertions;
 
 namespace Breadboard.IntegrationTests.Tests;
 /// <summary>
-/// Minimal class just to test Docker & Containers 
+/// Minimal class just to test Docker & Postgres Containers 
 /// </summary>
 /// <param name="pg"></param>
-public class SmokeTests(PostgresContainerFixture pg) : IntegrationTestBase(pg)
+public class SmokeTests(
+    PostgresContainerFixture pg
+    ) : IntegrationTestBase(pg)
 {
     [Fact]
     public async Task Database_ShouldBeReachable()

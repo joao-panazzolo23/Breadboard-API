@@ -15,12 +15,13 @@ builder.Services
 
 var app = builder.Build();
 
+await app.MigrateDatabase();
+
 app.UseStaticFiles()
     .UseSecurity()
     .UseHttpsRedirection()
     .UseRouting()
     .UseDocumentation()
-    .UseDatabase()
     .UseControllers()
     .UseExceptionHandler()
     ;

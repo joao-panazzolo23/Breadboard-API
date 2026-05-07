@@ -1,7 +1,6 @@
 using Breadboard.Application.Data;
 using Breadboard.Shared.Options;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
@@ -44,16 +43,13 @@ public static class EntityExtensions
     /// </summary>
     /// <param name="serviceProvider"></param>
     /// <returns></returns>
-    public static IServiceProvider MigrateDataBase(this IServiceProvider serviceProvider)
+    public static async Task<IServiceProvider> MigrateDataBaseAsync(this IServiceProvider serviceProvider)
     {
-        var cfg = serviceProvider.GetRequiredService<IConfiguration>();
-        Console.WriteLine($"[DEBUG] {cfg.GetConnectionString("DefaultConnection")}");
-
-        serviceProvider.CreateScope()
+        await serviceProvider.CreateScope()
             .ServiceProvider
             .GetRequiredService<AppDbContext>()
             .Database
-            .Migrate();
+            .MigrateAsync();
 
         return serviceProvider;
     }
