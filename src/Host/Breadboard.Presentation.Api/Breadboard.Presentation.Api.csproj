@@ -18,6 +18,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.Jwt\BuildingBlocks.Jwt.csproj" />
+		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.Mqtt\BuildingBlocks.Mqtt.csproj" />
 		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQLDapper\BuildingBlocks.PostgreSQLDapper.csproj" />
 		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQL\BuildingBlocks.PostgreSQL.csproj" />
 		<ProjectReference Include="..\..\Modules\Finances\Finances.Presentation\Finances.Presentation.csproj" />
