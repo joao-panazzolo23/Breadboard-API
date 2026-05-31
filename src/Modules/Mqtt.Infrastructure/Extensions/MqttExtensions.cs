@@ -1,10 +1,9 @@
-﻿using System.Net.Security;
-using Microsoft.AspNetCore.Builder;
+﻿using BuildingBlocks.Mqtt.Workers;
 using Microsoft.Extensions.DependencyInjection;
+using Mqtt.Domain.Abstract;
 using MQTTnet;
-using MQTTnet.Protocol;
 
-namespace BuildingBlocks.Mqtt;
+namespace Mqtt.Infrastructure.Extensions;
 
 /// <summary>
 /// MQTT (Message Queuing Telemetry Transport) is not even close to HTTP.
@@ -50,32 +49,15 @@ public static class MqttExtensions
     {
         services.AddSingleton<MqttClientFactory>();
 
-        return services.AddSingleton<IMqttClient>(_ =>
+        services.AddSingleton<IMqttClient>(_ =>
             new MqttClientFactory().CreateMqttClient()
         );
-    }
+        
+        var handlers = typeof(MqttExtensions).Assembly
+            .GetTypes()
+            .Where(t => t.IsClass && !t.IsAbstract
+                                  && t.IsAssignableTo(typeof(IMqttMessageHandler)));
 
-    public static async Task<IMqttClient>
-        ConnectMqttClient(
-            this WebApplication app)
-    {
-        var mqttClient =
-            app.Services
-                .GetRequiredService<IMqttClient>();
-
-        var options =
-            new MqttClientOptionsBuilder()
-                .WithTcpServer(
-                    "localhost",
-                    1883)
-                .Build();
-
-        await mqttClient.ConnectAsync(options);
-
-        await mqttClient.SubscribeAsync(
-            "devices/+/telemetry",
-            MqttQualityOfServiceLevel.AtLeastOnce);
-
-        return mqttClient;
+        return services.AddHostedService<MqttBackgroundWorker>();
     }
 }

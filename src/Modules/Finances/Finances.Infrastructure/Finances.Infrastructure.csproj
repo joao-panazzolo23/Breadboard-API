@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Finances.Infrastructure</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks.Mqtt\BuildingBlocks.Mqtt.csproj"/>
+        <ProjectReference Include="..\..\Mqtt.Domain\Mqtt.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

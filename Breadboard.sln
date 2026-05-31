@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances.Application", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances.Domain", "src\Modules\Finances\Finances.Domain\Finances.Domain.csproj", "{9CE3393F-C365-6E45-4425-56146025941A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances.Infraestructure", "src\Modules\Finances\Finances.Infraestructure\Finances.Infraestructure.csproj", "{1255C46F-595F-7DA5-04AB-7EFD7866E68B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances.Infrastructure", "src\Modules\Finances\Finances.Infrastructure\Finances.Infrastructure.csproj", "{1255C46F-595F-7DA5-04AB-7EFD7866E68B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finances.Presentation", "src\Modules\Finances\Finances.Presentation\Finances.Presentation.csproj", "{BA8D07AA-12E2-04A2-D93D-F90372B3576F}"
 EndProject
@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Application", "src\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Domain", "src\Modules\Orders\Orders.Domain\Orders.Domain.csproj", "{360CC4D6-5B1E-3761-4422-FDD95A3C2FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Infraestructure", "src\Modules\Orders\Orders.Infraestructure\Orders.Infraestructure.csproj", "{7ADC7E93-4B51-0160-51E8-C130D9CDCC7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Infrastructure", "src\Modules\Orders\Orders.Infrastructure\Orders.Infrastructure.csproj", "{7ADC7E93-4B51-0160-51E8-C130D9CDCC7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Presentation", "src\Modules\Orders\Orders.Presentation\Orders.Presentation.csproj", "{12E97002-79FF-5BB5-F97D-D991047D0216}"
 EndProject
@@ -74,6 +74,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Tests", "src\BuildingBlocks\BuildingBlocks.Tests\BuildingBlocks.Tests.csproj", "{3EE010C2-CB78-4C8B-861A-4CC87F74FB2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Mqtt", "src\BuildingBlocks\BuildingBlocks.Mqtt\BuildingBlocks.Mqtt.csproj", "{E67860DE-B3B7-468C-AAE4-4643A93C281C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mqtt", "Mqtt", "{C863587E-AA77-4585-BE86-ED268AF46873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mqtt.Domain", "src\Modules\Mqtt.Domain\Mqtt.Domain.csproj", "{EF009A58-9C61-437E-8CDB-0B8A2C49F268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mqtt.Application", "src\Modules\Mqtt.Application\Mqtt.Application.csproj", "{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mqtt.Infrastructure", "src\Modules\Mqtt.Infrastructure\Mqtt.Infrastructure.csproj", "{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mqtt.Presentation", "src\Modules\Mqtt.Presentation\Mqtt.Presentation.csproj", "{7CAB0CC8-1683-4A23-B581-B99870459D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -397,6 +407,54 @@ Global
 		{E67860DE-B3B7-468C-AAE4-4643A93C281C}.Release|x64.Build.0 = Release|Any CPU
 		{E67860DE-B3B7-468C-AAE4-4643A93C281C}.Release|x86.ActiveCfg = Release|Any CPU
 		{E67860DE-B3B7-468C-AAE4-4643A93C281C}.Release|x86.Build.0 = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|x64.Build.0 = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Debug|x86.Build.0 = Debug|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|x64.ActiveCfg = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|x64.Build.0 = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268}.Release|x86.Build.0 = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|x64.Build.0 = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|x64.ActiveCfg = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|x64.Build.0 = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9}.Release|x86.Build.0 = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|x64.Build.0 = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Debug|x86.Build.0 = Debug|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|x64.ActiveCfg = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|x64.Build.0 = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|x86.ActiveCfg = Release|Any CPU
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D}.Release|x86.Build.0 = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|x64.Build.0 = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Debug|x86.Build.0 = Debug|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|x64.ActiveCfg = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|x64.Build.0 = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|x86.ActiveCfg = Release|Any CPU
+		{7CAB0CC8-1683-4A23-B581-B99870459D75}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -436,6 +494,11 @@ Global
 		{D90140FE-944A-493B-89F6-FF431A73FAA1} = {1C3B8209-1024-4127-B252-AC20AC0ED6D2}
 		{3EE010C2-CB78-4C8B-861A-4CC87F74FB2C} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
 		{E67860DE-B3B7-468C-AAE4-4643A93C281C} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
+		{C863587E-AA77-4585-BE86-ED268AF46873} = {8D6C077D-F5C9-43AC-B00A-C029941B5136}
+		{EF009A58-9C61-437E-8CDB-0B8A2C49F268} = {C863587E-AA77-4585-BE86-ED268AF46873}
+		{CA0EECA1-2E14-40E0-9BF5-EF3F3F4D35D9} = {C863587E-AA77-4585-BE86-ED268AF46873}
+		{7DDFDFC1-DB3E-4C6C-8FD6-BAFA8899117D} = {C863587E-AA77-4585-BE86-ED268AF46873}
+		{7CAB0CC8-1683-4A23-B581-B99870459D75} = {C863587E-AA77-4585-BE86-ED268AF46873}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71CAA84E-AC05-46DA-9E14-61693BD3C351}

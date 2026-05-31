@@ -1,5 +1,8 @@
 namespace BuildingBlocks.Mqtt.Options;
 
+/// <summary>
+/// Todo: register and set within appsettings.json
+/// </summary>
 public class MqttOptions
 {
     public string Host { get; init; } = "";

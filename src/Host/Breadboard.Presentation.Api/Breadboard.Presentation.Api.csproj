@@ -22,6 +22,7 @@
 		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQLDapper\BuildingBlocks.PostgreSQLDapper.csproj" />
 		<ProjectReference Include="..\..\BuildingBlocks\BuildingBlocks.PostgreSQL\BuildingBlocks.PostgreSQL.csproj" />
 		<ProjectReference Include="..\..\Modules\Finances\Finances.Presentation\Finances.Presentation.csproj" />
+		<ProjectReference Include="..\..\Modules\Mqtt.Infrastructure\Mqtt.Infrastructure.csproj" />
 		<ProjectReference Include="..\..\Modules\Orders\Orders.Presentation\Orders.Presentation.csproj" />
 		<ProjectReference Include="..\..\Modules\Products\Products.Presentation\Products.Presentation.csproj" />
 		<ProjectReference Include="..\..\Modules\Users\Users.Infrastructure\Users.Infrastructure.csproj" />
